@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBL Gummies - Get Your Perfect Curves!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Get the Curves You Desire with BBL Gummies!</h1>
+            <p>100% Natural & Proven Formula - See Results Fast!</p>
+            <button class="cta-btn" onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})">Order Now</button>
+        </div>
+    </header>
+
+    <!-- Timer Section -->
+    <section id="timer">
+        <p>🔥 Limited Offer Ends In:</p>
+        <div id="countdown"></div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <h2>Why Choose BBL Gummies?</h2>
+        <ul>
+            <li>✅ Enhances Hip & Butt Growth Naturally</li>
+            <li>💊 Packed with Essential Vitamins & Nutrients</li>
+            <li>🛡️ Safe, Effective, and Non-Invasive</li>
+            <li>📅 Visible Results in Just Weeks!</li>
+        </ul>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>⭐⭐⭐⭐⭐ "I noticed a difference in just 3 weeks! Totally love it!"</p>
+            <span>- Jane D.</span>
+        </div>
+        <div class="testimonial">
+            <p>⭐⭐⭐⭐⭐ "Best decision ever! My confidence is on another level!"</p>
+            <span>- Sarah M.</span>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order-form">
+        <h2>Order Now & Get a Special Bonus!</h2>
+        <form id="bblOrderForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" name="address" placeholder="Enter your shipping address" required></textarea>
+
+            <button type="submit" class="submit-btn">Order Now</button>
+        </form>
+    </section>
+
+    <script>
+        // Countdown Timer
+        function startCountdown(durationInMinutes) {
+            let countdownElement = document.getElementById("countdown");
+            let timeLeft = durationInMinutes * 60;
+            setInterval(function () {
+                let minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                countdownElement.innerHTML = `${minutes}m ${seconds}s`;
+                if (timeLeft > 0) timeLeft--;
+            }, 1000);
+        }
+        startCountdown(10); // 10-minute timer
+
+        // Order Form Submission to Google Sheets
+        $("#bblOrderForm").submit(function (event) {
+            event.preventDefault();
+            let formData = $(this).serialize();
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec", // Replace with Google Sheets script URL
+                method: "POST",
+                data: formData,
+                success: function () {
+                    window.location.href = "success.html"; // Redirect to Success Page
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
