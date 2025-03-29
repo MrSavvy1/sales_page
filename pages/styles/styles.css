@@ -83,6 +83,97 @@ body {
     margin: 10px 0;
 }
 
+.testimonial img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Before and After Section */
+#before-after {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#before-after h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#before-after p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.before-after-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.before, .after {
+    text-align: center;
+    max-width: 300px;
+}
+
+.before img, .after img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.before h3, .after h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Additional Content */
+#additional-content {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#additional-content h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+#additional-content p, #additional-content ul {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#additional-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#additional-content li {
+    margin: 10px 0;
+}
+
+/* FAQ Section */
+.faq {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.faq h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.faq p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
 /* Order Form */
 #order-form {
     background: #fff;
