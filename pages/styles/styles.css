@@ -29,7 +29,7 @@ body {
     background: #ff4f7b;
     color: #fff;
     border: none;
-    padding: 15px 30px;
+    padding: 25px 50px;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 50px;
@@ -39,6 +39,109 @@ body {
 .cta-btn:hover {
     background: #ff2b63;
 }
+
+/* Animating Arrow */
+.arrow-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    margin-top: 10px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-left: 5px solid #ff4f7b;
+    border-bottom: 5px solid #ff4f7b;
+    transform: rotate(-45deg);
+    animation: bounce 0.5s infinite;
+}
+
+.arrow2 {
+    margin-top: 20px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
+    transform: rotate(-45deg);
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(-45deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+    }
+}
+
+/* Pricing Section */
+#pricing {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#pricing .old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.5rem;
+}
+
+#pricing .offer-price {
+    color: #ff4f7b;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Product Section */
+#product {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#product h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.product-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+}
+
 
 /* Timer Section */
 #timer {
@@ -132,10 +235,10 @@ body {
 /* Additional Content */
 #additional-content {
     background: #fff;
-    padding: 40px 20px;
+    padding: 20px 10px; /* Reduced padding */
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1000px; /* Increased width */
+    margin: 0 auto; /* Centered */
 }
 
 #additional-content h2 {
@@ -160,8 +263,8 @@ body {
 /* FAQ Section */
 .faq {
     text-align: left;
-    margin: 20px auto;
-    max-width: 600px;
+    margin: 10px auto; /* Reduced margin */
+    max-width: 800px; /* Increased width */
 }
 
 .faq h3 {
@@ -177,8 +280,10 @@ body {
 /* Order Form */
 #order-form {
     background: #fff;
-    padding: 40px 20px;
+    padding: 20px 10px; /* Reduced padding */
     text-align: center;
+    max-width: 800px; /* Increased width */
+    margin: 20px auto; /* Reduced margin */
 }
 
 #order-form h2 {
@@ -186,13 +291,13 @@ body {
 }
 
 form {
-    max-width: 400px;
+    max-width: 600px; /* Increased width */
     margin: auto;
 }
 
 input, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px; /* Increased padding */
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -247,6 +352,21 @@ input, textarea {
     .before img, .after img {
         max-width: 400px;
     }
+
+    .product-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-image {
+        width: 400px;
+    }
+
+    .product-description {
+        text-align: left;
+        max-width: 500px;
+    }
 }
 
 /* Mobile View */
@@ -283,5 +403,13 @@ input, textarea {
     .before-after-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    #order-form {
+        max-width: 90%; /* Adjusted for mobile */
+    }
+
+    form {
+        max-width: 100%; /* Adjusted for mobile */
     }
 }

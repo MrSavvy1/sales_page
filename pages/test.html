@@ -14,6 +14,9 @@
         <div class="hero-content">
             <h1>Get the Curves You Desire with BBL Gummies!</h1>
             <p>100% Natural & Proven Formula - See Results Fast!</p>
+            <div class="arrow-container">
+                <div class="arrow2"></div>
+            </div>
             <button class="cta-btn" onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})">Order Now</button>
         </div>
     </header>
@@ -22,6 +25,25 @@
     <section id="timer">
         <p>🔥 Limited Offer Ends In:</p>
         <div id="countdown"></div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product">
+        <h2>Introducing BBL Gummies</h2>
+        <div class="product-container">
+            <img src="images/product.png" alt="BBL Gummies Product" class="product-image">
+            <p class="product-description">
+                BBL Gummies are specially formulated to help you achieve the curves you desire. Packed with natural ingredients, these gummies are safe, effective, and easy to use. Start your journey to a more confident you today!
+            </p>
+            <img src="images/product.png" alt="BBL Gummies Product" class="product-image">
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>Special Offer</h2>
+        <p>Old Price: <span class="old-price">25,000 Naira</span></p>
+        <p>Offer Price: <span class="offer-price">20,000 Naira</span></p>
     </section>
 
     <!-- Benefits Section -->
@@ -57,6 +79,10 @@
 
     <!-- Before and After Section -->
     <section id="before-after">
+        <div class="arrow-container">
+            <div class="arrow"></div>
+        </div>
+        <button class="cta-btn" onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})">Order Now</button>
         <h2>Before and After Results</h2>
         <p>See the amazing transformation our customers have experienced with BBL Gummies!</p>
         <div class="before-after-container">
@@ -95,8 +121,8 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-            <label for="address">Shipping Address:</label>
-            <textarea id="address" name="address" placeholder="Enter your shipping address" required></textarea>
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea>
 
             <button type="submit" class="submit-btn">Order Now</button>
         </form>
@@ -104,17 +130,18 @@
 
     <script>
         // Countdown Timer
-        function startCountdown(durationInMinutes) {
+        function startCountdown(durationInHours) {
             let countdownElement = document.getElementById("countdown");
-            let timeLeft = durationInMinutes * 60;
+            let timeLeft = durationInHours * 60 * 60; // Convert hours to seconds
             setInterval(function () {
-                let minutes = Math.floor(timeLeft / 60);
+                let hours = Math.floor(timeLeft / 3600);
+                let minutes = Math.floor((timeLeft % 3600) / 60);
                 let seconds = timeLeft % 60;
-                countdownElement.innerHTML = `${minutes}m ${seconds}s`;
+                countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
                 if (timeLeft > 0) timeLeft--;
             }, 1000);
         }
-        startCountdown(10); // 10-minute timer
+        startCountdown(24); // 24-hour timer
 
         // Order Form Submission to Google Sheets
         $("#bblOrderForm").submit(function (event) {
