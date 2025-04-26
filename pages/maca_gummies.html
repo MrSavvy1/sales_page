@@ -6,6 +6,20 @@
     <title>BBL Gummies - Get Your Perfect Curves!</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer a {
+      color: #c2185b;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    </style>
 </head>
 <body>
 
@@ -127,36 +141,40 @@
             <button type="submit" class="submit-btn">Order Now</button>
         </form>
     </section>
+<footer>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="contact.html">Contact Us</a>
+  </footer>
 
-    <script>
-        // Countdown Timer
-        function startCountdown(durationInHours) {
-            let countdownElement = document.getElementById("countdown");
-            let timeLeft = durationInHours * 60 * 60; // Convert hours to seconds
-            setInterval(function () {
-                let hours = Math.floor(timeLeft / 3600);
-                let minutes = Math.floor((timeLeft % 3600) / 60);
-                let seconds = timeLeft % 60;
-                countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
-                if (timeLeft > 0) timeLeft--;
-            }, 1000);
-        }
-        startCountdown(24); // 24-hour timer
+  <script>
+    // Countdown Timer
+    function startCountdown(durationInHours) {
+        let countdownElement = document.getElementById("countdown");
+        let timeLeft = durationInHours * 60 * 60; // Convert hours to seconds
+        setInterval(function () {
+            let hours = Math.floor(timeLeft / 3600);
+            let minutes = Math.floor((timeLeft % 3600) / 60);
+            let seconds = timeLeft % 60;
+            countdownElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+            if (timeLeft > 0) timeLeft--;
+        }, 1000);
+    }
+    startCountdown(24); // 24-hour timer
 
-        // Order Form Submission to Google Sheets
-        $("#bblOrderForm").submit(function (event) {
-            event.preventDefault();
-            let formData = $(this).serialize();
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec", // Replace with Google Sheets script URL
-                method: "POST",
-                data: formData,
-                success: function () {
-                    window.location.href = "success.html"; // Redirect to Success Page
-                }
-            });
+    // Order Form Submission to Google Sheets
+    $("#bblOrderForm").submit(function (event) {
+        event.preventDefault();
+        let formData = $(this).serialize();
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec", // Replace with Google Sheets script URL
+            method: "POST",
+            data: formData,
+            success: function () {
+                window.location.href = "success.html"; // Redirect to Success Page
+            }
         });
-    </script>
-
+    });
+</script>
 </body>
 </html>
