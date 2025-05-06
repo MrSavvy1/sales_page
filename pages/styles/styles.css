@@ -226,11 +226,14 @@ body {
 
 .before, .after {
     text-align: center;
-    max-width: 300px;
+    max-width: 100%; /* Adjust as needed */
 }
 
 .before img, .after img {
-    width: 100%;
+    width: 100%; 
+
+    height: 640px; 
+   /* object-fit: cEnsures the image scales proportionally and fills the area */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -239,7 +242,6 @@ body {
     font-size: 1.5rem;
     margin: 10px 0;
 }
-
 /* Additional Content */
 #additional-content {
     background: #fff;
