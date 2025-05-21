@@ -303,6 +303,11 @@ body {
 form {
     max-width: 600px; /* Increased width */
     margin: auto;
+    text-align: center;
+}
+.form-group input, .form-group textarea {
+    width: 80%;
+    margin: 10px 0;
 }
 
 input, textarea {
