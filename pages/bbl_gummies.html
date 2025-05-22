@@ -350,7 +350,14 @@
         <textarea id="address" name="address" placeholder="Enter your delivery address" required></textarea><br>
     </div>
 
-    <button type="submit" class="submit-btn">Order Now</button>
+    <div class="form-group">
+        <button type="submit" class="submit-btn" id="submit-btn">Submit Order Now</button>
+        <div id="spinner" class="spinner" style="display: none;">
+            <div class="loader"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
 </form>
     </section>
 <footer>
@@ -377,6 +384,10 @@
     // Order Form Submission to Google Sheets
     $("#bblOrderForm").submit(function (event) {
         event.preventDefault();
+        const submitButton = $("#submit-btn");
+    submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
+    $("#spinner").show();
+
         let name = $("#name").val();
     let phone = $("#phone").val();
     let address = $("#address").val();
@@ -398,7 +409,12 @@
             data: formData,
             success: function () {
                 window.location.href = "success.html"; // Redirect to Success Page
-            }
+            },
+            error: function () {
+            alert("There was an error submitting your order. Please try again.");
+            submitButton.prop("disabled", false).css("opacity", "1").text("Submit Order Now");
+            $("#spinner").hide();
+        }
         });
     });
 </script>

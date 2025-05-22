@@ -9,6 +9,35 @@ body {
     color: #333;
 }
 
+.spinner {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light gray */
+    border-top: 4px solid #4CAF50; /* Green */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
 /* Hero Section
 .hero {
     background: linear-gradient(to right, #ff7eb3, #ff758c);
@@ -82,6 +111,12 @@ body {
     border-bottom: 5px solid white;
     transform: rotate(-45deg);
     animation: bounce 0.5s infinite;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc; /* Faded background for disabled state */
+    color: #666; /* Faded text color */
 }
 
 @keyframes bounce {
