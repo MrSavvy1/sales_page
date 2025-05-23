@@ -230,7 +230,7 @@ button:disabled {
 }
 
 .testimonial img {
-    width: 50%;
+    width: 60%;
     height: auto;
     margin-bottom: 10px;
 }
@@ -396,7 +396,7 @@ input, textarea {
     }
 
     .testimonial img {
-        width: 50%;
+        width: 60%;
     }
 
     .before img, .after img {
@@ -443,7 +443,7 @@ input, textarea {
     }
 
     .testimonial img {
-        width: 80%;
+        width: 90%;
     }
 
     .before img, .after img {
