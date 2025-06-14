@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://app.snipercrm.io/formframe?formid=d06cfb527c4374&c=0 -->
+<html lang="en" class="wf-fontawesome-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+        <!--<base target="_parent">--><base href="." target="_parent">
+
+    <!-- Title Page-->
+    <title>Order NOW!</title>
+
+    <!-- Icons font CSS-->
+    <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="./font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="./css" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="./select2.min.css" rel="stylesheet" media="all">
+    <!--<link href="newform/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">-->
+
+    <!-- Main CSS-->
+    <link href="./main.css" rel="stylesheet" media="all">
+    <style type="text/css">
+.col_half1 {
+  width: 30%;
+  float: left;
+}
+.col_half2 {
+  width: 70%;
+  float: left;
+}
+.col_half3 {
+  width: 50%;
+  float: left;
+}
+.col_half4 {
+  width: 50%;
+  float: left;
+}
+.myselect {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.myselect option {
+  white-space: nowrap;
+  width: 100% border-bottom: 1px #ccc solid;
+  /* This doesn't work. */
+}
+.Radio {
+  display: inline-flex;
+  align-items: center;
+}
+.Radio-Input {
+  margin: 0 0.5rem 0;
+}
+.column-lx {
+  flex: 1%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;
+}
+.column-l {
+  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 8px;width: fit-content;width: auto;
+  min-width: min-content;
+  max-width: max-content;
+}
+.column-lr {
+  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 45px;width: fit-content;width: auto;
+  min-width: min-content;
+  max-width: max-content;
+}
+.column-r {
+  flex: 35%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: right; text-align: right;
+}
+.rowx {
+  display: flex;
+}
+
+.btn--blue {
+  background: #0000B2; 
+  /*#4272d7;*/
+}
+
+.btn--blue:hover {
+  background: #3868cd;
+}
+select {
+  color: #000000;
+}
+.label{
+  color: #000000;
+display: none}
+iframe{
+
+}
+@media screen and (max-width: 600px) {.divresimg {width: 345px;}}@media screen and (max-width: 412px) {.divresimg {width: 150px;}}@media screen and (max-width: 375px) {.divresimg {width: 140px;}}@media screen and (min-width: 601px) {.divresimg {width: 200px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 150px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 150px;}}@media screen and (max-width: 734) {.divresimg {width: 100px;}}
+
+.divresbump {width: px;}
+
+@media screen and (max-width: 600px) {.divresbump {width: 345px; margin-left: -12px;}}@media screen and (max-width: 412px) {.divresbump {width: 350px; margin-left: -12px;}}@media screen and (max-width: 375px) {.divresbump {width: 260px; margin-left: -12px;}}@media screen and (min-width: 601px) {.divresbump {width: 550px; margin-left: -12px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresbump {width: 280px; margin-left: -12px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresbump {width: 480px; margin-left: -12px;}}@media screen and (max-width: 734) {.divresbump {width: 200px; margin-left: -12px;}}
+
+@media screen and (max-width: 600px) {.sbn {padding-right: 20px; padding-left: 20px;}}@media screen and (max-width: 412px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (max-width: 375px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (min-width: 601px) {.sbn {padding-right: 40px; padding-left: 40px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (max-width: 734px) {.sbn {padding-right: 10px; padding-left: 10px;}}
+    
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px; /* Add some space between rows if needed */
+}
+
+.field-25 {
+    flex: 0 0 30%; /* Flex shorthand to take 25% of the row */
+    margin-right: 2px; /* Optional: Add space between the fields */
+}
+
+.field-75 {
+    flex: 0 0 68%; /* Flex shorthand to take 75% of the row */
+}
+
+/* Optional: Add some styling to the select and input elements */
+select, input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+    </style><link rel="stylesheet" href="./4ecc3dbb0b.css" media="all">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-6 sbn" style="background-color: #000000; padding-top: 15px; padding-bottom: 15px;">
+                <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
+
+                    <form method="POST" action="https://app.snipercrm.io/processor" id="order_form" class="sniperform">
+
+
+
+<!--<div style="display: ">-->
+
+
+<div style="margin: 10px">
+<h2 align="center" style="font-size: 18px; color: #495057; font-family: Cambria;">Please Fill The Form Below To Place Your Order</h2>
+<p align="center" style="color: #495057;"><b>Only Serious Buyers Should Fill The Form Below</b></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- for no show of each variation qty text field, 0 select, 1 radio -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-12"><div class="input-group">
+<label class="label">Enter Your Full Name *</label>
+<input class="input--style-4" type="text" name="name" id="name" value="" required="" placeholder="Enter Your Full Name *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px"></div></div>
+
+
+
+
+<input type="hidden" name="ccode1" id="phonecc" value="161">
+<input type="hidden" name="ccode2" id="phonewa" value="161">
+<label class="label">Enter Your Phone Number *</label>
+<div class="col-12">
+<div class="input-group">
+    <input class="input--style-4" type="number" name="phone" onblur="savePartialData()" id="phone" value="" required="" placeholder="Enter Your Phone Number *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px; width: 100% !important">
+        <span style="color: red; display: none;" id="phone_error"><b>Error: Phone number is not complete</b></span></div>
+</div>
+
+
+<label class="label">Enter Your WhatsApp Phone Number *</label>
+<div class="col-12">
+<div class="input-group">
+    <input class="input--style-4" type="number" name="waphone" id="waphone" value="" required="" placeholder="Enter Your WhatsApp Phone Number  *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px; width: 100% !important"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+<div class="col-12"><div class="input-group">
+<label class="label">Give Us A Detailed Address (Work or Home) *</label>
+<input class="input--style-4" type="text" name="address" value="" id="address" required="" placeholder="Give Us A Detailed Address (Work or Home) *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px"></div></div></div>
+
+
+
+
+
+
+
+
+
+<label class="label">Click To Select Your State *</label>
+<div class="rs-select2 js-select-simple select--no-search-dx">
+<select name="state" id="state" class="myselect select2-hidden-accessible" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px" required="" tabindex="-1" aria-hidden="true">
+  <option value="" selected="selected">Click To Select Your State * </option>
+                <option value="Lagos">Lagos</option>
+                <option value="Abuja">Abuja</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 631.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-container"><span class="select2-selection__rendered" id="select2-state-container" title="Click To Select Your State * ">Click To Select Your State * </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+<label class="label">Click To Select Your Package *</label>
+<div class="rs-select2 js-select-simple select--no-search-dx">
+<select name="quantity" id="selectwrap" required="" class="myselect select2-hidden-accessible" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px;" tabindex="-1" aria-hidden="true"><option value="">Click To Select Your Package *</option>
+
+                <option value="138924">
+          
+                                    Buy 
+            1 Pack = 
+             ₦16,000              
+            </option>
+                <option value="138925">
+          
+                                    Buy 
+            2 Pack = 
+             ₦28,000              
+            </option>
+                <option value="138926">
+          
+                                    Buy 
+            3 Pack = 
+             ₦35,000              
+            </option>
+                <option value="138927">
+          
+                                    Buy 
+            4 Pack = 
+             ₦45,000              
+            </option>
+        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 631.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-selectwrap-container"><span class="select2-selection__rendered" id="select2-selectwrap-container" title="Click To Select Your Package *">Click To Select Your Package *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div><p></p>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+ 
+<table style="margin-bottom: -5px; border: 0; border-collapse: collapse;font-size: 14px; color: #495057; width: 100%" cellspacing="20">
+<tbody><tr style=" background-color: transparent; border: none;" id="c-statefeetable"></tr>
+<tr style=" background-color: transparent; border: none;" id="c-statefeetableqty"></tr>
+</tbody><tbody>
+
+</tbody>
+</table>
+
+
+
+
+
+
+<div style="font-size: 14px; display: none;" align="center" id="c-error"><label style="color: #ff0000"><strong> Coupon Code is invalid!</strong></label></div>
+
+<div style="font-size: 14px; display: none;" align="center" id="cc-error"><label style="color: #ff0000"><strong> Please type Coupon Code...</strong></label></div>
+
+<div style="font-size: 14px; display: none;" align="center" id="cc-qty"><label style="color: #ff0000"><strong> Please select product quantity above</strong></label></div>
+
+
+
+
+<table style="margin-bottom: -5px; border-collapse: collapse; font-size: 14px; width: 100%; display: none;" cellspacing="20" id="c-table">
+<tbody>
+</tbody>
+</table>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--dup-->
+
+
+
+
+
+
+ 
+
+
+<!--
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="comtxt" style="display: none;">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  
+<div id="hide1" name="Cash On Delivery" align="left" style="display: ">
+
+
+
+
+<label class="Radio">
+<label class="radio-container m-r-45">
+  <input id="" type="radio" name="pgmain" class="Radio-Input" value="Cash On Delivery" checked="">
+  <span class="checkmark"></span></label>
+  <img src="./cod.png" class="divresimg" style="margin-left: -25px;"></label>
+<br><br>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<div style="margin:auto" align="center">
+
+
+
+
+<div style="font-size: 14px; display: none;" align="center" id="nameopt-error"><label style="color: #ff0000"><strong> Please type your name above</strong></label></div>
+
+<div style="font-size: 14px; display: none;" align="center" id="phoneopt-error"><label style="color: #ff0000"><strong> Please type your phone number above</strong></label></div>
+
+<div style="font-size: 14px; display: none;" align="center" id="addressopt-error"><label style="color: #ff0000"><strong> Please type your address above</strong></label></div>
+
+
+
+<div style="font-size: 14px; display: none;" align="center" id="packageopt-error"><label style="color: #ff0000"><strong> Please select your package above</strong></label></div>
+
+
+<div style="font-size: 14px; display: none;" align="center" id="var1-error"><label style="color: #ff0000"><strong> Please type quantity for product variation above</strong></label></div>
+
+
+
+<div style="margin-bottom: 10px; font-size: 14px; color: #495057; font-family: Cambria" align="center"><strong> </strong></div>
+
+
+
+
+
+
+<div class="p-t-15" align="center">
+                            <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
+        <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
+</div>
+
+<input type="hidden" name="hpf" id="hpf" value="">
+
+<input type="hidden" name="zq" id="zq" value="4374"><input type="hidden" name="unx" id="unx" value="0"><input type="hidden" name="pid" id="pid" value="22686"><input type="hidden" name="bumppid" id="bumppid" value="0"><input type="hidden" name="cid" id="cid" value="161"><input type="hidden" name="fid" id="fid" value="d06cfb527c4374"><input type="hidden" name="usp" value="0"><input type="hidden" name="grk" value=""><input type="hidden" name="pvar" id="pvar" value=""><input type="hidden" name="addedby" value=""></div>
+
+
+
+
+                        
+                    <input type="hidden" name="parent_url" value="https://detox.com.ng/curvy/?fbclid=IwY2xjawK5CwhleHRuA2FlbQIxMABicmlkETFoMTM2c2pEU1JBd0Rud0lJAR6-p-rC3z63JXHyXzNGpf7kB7VwWwCfQ2As-ZvLbFvxFJnUz_hmxNW62h0Jsw_aem_n_ovL3fWGd4_Cp04gNOhCw"></form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="./webfontloader.js.download"></script><script src="./jquery.min.js.download"></script>
+    <!-- Vendor JS-->
+    <script src="./select2.min.js.download"></script>
+    <script src="./moment.min.js.download"></script>
+    <script src="./daterangepicker.js.download"></script>
+
+    <!-- Main JS-->
+    <script src="./global.js.download"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="./btn.js.download"></script>
+
+<script type="text/javascript" src="./radioclick.js.download"></script>
+
+<script type="text/javascript" src="./btnfxnew.js.download"></script>
+
+
+<script src="./select2.full.min.js.download"></script>
+  <script src="./4ecc3dbb0b.js.download"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Event listener for when the country is selected
+            $('#country').change(function() {
+                var selectedCountry = $(this).val();
+                $('#phonecc').val(selectedCountry);
+                $('#phonewa').val(selectedCountry);
+          });
+        });
+    </script>
+
+<script type="text/javascript">
+$("#productidbump").click(function() {
+    if($(this).is(":checked")) {
+      $('.bumpquantity').attr('required', 'required');
+        $("#bumpqty").show();
+    } else {
+      $('.bumpquantity').removeAttr('required');
+        $("#bumpqty").hide();
+    }
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.sniperform').submit(function(){
+        $("#sniperbutton").html("Submitting Your Order...");
+        $("#sniperbutton").prop('disabled', true);
+    });
+});
+</script>
+
+<script type="text/javascript">
+    var names = [''];
+$('#state').change(function() {
+        var state = $('#state').val();
+        if (jQuery.inArray(state, names)!='-1') {
+            $("#comtxt").hide();
+            $("#hide1").show();
+            $("#hide2").hide();
+            $("#hide3").hide();
+            $("#hide4").hide();
+        } else {
+            $("#comtxt").show(); 
+            $("#hide1").hide();
+            $("#hide2").show();
+            $("#hide3").show();
+            $("#hide4").show();
+        }
+        if (names=='')
+        {
+          $("#hide2").hide();
+        }
+    });
+</script>
+
+<script>
+$(document).ready(function($){
+// hide messages 
+$("#c-error").hide();
+$("#cc-error").hide();
+$("#cc-qty").hide();
+$("#c-table").hide();
+// on submit...
+$('#sniperbuttonx').click(function(e){
+e.preventDefault();
+$("#c-error").hide();
+$('#c-table').find('tr').remove();
+
+
+var cc = $("#coupon").val();
+if(cc == ""){
+$("#cc-error").show();
+$("#coupon").focus();
+$("#cc-error").fadeOut(5000);
+return false;
+}
+
+var qty = $("#selectwrap").val();
+
+if(qty == ""){
+$("#cc-qty").show();
+$("#selectwrap").focus();
+$("#cc-qty").fadeOut(5000);
+return false;
+}
+
+
+
+
+
+var hfcoupon = $("#hfcoupon").val();
+var storeid = $("#zq").val();
+var delivery_fee = $("#delivery_fee").val();
+
+
+$.post("ajaxDataCoupon.php", { cc : cc, qty : qty, hfcoupon : hfcoupon, storeid : storeid, delivery_fee : delivery_fee },
+
+
+ 
+            function(result){  
+
+            //if the result is 0  
+            if(result == 0){  
+                //show that the code is correct 
+                $("#coupon").val(''); 
+                $("#c-error").show();
+                $("#c-error").fadeOut(5000); 
+            }
+            else{
+                //show that the code is not correct 
+                $("#c-table").show();
+                $("#c-table").fadeIn(3000);
+                $('#c-table').append(result);
+            }
+        });  
+
+});  
+
+});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+    $('#state').on('change', function(){
+        var state = $(this).val();
+        var storeid = $("#zq").val();
+        var unx = $("#unx").val();
+        if(state){
+            $.ajax({
+                type:'POST',
+                url:'states_delfee.php',
+                data: {state : state, storeid:storeid, unx: unx},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('#c-statefeetable').html(html); 
+                }
+            }); 
+        }else{
+        }
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $('#selectwrap').on('change', function(){
+        var quantity = $(this).val();
+        var storeid = $("#zq").val();
+        var delivery_fee = $("#delivery_fee").val();
+        var unx = $("#unx").val();
+        if(quantity){
+            $.ajax({
+                type:'POST',
+                url:'states_delfeeqty.php',
+                data: {quantity : quantity, storeid:storeid, delivery_fee : delivery_fee, unx: unx},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('#c-statefeetableqty').html(html); 
+                }
+            }); 
+        }else{
+        }
+    });
+});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+  //$("#state").hide();
+    $('#country').on('change', function(){
+        var countryID = $(this).val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:'formframestates.php',
+                data:'countryid='+countryID,
+                success:function(html){
+                    $('#state').html(html); 
+                    //$("#state").show();
+                }
+            }); 
+        }else{
+          $('#state').html('<option value="">Select country first</option>');
+        }
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $('#country').on('change', function(){
+        var countryID = $(this).val();
+        var productid = $("#pid").val();
+var storeid = $("#zq").val();
+var pvar  = $("#pvar").val();
+var fid  = $("#fid").val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:'formframeqty.php',
+                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('#selectwrap').html(html); 
+                }
+            }); 
+        }else{
+          $('#selectwrap').html('<option value="">Select Quantity</option>');
+        }
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $('#country').on('change', function(){
+        var countryID = $(this).val();
+        var productid = $("#pid").val();
+var storeid = $("#zq").val();
+var pvar  = $("#pvar").val();
+var fid  = $("#fid").val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:'formframeqty2.php',
+                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('#qtyradio').html(html); 
+                }
+            }); 
+        }else{
+          
+        }
+    });
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('#country').on('change', function(){
+        var countryID = $(this).val();
+        var productid = $("#bumppid").val();
+var storeid = $("#zq").val();
+var pvar  = $("#pvar").val();
+var fid  = $("#fid").val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:'formframeqty3.php',
+                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('#bumpqtyradio').html(html); 
+                }
+            }); 
+        }else{
+          
+        }
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $('#country').on('change', function(){
+        var countryID = $(this).val();
+        var productid = $("#bumppid").val();
+var storeid = $("#zq").val();
+        if(countryID){
+            $.ajax({
+                type:'POST',
+                url:'formframeqtybump.php',
+                data: {countryid: countryID, productid : productid, storeid : storeid},
+                //data:'countryid='+countryID,
+                success:function(html){
+                    $('.bumpquantity').html(html); 
+                }
+            }); 
+        }else{
+          $('.bumpquantity').html('<option value="">Select Quantity</option>');
+        }
+    });
+});
+</script>
+
+
+<script>
+function savePartialData() {
+    var phonenum = document.getElementById('phone').value;
+    var customername = document.getElementById('name').value;
+    var storeid = document.getElementById('zq').value;
+    var productid = document.getElementById('pid').value;
+    var formid = document.getElementById('fid').value;
+    var phonecc = document.getElementById('phonecc').value;
+    var cid = document.getElementById('cid').value;
+
+
+        if (phonenum !== '' && phonenum.length < 7) {
+            $("#phone_error").show(1000);
+            $("#phone_errorx").show(1000);
+            $("#sniperbutton").prop('disabled', true); 
+            return; 
+        }
+
+        else {
+            $("#phone_error").hide(1000);
+            $("#phone_errorx").hide(1000);
+            $("#sniperbutton").prop('disabled', false); 
+        }
+
+
+
+    if (phonenum) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "form_cb.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("customername=" + customername + "&phonenum=" + phonenum + "&storeid=" + storeid + "&productid=" + productid + "&phonecc=" + phonecc + "&cid=" + cid + "&formid=" + formid + "&cb=" + 1);
+    }
+}
+</script>
+
+
+
+
+<script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
+
+
+
+
+
+<script>
+window.addEventListener("message", function(event) {
+            if (event.data && event.data.parentUrl) {
+                var parentUrl = event.data.parentUrl;
+
+                // Create a hidden input field for the parent URL
+                var hiddenField = document.createElement("input");
+                hiddenField.type = "hidden";
+                hiddenField.name = "parent_url";
+                hiddenField.value = parentUrl;
+
+                // Append the hidden input field to the form
+                var form = document.getElementById("order_form");
+                form.appendChild(hiddenField);
+            }
+        });
+    </script>
+
+    <script>
+    function sendHeight() {
+        var height = document.body.scrollHeight; // Get content height
+        window.parent.postMessage({ iframeHeight: height }, "*");
+    }
+
+    // Send height when the page loads and when resized
+    window.onload = sendHeight;
+    window.addEventListener("resize", sendHeight);
+</script>
+
+
+
+
+
+
+
+<div style="clear: both; display: block; height: 0px;"></div></body></html>

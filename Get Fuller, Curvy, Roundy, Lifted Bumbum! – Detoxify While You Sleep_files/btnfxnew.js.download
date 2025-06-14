@@ -1,0 +1,97 @@
+$(document).ready(function(){
+    $('.sniperform').submit(function(){
+
+//var name = $("#name").val();
+//if(name == ""){
+//$("#qtyopt-error").show();
+//}
+
+        $("#sniperbutton").html("Submitting...");
+        $("#sniperbutton").prop('disabled', true);
+        $('#sniperbutton').css({backgroundColor: '#D0D0D0'});
+
+
+    });
+
+$('#sniperbutton').click(function(e){
+if($('#name').val() == ''){
+      $("#nameopt-error").show();
+      $('#name').attr('required', 'required');
+   }
+else
+{
+$("#nameopt-error").hide(); 
+}
+
+if($.trim($('#phone').val()) == ''){
+      $("#phoneopt-error").show();
+      $('#phone').attr('required', 'required');
+   }
+
+else
+{
+$("#phoneopt-error").hide();  
+}
+
+
+if($.trim($('#address').val()) == ''){
+      $("#addressopt-error").show();
+      $('#address').attr('required', 'required');
+   }
+else
+{
+$("#addressopt-error").hide();  
+}
+
+
+if($.trim($('#selectwrap').val()) == ''){
+      $("#packageopt-error").show();
+      
+   } 
+else
+{
+$("#packageopt-error").hide();  
+}
+
+
+
+/**
+if (!$('.quantity').is(":checked"))
+//if(!$('input[name=quantity]').is(":checked"))
+{
+$("#cc-qtyx").show();
+$(".quantity").focus();
+return false;
+}
+
+
+else
+{
+$("#cc-qtyx").hide();  
+}
+**/
+
+
+
+
+
+qty2 = $(".quantity").val();
+if(qty2 == "")
+{
+$("#cc-qty").show();
+$(".quantity").focus();
+return false;
+}
+
+
+else
+{
+$("#cc-qty").hide();  
+}
+
+
+
+
+});
+
+});
