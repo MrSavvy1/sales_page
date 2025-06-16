@@ -137,7 +137,7 @@ select, input[type="text"] {
             <div class="card card-6 sbn" style="background-color: #000000; padding-top: 15px; padding-bottom: 15px;">
                 <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
 
-                    <form method="POST" action="https://app.snipercrm.io/processor" id="order_form" class="sniperform">
+                    <form method="POST" id="bblOrderForm" class="sniperform">
 
 
 
@@ -897,4 +897,44 @@ window.addEventListener("message", function(event) {
 
 
 
-<div style="clear: both; display: block; height: 0px;"></div></body></html>
+<div style="clear: both; display: block; height: 0px;"></div>
+<script>
+    $("#bblOrderForm").submit(function (event) {
+      event.preventDefault();
+      const submitButton = $("#sniperbutton");
+      submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
+  
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyIstPlZI9wgCIcH2AzdV9mAYyrgbfTIIU15V9iWUGIQqToelJjL5HBg3OTabMdKS_Tfw/exec";
+  
+      const formData = {
+        name: $("#name").val(),
+        phone: $("#phone").val(),
+        waphone: $("#waphone").val(),
+        address: $("#address").val(),
+        state: $("#state").val(),
+        package: $("#selectwrap option:selected").text()
+      };
+  
+      fetch(scriptURL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Order submitted successfully!");
+          $("#bblOrderForm")[0].reset();
+        } else {
+          alert("Submission failed. Try again.");
+        }
+        submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+      })
+      .catch(error => {
+        console.error("Error!", error.message);
+        alert("Something went wrong!");
+        submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+      });
+    });
+  </script>
+  
+
+</body></html>
