@@ -889,6 +889,11 @@ window.addEventListener("message", function(event) {
     // Send height when the page loads and when resized
     window.onload = sendHeight;
     window.addEventListener("resize", sendHeight);
+    $(document).ready(function() {
+    $('#state').select2();
+    $('#selectwrap').select2();
+});
+
 </script>
 
 
