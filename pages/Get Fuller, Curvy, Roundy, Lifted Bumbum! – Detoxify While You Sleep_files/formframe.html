@@ -507,7 +507,7 @@ select, input[type="text"] {
     <!-- Jquery JS-->
     <script src="./webfontloader.js.download"></script><script src="./jquery.min.js.download"></script>
     <!-- Vendor JS-->
-    <script src="./select2.min.js.download"></script>
+    
     <script src="./moment.min.js.download"></script>
     <script src="./daterangepicker.js.download"></script>
 
@@ -530,13 +530,20 @@ select, input[type="text"] {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#state').select2();
-            $('#selectwrap').select2();
-        });
+    // Destroy existing instances (if any)
+    if ($.fn.select2) {
+        $('#state').select2('destroy');
+        $('#selectwrap').select2('destroy');
+    }
+
+    // Initialize select2
+    $('#state').select2();
+    $('#selectwrap').select2();
+});
     </script>
 
 
-<script src="./select2.full.min.js.download"></script>
+
   <script src="./4ecc3dbb0b.js.download"></script>
 
     <script>
@@ -909,11 +916,7 @@ window.addEventListener("message", function(event) {
     // Send height when the page loads and when resized
     window.onload = sendHeight;
     window.addEventListener("resize", sendHeight);
-    $(document).ready(function() {
-    $('#state').select2();
-    $('#selectwrap').select2();
-});
-
+   
 </script>
 
 
