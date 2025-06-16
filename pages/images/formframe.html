@@ -7,9 +7,11 @@
         <!--<base target="_parent">--><base href="." target="_parent">
 
     <!-- Title Page-->
-    <title>Order NOW!</title>|
-    <!-- CSS for Select2 from CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+    <title>Order NOW!</title>
+
+     <!-- CSS for Select2 from CDN -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+
     <!-- Icons font CSS-->
     <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="./font-awesome.min.css" rel="stylesheet" media="all">
@@ -129,7 +131,16 @@ select, input[type="text"] {
 }
     </style><link rel="stylesheet" href="./4ecc3dbb0b.css" media="all">
 
-
+<style>
+  .select2-container {
+      width: 100% !important;
+  }
+  .select2-selection {
+      border-radius: 12px;
+      height: 50px;
+      font-size: 14px;
+  }
+</style>
 </head>
 
 <body>
@@ -138,7 +149,7 @@ select, input[type="text"] {
             <div class="card card-6 sbn" style="background-color: #000000; padding-top: 15px; padding-bottom: 15px;">
                 <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
 
-                    <form method="POST" id="bblOrderForm" class="sniperform">
+                    <form method="POST"  id="order_form" class="sniperform">
 
 
 
@@ -307,25 +318,25 @@ select, input[type="text"] {
           
                                     Buy 
             1 Pack = 
-             ₦25,000              
+             ₦16,000              
             </option>
                 <option value="138925">
           
                                     Buy 
             2 Pack = 
-             ₦48,000              
+             ₦28,000              
             </option>
                 <option value="138926">
           
                                     Buy 
             3 Pack = 
-             ₦70,000              
+             ₦35,000              
             </option>
                 <option value="138927">
           
                                     Buy 
             4 Pack = 
-             ₦90,000              
+             ₦45,000              
             </option>
         </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 631.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-selectwrap-container"><span class="select2-selection__rendered" id="select2-selectwrap-container" title="Click To Select Your Package *">Click To Select Your Package *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div><p></p>
 
@@ -515,19 +526,19 @@ select, input[type="text"] {
 <script type="text/javascript" src="./radioclick.js.download"></script>
 
 <script type="text/javascript" src="./btnfxnew.js.download"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#state').select2();
-            $('#selectwrap').select2();
-        });
-    </script>
 
 
 <script src="./select2.full.min.js.download"></script>
   <script src="./4ecc3dbb0b.js.download"></script>
-
+<!-- JS for jQuery and Select2 from CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#state').select2();
+        $('#selectwrap').select2();
+    });
+</script>
     <script>
         $(document).ready(function() {
             // Event listener for when the country is selected
@@ -898,11 +909,6 @@ window.addEventListener("message", function(event) {
     // Send height when the page loads and when resized
     window.onload = sendHeight;
     window.addEventListener("resize", sendHeight);
-    $(document).ready(function() {
-    $('#state').select2();
-    $('#selectwrap').select2();
-});
-
 </script>
 
 
@@ -949,6 +955,4 @@ window.addEventListener("message", function(event) {
       });
     });
   </script>
-  
-
 </body></html>
