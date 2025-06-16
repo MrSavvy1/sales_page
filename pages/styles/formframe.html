@@ -7,8 +7,9 @@
         <!--<base target="_parent">--><base href="." target="_parent">
 
     <!-- Title Page-->
-    <title>Order NOW!</title>
-
+    <title>Order NOW!</title>|
+    <!-- CSS for Select2 from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
     <!-- Icons font CSS-->
     <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="./font-awesome.min.css" rel="stylesheet" media="all">
@@ -514,6 +515,14 @@ select, input[type="text"] {
 <script type="text/javascript" src="./radioclick.js.download"></script>
 
 <script type="text/javascript" src="./btnfxnew.js.download"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#state').select2();
+            $('#selectwrap').select2();
+        });
+    </script>
 
 
 <script src="./select2.full.min.js.download"></script>
