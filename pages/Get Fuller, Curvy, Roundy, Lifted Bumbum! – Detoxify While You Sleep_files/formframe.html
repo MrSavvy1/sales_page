@@ -476,7 +476,7 @@ select, input[type="text"] {
 
 
 <div class="p-t-15" align="center">
-                            <button id="bblOrder" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
+                            <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
         <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
 </div>
 
@@ -545,8 +545,8 @@ $("#productidbump").click(function() {
 <script type="text/javascript">
     $(document).ready(function(){
     $('.sniperform').submit(function(){
-        $("#sniperbtton").html("Submitting Your Order...");
-        $("#sniperbtton").prop('disabled', true);
+        $("#sniperbutton").html("Submitting Your Order...");
+        $("#sniperbutton").prop('disabled', true);
     });
 });
 </script>
@@ -583,7 +583,7 @@ $("#cc-error").hide();
 $("#cc-qty").hide();
 $("#c-table").hide();
 // on submit...
-$('#sniperbutto').click(function(e){
+$('#sniperbuttonx').click(function(e){
 e.preventDefault();
 $("#c-error").hide();
 $('#c-table').find('tr').remove();
@@ -615,7 +615,7 @@ var storeid = $("#zq").val();
 var delivery_fee = $("#delivery_fee").val();
 
 
-$.post("ajaxDataCoupo.php", { cc : cc, qty : qty, hfcoupon : hfcoupon, storeid : storeid, delivery_fee : delivery_fee },
+$.post("ajaxDataCoupon.php", { cc : cc, qty : qty, hfcoupon : hfcoupon, storeid : storeid, delivery_fee : delivery_fee },
 
 
  
@@ -652,7 +652,7 @@ $(document).ready(function(){
         if(state){
             $.ajax({
                 type:'POST',
-                url:'states_delfe.php',
+                url:'states_delfee.php',
                 data: {state : state, storeid:storeid, unx: unx},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -676,7 +676,7 @@ $(document).ready(function(){
         if(quantity){
             $.ajax({
                 type:'POST',
-                url:'states_delfeeqt.php',
+                url:'states_delfeeqty.php',
                 data: {quantity : quantity, storeid:storeid, delivery_fee : delivery_fee, unx: unx},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -699,7 +699,7 @@ $(document).ready(function(){
         if(countryID){
             $.ajax({
                 type:'POST',
-                url:'formframestate.php',
+                url:'formframestates.php',
                 data:'countryid='+countryID,
                 success:function(html){
                     $('#state').html(html); 
@@ -725,7 +725,7 @@ var fid  = $("#fid").val();
         if(countryID){
             $.ajax({
                 type:'POST',
-                url:'formframeqt.php',
+                url:'formframeqty.php',
                 data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -751,7 +751,7 @@ var fid  = $("#fid").val();
         if(countryID){
             $.ajax({
                 type:'POST',
-                url:'formframeqty.php',
+                url:'formframeqty2.php',
                 data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -779,7 +779,7 @@ var fid  = $("#fid").val();
         if(countryID){
             $.ajax({
                 type:'POST',
-                url:'formframeqty.php',
+                url:'formframeqty3.php',
                 data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -803,7 +803,7 @@ var storeid = $("#zq").val();
         if(countryID){
             $.ajax({
                 type:'POST',
-                url:'formframeqtybum.php',
+                url:'formframeqtybump.php',
                 data: {countryid: countryID, productid : productid, storeid : storeid},
                 //data:'countryid='+countryID,
                 success:function(html){
@@ -832,21 +832,21 @@ function savePartialData() {
         if (phonenum !== '' && phonenum.length < 7) {
             $("#phone_error").show(1000);
             $("#phone_errorx").show(1000);
-            $("#sniperbtton").prop('disabled', true); 
+            $("#sniperbutton").prop('disabled', true); 
             return; 
         }
 
         else {
             $("#phone_error").hide(1000);
             $("#phone_errorx").hide(1000);
-            $("#sniperbuttn").prop('disabled', false); 
+            $("#sniperbutton").prop('disabled', false); 
         }
 
 
 
     if (phonenum) {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "form_b.php", true);
+        xhr.open("POST", "form_cb.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("customername=" + customername + "&phonenum=" + phonenum + "&storeid=" + storeid + "&productid=" + productid + "&phonecc=" + phonecc + "&cid=" + cid + "&formid=" + formid + "&cb=" + 1);
     }
@@ -901,7 +901,7 @@ window.addEventListener("message", function(event) {
 <script>
     $("#bblOrderForm").submit(function (event) {
       event.preventDefault();
-      const submitButton = $("#bblOrder");
+      const submitButton = $("#sniperbutton");
       submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
   
       const scriptURL = "https://script.google.com/macros/s/AKfycbyIstPlZI9wgCIcH2AzdV9mAYyrgbfTIIU15V9iWUGIQqToelJjL5HBg3OTabMdKS_Tfw/exec";
