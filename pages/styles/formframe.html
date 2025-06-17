@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order NOW!</title>
+
+    <!-- CSS for Select2 from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .select2-container {
+            width: 10% !important;
+        }
+        .select2-selection {
+            border-radius: 12px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .btn--blue {
+            background: #0000B2;
+            color: #FFFFFF;
+            font-weight: bold;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn--blue:hover {
+            background: #3868cd;
+        }
+        .myselect {
+    border-radius: 12px;
+    height: 50px;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #495057;
+}
+
+.myselect:focus {
+    border-color: #0000B2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 178, 0.5);
+}/* General Form Container Styling */
+/* General Form Container Styling */
+.form-container {
+    width: 40%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 50px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Ensure space between inputs and button */
+    height: 100%; /* Allow the container to grow */
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow input fields to grow */
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    position: sticky; /* Keep the button visible */
+    bottom: 0; /* Stick to the bottom of the form container */
+}
+
+/* Submit Button Styling */
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="page-wrapper font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-6 sbn" style="background-color: #000000; padding-top: 15px; padding-bottom: 15px;">
+                <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
+
+                    <form method="POST" id="bblOrderForm" class="sniperform">
+                        <h2 align="center" style="font-size: 18px; color: #495057; font-family: Cambria;">Please Fill The Form Below To Place Your Order</h2>
+                        <p align="center" style="color: #495057;"><b>Only Serious Buyers Should Fill The Form Below</b></p>
+
+                        <!-- Full Name -->
+                        <div class="input-group">
+                            <label class="label">Enter Your Full Name *</label>
+                            <input class="input--style-4" type="text" name="name" id="name" required placeholder="Enter Your Full Name *" style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="input-group">
+                            <label class="label">Enter Your Phone Number *</label>
+                            <input class="input--style-4" type="number" name="phone" id="phone" required placeholder="Enter Your Phone Number *" style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                        </div>
+
+                        <!-- WhatsApp Phone Number -->
+                        <div class="input-group">
+                            <label class="label">Enter Your WhatsApp Phone Number *</label>
+                            <input class="input--style-4" type="number" name="waphone" id="waphone" required placeholder="Enter Your WhatsApp Phone Number *" style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="input-group">
+                            <label class="label">Give Us A Detailed Address (Work or Home) *</label>
+                            <input class="input--style-4" type="text" name="address" id="address" required placeholder="Give Us A Detailed Address (Work or Home) *" style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                        </div>
+
+                        <!-- Select State -->
+                        <div class="input-group">
+                            <label class="label">Click To Select Your State *</label>
+                            <select name="state" id="state" class="myselect" required style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                                <option value="" selected>Click To Select Your State *</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Abuja">Abuja</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Package -->
+                        <div class="input-group">
+                            <label class="label">Click To Select Your Package *</label>
+                            <select name="quantity" id="selectwrap" class="myselect" required style="border-radius: 12px; height: 50px; font-size: 14px; width: 90%;">
+                                <option value="" selected>Click To Select Your Package *</option>
+                                <option value="1 Pack">Buy 1 Pack = ₦25,000</option>
+                                <option value="2 Packs">Buy 2 Packs = ₦48,000</option>
+                                <option value="3 Packs">Buy 3 Packs = ₦70,000</option>
+                                <option value="4 Packs">Buy 4 Packs = ₦90,000</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div align="center">
+                            <button id="sniperbutton" class="btn--blue" type="submit">Place My Order</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS for jQuery and Select2 from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Destroy existing Select2 instances to prevent duplicates
+            if ($.fn.select2) {
+                $('#state').select2('destroy');
+                $('#selectwrap').select2('destroy');
+            }
+
+            // Initialize Select2 for dropdowns
+            $('#state').select2();
+            $('#selectwrap').select2();
+
+            // Handle form submission
+            $("#bblOrderForm").submit(function (event) {
+                event.preventDefault();
+                const submitButton = $("#sniperbutton");
+                submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
+
+                const scriptURL = "https://script.google.com/macros/s/AKfycbzdga8MTpKz3PLell5lWR1SFiRI8iVI_YEtexUb8ZqrydHWZo07ySbN5TpZUuLevrfGCA/exec";
+
+                const formData = {
+                    name: $("#name").val(),
+                    phone: $("#phone").val(),
+                    waphone: $("#waphone").val(),
+                    address: $("#address").val(),
+                    state: $("#state").val(),
+                    package: $("#selectwrap option:selected").text()
+                };
+
+                fetch(scriptURL, {
+                    method: "POST",
+                    body: new URLSearchParams(formData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Order submitted successfully!");
+                        $("#bblOrderForm")[0].reset();
+                    } else {
+                        alert("Submission failed. Try again.");
+                    }
+                    submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+                })
+                .catch(error => {
+                    console.error("Error!", error.message);
+                    alert("Something went wrong!");
+                    submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
