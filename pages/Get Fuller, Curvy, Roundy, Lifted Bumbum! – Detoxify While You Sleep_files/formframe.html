@@ -48,12 +48,12 @@
         .label { color: #000000; display: none; }
         iframe {}
         @media screen and (max-width: 600px) {.divresimg {width: 345px;}}
-        @media screen and (max-width: 412px) {.divresimg {width: 150px;}}
-        @media screen and (max-width: 375px) {.divresimg {width: 140px;}}
-        @media screen and (min-width: 601px) {.divresimg {width: 200px;}}
-        @media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 150px;}}
-        @media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 150px;}}
-        @media screen and (max-width: 734px) {.divresimg {width: 100px;}}
+@media screen and (max-width: 412px) {.divresimg {width: 200px;}} /* Changed from 150px */
+@media screen and (max-width: 375px) {.divresimg {width: 200px;}} /* Changed from 140px */
+@media screen and (min-width: 601px) {.divresimg {width: 345px;}} /* Changed from 200px */
+@media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 200px;}} /* Changed from 150px */
+@media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 200px;}} /* Changed from 150px */
+@media screen and (max-width: 734px) {.divresimg {width: 200px;}} /* Changed from 100px */
         .divresbump {width: px;}
         @media screen and (max-width: 600px) {.divresbump {width: 345px; margin-left: -12px;}}
         @media screen and (max-width: 412px) {.divresbump {width: 350px; margin-left: -12px;}}
@@ -86,6 +86,13 @@
         .Radio-Input {
              margin: 0 0.5rem 0;
         }
+        .radio-container {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+        }
+        
     </style>
     <style>
         .select2-container {
@@ -319,18 +326,16 @@
                         <div id="comtxt" style="display: none;"></div>
 
                        
-<div id="hide1" name="Cash On Delivery" align="left" style="display: ">
-
-
-
-
-    <label class="Radio">
-    <label class="radio-container m-r-45">
-      <input id="" type="radio" name="pgmain" class="Radio-Input" value="Cash On Delivery" checked="">
-      <span class="checkmark"></span></label>
-      <img src="./cod.png" class="divresimg" style="margin-left: -25px;"></label>
-    <br><br>
-    </div>
+                        <div id="hide1" name="Cash On Delivery" align="left" style="display: block;">
+                            <label class="Radio">
+                                <label class="radio-container m-r-45">
+                                    <input id="cod-radio" type="radio" name="pgmain"  class="Radio-Input" value="Cash On Delivery" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                                <img src="cod.png" class="divresimg" alt="Cash on Delivery">
+                            </label>
+                            <br><br>
+                        </div>
 
                         <div style="margin:auto" align="center">
                             <div style="font-size: 14px; display: none;" align="center" id="nameopt-error"><label style="color: #ff0000"><strong> Please type your name above</strong></label></div>
@@ -341,23 +346,11 @@
                             <div style="margin-bottom: 10px; font-size: 14px; color: #495057; font-family: Cambria" align="center"><strong> </strong></div>
 
                             <div class="p-t-15" align="center">
-                                <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
+                                <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:20px; margin-bottom: 50px; border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
                                 <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
                             </div>
 
-                            <input type="hidden" name="hpf" id="hpf" value="">
-                            <input type="hidden" name="zq" id="zq" value="4374">
-                            <input type="hidden" name="unx" id="unx" value="0">
-                            <input type="hidden" name="pid" id="pid" value="22686">
-                            <input type="hidden" name="bumppid" id="bumppid" value="0">
-                            <input type="hidden" name="cid" id="cid" value="161">
-                            <input type="hidden" name="fid" id="fid" value="d06cfb527c4374">
-                            <input type="hidden" name="usp" value="0">
-                            <input type="hidden" name="grk" value="">
-                            <input type="hidden" name="pvar" id="pvar" value="">
-                            <input type="hidden" name="addedby" value="">
-                            <input type="hidden" name="parent_url" value="https://detox.com.ng/curvy/?fbclid=IwY2xjawK5CwhleHRuA2FlbQIxMABicmlkETFoMTM2c2pEU1JBd0Rud0lJAR6-p-rC3z63JXHyXzNGpf7kB7VwWwCfQ2As-ZvLbFvxFJnUz_hmxNW62h0Jsw_aem_n_ovL3fWGd4_Cp04gNOhCw">
-                        </div>
+                             </div>
                     </form>
                 </div>
             </div>
@@ -546,26 +539,12 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert("Order submitted successfully!");
-                    jQuery("#order_form")[0].reset();
-                    jQuery('#state, #selectwrap').select2('destroy').select2({
-                        minimumResultsForSearch: Infinity,
-                        placeholder: function() {
-                            return jQuery(this).find('option:selected').text().trim();
-                        },
-                        width: '100%'
-                    });
-                    jQuery('.select2-container').css({
-                        'display': 'block',
-                        'visibility': 'visible',
-                        'opacity': 1
-                    });
-                    jQuery('#state, #selectwrap').css('display', 'none');
-                } else {
-                    alert("Submission failed. Try again.");
-                }
+                window.location.href = '../success.html'; // Navigate to success.html in same window
+            } else {
+                alert("Submission failed. Try again.");
                 submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
-            })
+            }
+        })
             .catch(error => {
                 console.error("Submission error:", error.message);
                 alert("Something went wrong!");
@@ -595,14 +574,14 @@
         jQuery('#state').change(function() {
             var state = jQuery('#state').val();
             if (jQuery.inArray(state, names)!='-1') {
-                jQuery("#comtxt").hide();
+                jQuery("#comtxt").show();
                 jQuery("#hide1").show();
-                jQuery("#hide2").hide();
-                jQuery("#hide3").hide();
-                jQuery("#hide4").hide();
+                jQuery("#hide2").show();
+                jQuery("#hide3").show();
+                jQuery("#hide4").show();
             } else {
                 jQuery("#comtxt").show(); 
-                jQuery("#hide1").hide();
+                jQuery("#hide1").show();
                 jQuery("#hide2").show();
                 jQuery("#hide3").show();
                 jQuery("#hide4").show();
