@@ -7,9 +7,11 @@
         <!--<base target="_parent">--><base href="." target="_parent">
 
     <!-- Title Page-->
-    <title>Order NOW!</title>|
+    <title>Order NOW!</title>
+
     <!-- CSS for Select2 from CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+
     <!-- Icons font CSS-->
     <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="./font-awesome.min.css" rel="stylesheet" media="all">
@@ -127,18 +129,28 @@ select, input[type="text"] {
     box-sizing: border-box;
     font-size: 16px;
 }
+.select2-container {
+    width: 100% !important;
+}
+.select2-selection--single {
+    border: 1px solid #ccc !important;
+    border-radius: 12px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.select2-selection__rendered {
+    line-height: 50px !important;
+    padding-left: 10px !important;
+}
+.select2-selection__arrow {
+    height: 50px !important;
+}
+select.myselect:not(.select2-hidden-accessible) {
+    display: none !important;
+}
     </style><link rel="stylesheet" href="./4ecc3dbb0b.css" media="all">
 
-<style>
-    .select2-container {
-        width: 100% !important;
-    }
-    .select2-selection {
-        border-radius: 12px;
-        height: 50px;
-        font-size: 14px;
-    }
-</style>
 </head>
 
 <body>
@@ -147,61 +159,16 @@ select, input[type="text"] {
             <div class="card card-6 sbn" style="background-color: #000000; padding-top: 15px; padding-bottom: 15px;">
                 <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
 
-                    <form method="POST" id="bblOrderForm" class="sniperform">
-
-
-
-<!--<div style="display: ">-->
-
+                    <form method="POST" id="order_form" class="sniperform" action="">
 
 <div style="margin: 10px">
 <h2 align="center" style="font-size: 18px; color: #495057; font-family: Cambria;">Please Fill The Form Below To Place Your Order</h2>
 <p align="center" style="color: #495057;"><b>Only Serious Buyers Should Fill The Form Below</b></p>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- for no show of each variation qty text field, 0 select, 1 radio -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="col-12"><div class="input-group">
 <label class="label">Enter Your Full Name *</label>
 <input class="input--style-4" type="text" name="name" id="name" value="" required="" placeholder="Enter Your Full Name *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px"></div></div>
-
-
-
 
 <input type="hidden" name="ccode1" id="phonecc" value="161">
 <input type="hidden" name="ccode2" id="phonewa" value="161">
@@ -212,157 +179,81 @@ select, input[type="text"] {
         <span style="color: red; display: none;" id="phone_error"><b>Error: Phone number is not complete</b></span></div>
 </div>
 
-
 <label class="label">Enter Your WhatsApp Phone Number *</label>
 <div class="col-12">
 <div class="input-group">
     <input class="input--style-4" type="number" name="waphone" id="waphone" value="" required="" placeholder="Enter Your WhatsApp Phone Number  *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px; width: 100% !important"></div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div>
 <div class="col-12"><div class="input-group">
 <label class="label">Give Us A Detailed Address (Work or Home) *</label>
 <input class="input--style-4" type="text" name="address" value="" id="address" required="" placeholder="Give Us A Detailed Address (Work or Home) *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px"></div></div></div>
 
-
-
-
-
-
-
-
-
 <label class="label">Click To Select Your State *</label>
 <div class="rs-select2 js-select-simple select--no-search-dx">
-<select name="state" id="state" class="myselect select2-hidden-accessible" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px" required="" tabindex="-1" aria-hidden="true">
+<select name="state" id="state" class="myselect" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px" required="">
   <option value="" selected="selected">Click To Select Your State * </option>
-                <option value="Lagos">Lagos</option>
-                <option value="Abuja">Abuja</option>
-                <option value="Rivers">Rivers</option>
-                <option value="Abia">Abia</option>
-                <option value="Adamawa">Adamawa</option>
-                <option value="Akwa Ibom">Akwa Ibom</option>
-                <option value="Anambra">Anambra</option>
-                <option value="Bauchi">Bauchi</option>
-                <option value="Bayelsa">Bayelsa</option>
-                <option value="Benue">Benue</option>
-                <option value="Borno">Borno</option>
-                <option value="Cross River">Cross River</option>
-                <option value="Delta">Delta</option>
-                <option value="Ebonyi">Ebonyi</option>
-                <option value="Edo">Edo</option>
-                <option value="Ekiti">Ekiti</option>
-                <option value="Enugu">Enugu</option>
-                <option value="Gombe">Gombe</option>
-                <option value="Imo">Imo</option>
-                <option value="Jigawa">Jigawa</option>
-                <option value="Kaduna">Kaduna</option>
-                <option value="Kano">Kano</option>
-                <option value="Katsina">Katsina</option>
-                <option value="Kebbi">Kebbi</option>
-                <option value="Kogi">Kogi</option>
-                <option value="Kwara">Kwara</option>
-                <option value="Nasarawa">Nasarawa</option>
-                <option value="Niger">Niger</option>
-                <option value="Ogun">Ogun</option>
-                <option value="Ondo">Ondo</option>
-                <option value="Osun">Osun</option>
-                <option value="Oyo">Oyo</option>
-                <option value="Plateau">Plateau</option>
-                <option value="Sokoto">Sokoto</option>
-                <option value="Taraba">Taraba</option>
-                <option value="Yobe">Yobe</option>
-                <option value="Zamfara">Zamfara</option>
-        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 631.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-container"><span class="select2-selection__rendered" id="select2-state-container" title="Click To Select Your State * ">Click To Select Your State * </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div>
-
+  <option value="Lagos">Lagos</option>
+  <option value="Abuja">Abuja</option>
+  <option value="Rivers">Rivers</option>
+  <option value="Abia">Abia</option>
+  <option value="Adamawa">Adamawa</option>
+  <option value="Akwa Ibom">Akwa Ibom</option>
+  <option value="Anambra">Anambra</option>
+  <option value="Bauchi">Bauchi</option>
+  <option value="Bayelsa">Bayelsa</option>
+  <option value="Benue">Benue</option>
+  <option value="Borno">Borno</option>
+  <option value="Cross River">Cross River</option>
+  <option value="Delta">Delta</option>
+  <option value="Ebonyi">Ebonyi</option>
+  <option value="Edo">Edo</option>
+  <option value="Ekiti">Ekiti</option>
+  <option value="Enugu">Enugu</option>
+  <option value="Gombe">Gombe</option>
+  <option value="Imo">Imo</option>
+  <option value="Jigawa">Jigawa</option>
+  <option value="Kaduna">Kaduna</option>
+  <option value="Kano">Kano</option>
+  <option value="Katsina">Katsina</option>
+  <option value="Kebbi">Kebbi</option>
+  <option value="Kogi">Kogi</option>
+  <option value="Kwara">Kwara</option>
+  <option value="Nasarawa">Nasarawa</option>
+  <option value="Niger">Niger</option>
+  <option value="Ogun">Ogun</option>
+  <option value="Ondo">Ondo</option>
+  <option value="Osun">Osun</option>
+  <option value="Oyo">Oyo</option>
+  <option value="Plateau">Plateau</option>
+  <option value="Sokoto">Sokoto</option>
+  <option value="Taraba">Taraba</option>
+  <option value="Yobe">Yobe</option>
+  <option value="Zamfara">Zamfara</option>
+</select>
+</div>
 <br>
-
-
-
-
-
-
-
-
-
 
 <label class="label">Click To Select Your Package *</label>
 <div class="rs-select2 js-select-simple select--no-search-dx">
-<select name="quantity" id="selectwrap" required="" class="myselect select2-hidden-accessible" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px;" tabindex="-1" aria-hidden="true"><option value="">Click To Select Your Package *</option>
-
-                <option value="138924">
-          
-                                    Buy 
-            1 Pack = 
-             ₦25,000              
-            </option>
-                <option value="138925">
-          
-                                    Buy 
-            2 Pack = 
-             ₦48,000              
-            </option>
-                <option value="138926">
-          
-                                    Buy 
-            3 Pack = 
-             ₦70,000              
-            </option>
-                <option value="138927">
-          
-                                    Buy 
-            4 Pack = 
-             ₦90,000              
-            </option>
-        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 631.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-selectwrap-container"><span class="select2-selection__rendered" id="select2-selectwrap-container" title="Click To Select Your Package *">Click To Select Your Package *</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div><p></p>
-
-
-
-
-
-
-
-
-
-
+<select name="quantity" id="selectwrap" required="" class="myselect" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 14px;">
+  <option value="">Click To Select Your Package *</option>
+  <option value="138924">Buy 1 Pack = ₦16,000</option>
+  <option value="138925">Buy 2 Pack = ₦28,000</option>
+  <option value="138926">Buy 3 Pack = ₦35,000</option>
+  <option value="138927">Buy 4 Pack = ₦45,000</option>
+</select>
+</div><p></p>
 
 <br>
 
- 
 <table style="margin-bottom: -5px; border: 0; border-collapse: collapse;font-size: 14px; color: #495057; width: 100%" cellspacing="20">
 <tbody><tr style=" background-color: transparent; border: none;" id="c-statefeetable"></tr>
 <tr style=" background-color: transparent; border: none;" id="c-statefeetableqty"></tr>
 </tbody><tbody>
-
 </tbody>
 </table>
-
-
-
-
-
 
 <div style="font-size: 14px; display: none;" align="center" id="c-error"><label style="color: #ff0000"><strong> Coupon Code is invalid!</strong></label></div>
 
@@ -370,73 +261,16 @@ select, input[type="text"] {
 
 <div style="font-size: 14px; display: none;" align="center" id="cc-qty"><label style="color: #ff0000"><strong> Please select product quantity above</strong></label></div>
 
-
-
-
 <table style="margin-bottom: -5px; border-collapse: collapse; font-size: 14px; width: 100%; display: none;" cellspacing="20" id="c-table">
 <tbody>
 </tbody>
 </table>
 <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!--dup-->
-
-
-
-
-
-
- 
-
-
-<!--
--->
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="comtxt" style="display: none;">
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
- 
-
-  
 <div id="hide1" name="Cash On Delivery" align="left" style="display: ">
-
-
-
-
 <label class="Radio">
 <label class="radio-container m-r-45">
   <input id="" type="radio" name="pgmain" class="Radio-Input" value="Cash On Delivery" checked="">
@@ -445,142 +279,182 @@ select, input[type="text"] {
 <br><br>
 </div>
 
-
-
-
-
-
-
-
- 
-
-
-
-
-
 <div style="margin:auto" align="center">
-
-
-
-
 <div style="font-size: 14px; display: none;" align="center" id="nameopt-error"><label style="color: #ff0000"><strong> Please type your name above</strong></label></div>
 
 <div style="font-size: 14px; display: none;" align="center" id="phoneopt-error"><label style="color: #ff0000"><strong> Please type your phone number above</strong></label></div>
 
 <div style="font-size: 14px; display: none;" align="center" id="addressopt-error"><label style="color: #ff0000"><strong> Please type your address above</strong></label></div>
 
-
-
 <div style="font-size: 14px; display: none;" align="center" id="packageopt-error"><label style="color: #ff0000"><strong> Please select your package above</strong></label></div>
-
 
 <div style="font-size: 14px; display: none;" align="center" id="var1-error"><label style="color: #ff0000"><strong> Please type quantity for product variation above</strong></label></div>
 
-
-
 <div style="margin-bottom: 10px; font-size: 14px; color: #495057; font-family: Cambria" align="center"><strong> </strong></div>
 
-
-
-
-
-
 <div class="p-t-15" align="center">
-                            <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
-        <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
+    <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:15px;border-color: #000000;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: Cambria" name="submit">Place My Order</button><br>
+    <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
 </div>
 
 <input type="hidden" name="hpf" id="hpf" value="">
-
 <input type="hidden" name="zq" id="zq" value="4374"><input type="hidden" name="unx" id="unx" value="0"><input type="hidden" name="pid" id="pid" value="22686"><input type="hidden" name="bumppid" id="bumppid" value="0"><input type="hidden" name="cid" id="cid" value="161"><input type="hidden" name="fid" id="fid" value="d06cfb527c4374"><input type="hidden" name="usp" value="0"><input type="hidden" name="grk" value=""><input type="hidden" name="pvar" id="pvar" value=""><input type="hidden" name="addedby" value=""></div>
 
-
-
-
-                        
-                    <input type="hidden" name="parent_url" value="https://detox.com.ng/curvy/?fbclid=IwY2xjawK5CwhleHRuA2FlbQIxMABicmlkETFoMTM2c2pEU1JBd0Rud0lJAR6-p-rC3z63JXHyXzNGpf7kB7VwWwCfQ2As-ZvLbFvxFJnUz_hmxNW62h0Jsw_aem_n_ovL3fWGd4_Cp04gNOhCw"></form>
+<input type="hidden" name="parent_url" value="https://detox.com.ng/curvy/?fbclid=IwY2xjawK5CwhleHRuA2FlbQIxMABicmlkETFoMTM2c2pEU1JBd0Rud0lJAR6-p-rC3z63JXHyXzNGpf7kB7VwWwCfQ2As-ZvLbFvxFJnUz_hmxNW62h0Jsw_aem_n_ovL3fWGd4_Cp04gNOhCw"></form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="./webfontloader.js.download"></script><script src="./jquery.min.js.download"></script>
-    <!-- Vendor JS-->
-    
-    <script src="./moment.min.js.download"></script>
-    <script src="./daterangepicker.js.download"></script>
-
-    <!-- Main JS-->
-    <script src="./global.js.download"></script>
-
-
-
-
-
-
-<script type="text/javascript" src="./btn.js.download"></script>
-
-<script type="text/javascript" src="./radioclick.js.download"></script>
-
-<script type="text/javascript" src="./btnfxnew.js.download"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- JS for jQuery and Select2 from CDN -->
+    <!-- Jquery and Select2 JS from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <!-- Other Vendor JS-->
+    <script src="./webfontloader.js.download"></script>
+    <script src="./moment.min.js.download"></script>
+    <script src="./daterangepicker.js.download"></script>
+    <!-- Main JS-->
+    <script src="./global.js.download"></script>
+    <script src="./btn.js.download"></script>
+    <script src="./radioclick.js.download"></script>
+    <script src="./btnfxnew.js.download"></script>
+    <script src="./4ecc3dbb0b.js.download"></script>
+    <script src="./iframeResizer.contentWindow.min.js.download"></script>
+
+    <!-- Select2 Initialization -->
     <script>
-        $(document).ready(function() {
-    // Destroy existing instances (if any)
-    if ($.fn.select2) {
-        $('#state').select2('destroy');
-        $('#selectwrap').select2('destroy');
-    }
+    $(document).ready(function() {
+        // Check if Select2 is loaded
+        if (typeof $.fn.select2 === 'undefined') {
+            console.error('Select2 is not loaded. Check script includes.');
+            return;
+        }
 
-    // Initialize select2
-    $('#state').select2();
-    $('#selectwrap').select2();
-});
-    </script>
+        // Destroy any existing Select2 instances
+        $('#state, #selectwrap').select2('destroy');
 
-
-
-  <script src="./4ecc3dbb0b.js.download"></script>
-
-    <script>
-        $(document).ready(function() {
-            // Event listener for when the country is selected
-            $('#country').change(function() {
-                var selectedCountry = $(this).val();
-                $('#phonecc').val(selectedCountry);
-                $('#phonewa').val(selectedCountry);
-          });
+        // Initialize Select2
+        $('#state, #selectwrap').select2({
+            minimumResultsForSearch: Infinity,
+            placeholder: function() {
+                return $(this).find('option:selected').text().trim();
+            },
+            width: '100%'
+        }).on('select2:open', function() {
+            console.log('Select2 dropdown opened for', this.id);
         });
+
+        // Hide native select elements
+        $('#state, #selectwrap').css('display', 'none');
+
+        // Event listener for country (unchanged)
+        $('#country').change(function() {
+            var selectedCountry = $(this).val();
+            $('#phonecc').val(selectedCountry);
+            $('#phonewa').val(selectedCountry);
+        });
+    });
     </script>
 
-<script type="text/javascript">
-$("#productidbump").click(function() {
-    if($(this).is(":checked")) {
-      $('.bumpquantity').attr('required', 'required');
-        $("#bumpqty").show();
-    } else {
-      $('.bumpquantity').removeAttr('required');
-        $("#bumpqty").hide();
-    }
-});
-</script>
+    <!-- Form Submission Script -->
+    <script>
+    $(document).ready(function() {
+        $("#order_form").submit(function (event) {
+            event.preventDefault();
+            const submitButton = $("#sniperbutton");
+            
+            // Basic validation
+            const name = $("#name").val().trim();
+            const phone = $("#phone").val().trim();
+            const waphone = $("#waphone").val().trim();
+            const address = $("#address").val().trim();
+            const state = $("#state").val().trim();
+            const package = $("#selectwrap").val().trim();
 
-<script type="text/javascript">
-    $(document).ready(function(){
-    $('.sniperform').submit(function(){
-        $("#sniperbutton").html("Submitting Your Order...");
-        $("#sniperbutton").prop('disabled', true);
+            if (!name) {
+                $("#nameopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!phone || phone.length < 7) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                $("#phone_error").show().fadeOut(5000);
+                return;
+            }
+            if (!waphone) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!address) {
+                $("#addressopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!state) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!package) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+
+            // Update button state
+            submitButton.prop("disabled", true).css("opacity", "0.6").text("Submitting Your Order...");
+
+            const scriptURL = "https://script.google.com/macros/s/AKfycbyIstPlZI9wgCIcH2AzdV9mAYyrgbfTIIU15V9iWUGIQqToelJjL5HBg3OTabMdKS_Tfw/exec";
+            const formData = {
+                name: name,
+                phone: phone,
+                waphone: waphone,
+                address: address,
+                state: state,
+                package: $("#selectwrap option:selected").text().trim()
+            };
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: new URLSearchParams(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Order submitted successfully!");
+                    $("#order_form")[0].reset();
+                    $('#state, #selectwrap').select2('destroy').select2({
+                        minimumResultsForSearch: Infinity,
+                        placeholder: function() {
+                            return $(this).find('option:selected').text().trim();
+                        },
+                        width: '100%'
+                    });
+                    $('#state, #selectwrap').css('display', 'none');
+                } else {
+                    alert("Submission failed. Try again.");
+                }
+                submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+            })
+            .catch(error => {
+                console.error("Error:", error.message);
+                alert("Something went wrong!");
+                submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
+            });
+        });
     });
-});
-</script>
+    </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
+    $("#productidbump").click(function() {
+        if($(this).is(":checked")) {
+            $('.bumpquantity').attr('required', 'required');
+            $("#bumpqty").show();
+        } else {
+            $('.bumpquantity').removeAttr('required');
+            $("#bumpqty").hide();
+        }
+    });
+    </script>
+
+    <script type="text/javascript">
     var names = [''];
-$('#state').change(function() {
+    $('#state').change(function() {
         var state = $('#state').val();
         if (jQuery.inArray(state, names)!='-1') {
             $("#comtxt").hide();
@@ -597,372 +471,217 @@ $('#state').change(function() {
         }
         if (names=='')
         {
-          $("#hide2").hide();
+            $("#hide2").hide();
         }
     });
-</script>
+    </script>
 
-<script>
-$(document).ready(function($){
-// hide messages 
-$("#c-error").hide();
-$("#cc-error").hide();
-$("#cc-qty").hide();
-$("#c-table").hide();
-// on submit...
-$('#sniperbuttonx').click(function(e){
-e.preventDefault();
-$("#c-error").hide();
-$('#c-table').find('tr').remove();
-
-
-var cc = $("#coupon").val();
-if(cc == ""){
-$("#cc-error").show();
-$("#coupon").focus();
-$("#cc-error").fadeOut(5000);
-return false;
-}
-
-var qty = $("#selectwrap").val();
-
-if(qty == ""){
-$("#cc-qty").show();
-$("#selectwrap").focus();
-$("#cc-qty").fadeOut(5000);
-return false;
-}
-
-
-
-
-
-var hfcoupon = $("#hfcoupon").val();
-var storeid = $("#zq").val();
-var delivery_fee = $("#delivery_fee").val();
-
-
-$.post("ajaxDataCoupon.php", { cc : cc, qty : qty, hfcoupon : hfcoupon, storeid : storeid, delivery_fee : delivery_fee },
-
-
- 
-            function(result){  
-
-            //if the result is 0  
-            if(result == 0){  
-                //show that the code is correct 
-                $("#coupon").val(''); 
-                $("#c-error").show();
-                $("#c-error").fadeOut(5000); 
+    <script>
+    $(document).ready(function(){
+        $('#state').on('change', function(){
+            var state = $(this).val();
+            var storeid = $("#zq").val();
+            var unx = $("#unx").val();
+            if(state){
+                $.ajax({
+                    type:'POST',
+                    url:'states_delfee.php',
+                    data: {state : state, storeid:storeid, unx: unx},
+                    success:function(html){
+                        $('#c-statefeetable').html(html); 
+                    }
+                }); 
+            }else{
             }
-            else{
-                //show that the code is not correct 
-                $("#c-table").show();
-                $("#c-table").fadeIn(3000);
-                $('#c-table').append(result);
+        });
+    });
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $('#selectwrap').on('change', function(){
+            var quantity = $(this).val();
+            var storeid = $("#zq").val();
+            var delivery_fee = $("#delivery_fee").val();
+            var unx = $("#unx").val();
+            if(quantity){
+                $.ajax({
+                    type:'POST',
+                    url:'states_delfeeqty.php',
+                    data: {quantity : quantity, storeid:storeid, delivery_fee : delivery_fee, unx: unx},
+                    success:function(html){
+                        $('#c-statefeetableqty').html(html); 
+                    }
+                }); 
+            }else{
             }
-        });  
-
-});  
-
-});
-</script>
-
-
-
-<script>
-$(document).ready(function(){
-    $('#state').on('change', function(){
-        var state = $(this).val();
-        var storeid = $("#zq").val();
-        var unx = $("#unx").val();
-        if(state){
-            $.ajax({
-                type:'POST',
-                url:'states_delfee.php',
-                data: {state : state, storeid:storeid, unx: unx},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#c-statefeetable').html(html); 
-                }
-            }); 
-        }else{
-        }
+        });
     });
-});
-</script>
+    </script>
 
-
-<script>
-$(document).ready(function(){
-    $('#selectwrap').on('change', function(){
-        var quantity = $(this).val();
-        var storeid = $("#zq").val();
-        var delivery_fee = $("#delivery_fee").val();
-        var unx = $("#unx").val();
-        if(quantity){
-            $.ajax({
-                type:'POST',
-                url:'states_delfeeqty.php',
-                data: {quantity : quantity, storeid:storeid, delivery_fee : delivery_fee, unx: unx},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#c-statefeetableqty').html(html); 
-                }
-            }); 
-        }else{
-        }
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframestates.php',
+                    data:'countryid='+countryID,
+                    success:function(html){
+                        $('#state').html(html); 
+                    }
+                }); 
+            }else{
+                $('#state').html('<option value="">Select country first</option>');
+            }
+        });
     });
-});
-</script>
+    </script>
 
-
-
-<script>
-$(document).ready(function(){
-  //$("#state").hide();
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframestates.php',
-                data:'countryid='+countryID,
-                success:function(html){
-                    $('#state').html(html); 
-                    //$("#state").show();
-                }
-            }); 
-        }else{
-          $('#state').html('<option value="">Select country first</option>');
-        }
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty.php',
+                    data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                    success:function(html){
+                        $('#selectwrap').html(html); 
+                    }
+                }); 
+            }else{
+                $('#selectwrap').html('<option value="">Select Quantity</option>');
+            }
+        });
     });
-});
-</script>
+    </script>
 
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#pid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#selectwrap').html(html); 
-                }
-            }); 
-        }else{
-          $('#selectwrap').html('<option value="">Select Quantity</option>');
-        }
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty2.php',
+                    data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                    success:function(html){
+                        $('#qtyradio').html(html); 
+                    }
+                }); 
+            }else{
+            }
+        });
     });
-});
-</script>
+    </script>
 
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#pid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty2.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#qtyradio').html(html); 
-                }
-            }); 
-        }else{
-          
-        }
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty3.php',
+                    data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
+                    success:function(html){
+                        $('#bumpqtyradio').html(html); 
+                    }
+                }); 
+            }else{
+            }
+        });
     });
-});
-</script>
+    </script>
 
-
-
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#bumppid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty3.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#bumpqtyradio').html(html); 
-                }
-            }); 
-        }else{
-          
-        }
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqtybump.php',
+                    data: {countryid: countryID, productid : productid, storeid : storeid},
+                    success:function(html){
+                        $('.bumpquantity').html(html); 
+                    }
+                }); 
+            }else{
+                $('.bumpquantity').html('<option value="">Select Quantity</option>');
+            }
+        });
     });
-});
-</script>
+    </script>
 
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#bumppid").val();
-var storeid = $("#zq").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqtybump.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('.bumpquantity').html(html); 
-                }
-            }); 
-        }else{
-          $('.bumpquantity').html('<option value="">Select Quantity</option>');
-        }
-    });
-});
-</script>
-
-
-<script>
-function savePartialData() {
-    var phonenum = document.getElementById('phone').value;
-    var customername = document.getElementById('name').value;
-    var storeid = document.getElementById('zq').value;
-    var productid = document.getElementById('pid').value;
-    var formid = document.getElementById('fid').value;
-    var phonecc = document.getElementById('phonecc').value;
-    var cid = document.getElementById('cid').value;
-
-
+    <script>
+    function savePartialData() {
+        var phonenum = document.getElementById('phone').value;
+        var customername = document.getElementById('name').value;
+        var storeid = document.getElementById('zq').value;
+        var productid = document.getElementById('pid').value;
+        var formid = document.getElementById('fid').value;
+        var phonecc = document.getElementById('phonecc').value;
+        var cid = document.getElementById('cid').value;
         if (phonenum !== '' && phonenum.length < 7) {
             $("#phone_error").show(1000);
             $("#phone_errorx").show(1000);
             $("#sniperbutton").prop('disabled', true); 
             return; 
         }
-
         else {
             $("#phone_error").hide(1000);
             $("#phone_errorx").hide(1000);
             $("#sniperbutton").prop('disabled', false); 
         }
-
-
-
-    if (phonenum) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "form_cb.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send("customername=" + customername + "&phonenum=" + phonenum + "&storeid=" + storeid + "&productid=" + productid + "&phonecc=" + phonecc + "&cid=" + cid + "&formid=" + formid + "&cb=" + 1);
+        if (phonenum) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "form_cb.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("customername=" + customername + "&phonenum=" + phonenum + "&storeid=" + storeid + "&productid=" + productid + "&phonecc=" + phonecc + "&cid=" + cid + "&formid=" + formid + "&cb=" + 1);
+        }
     }
-}
-</script>
+    </script>
 
-
-
-
-<script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
-
-
-
-
-
-<script>
-window.addEventListener("message", function(event) {
-            if (event.data && event.data.parentUrl) {
-                var parentUrl = event.data.parentUrl;
-
-                // Create a hidden input field for the parent URL
-                var hiddenField = document.createElement("input");
-                hiddenField.type = "hidden";
-                hiddenField.name = "parent_url";
-                hiddenField.value = parentUrl;
-
-                // Append the hidden input field to the form
-                var form = document.getElementById("order_form");
-                form.appendChild(hiddenField);
-            }
-        });
+    <script>
+    window.addEventListener("message", function(event) {
+        if (event.data && event.data.parentUrl) {
+            var parentUrl = event.data.parentUrl;
+            var hiddenField = document.createElement("input");
+            hiddenField.type = "hidden";
+            hiddenField.name = "parent_url";
+            hiddenField.value = parentUrl;
+            var form = document.getElementById("order_form");
+            form.appendChild(hiddenField);
+        }
+    });
     </script>
 
     <script>
     function sendHeight() {
-        var height = document.body.scrollHeight; // Get content height
+        var height = document.body.scrollHeight;
         window.parent.postMessage({ iframeHeight: height }, "*");
     }
-
-    // Send height when the page loads and when resized
     window.onload = sendHeight;
     window.addEventListener("resize", sendHeight);
-   
-</script>
-
-
-
-
-
-
+    </script>
 
 <div style="clear: both; display: block; height: 0px;"></div>
-<script>
-    $("#bblOrderForm").submit(function (event) {
-      event.preventDefault();
-      const submitButton = $("#sniperbutton");
-      submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
-  
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyIstPlZI9wgCIcH2AzdV9mAYyrgbfTIIU15V9iWUGIQqToelJjL5HBg3OTabMdKS_Tfw/exec";
-  
-      const formData = {
-        name: $("#name").val(),
-        phone: $("#phone").val(),
-        waphone: $("#waphone").val(),
-        address: $("#address").val(),
-        state: $("#state").val(),
-        package: $("#selectwrap option:selected").text()
-      };
-  
-      fetch(scriptURL, {
-        method: "POST",
-        body: new URLSearchParams(formData)
-      })
-      .then(response => {
-        if (response.ok) {
-          alert("Order submitted successfully!");
-          $("#bblOrderForm")[0].reset();
-        } else {
-          alert("Submission failed. Try again.");
-        }
-        submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
-      })
-      .catch(error => {
-        console.error("Error!", error.message);
-        alert("Something went wrong!");
-        submitButton.prop("disabled", false).css("opacity", "1").text("Place My Order");
-      });
-    });
-  </script>
-  
-
 </body></html>
