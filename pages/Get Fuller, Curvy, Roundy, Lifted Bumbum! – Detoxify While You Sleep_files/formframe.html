@@ -9,146 +9,75 @@
     <!-- Title Page-->
     <title>Order NOW!</title>
 
-    <!-- CSS for Select2 from CDN -->
+    <!-- CSS for Select2 from CDN with fallback -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link href="./select2.min.css" rel="stylesheet" media="all">
 
     <!-- Icons font CSS-->
     <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="./font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="./css" rel="stylesheet">
-    <!-- Vendor CSS-->
-    <link href="./select2.min.css" rel="stylesheet" media="all">
-    <!--<link href="newform/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">-->
-
     <!-- Main CSS-->
     <link href="./main.css" rel="stylesheet" media="all">
     <style type="text/css">
-.col_half1 {
-  width: 30%;
-  float: left;
-}
-.col_half2 {
-  width: 70%;
-  float: left;
-}
-.col_half3 {
-  width: 50%;
-  float: left;
-}
-.col_half4 {
-  width: 50%;
-  float: left;
-}
+.col_half1 { width: 30%; float: left; }
+.col_half2 { width: 70%; float: left; }
+.col_half3 { width: 50%; float: left; }
+.col_half4 { width: 50%; float: left; }
 .myselect {
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .myselect option {
   white-space: nowrap;
-  width: 100% border-bottom: 1px #ccc solid;
-  /* This doesn't work. */
+  width: 100%;
+  border-bottom: 1px #ccc solid;
 }
-.Radio {
-  display: inline-flex;
-  align-items: center;
-}
-.Radio-Input {
-  margin: 0 0.5rem 0;
-}
-.column-lx {
-  flex: 1%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
-    vertical-align: middle; padding: 0.3em 0; align-items: center;
-}
-.column-l {
-  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
-    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 8px;width: fit-content;width: auto;
-  min-width: min-content;
-  max-width: max-content;
-}
-.column-lr {
-  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
-    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 45px;width: fit-content;width: auto;
-  min-width: min-content;
-  max-width: max-content;
-}
-.column-r {
-  flex: 35%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
-    vertical-align: middle; padding: 0.3em 0; align-items: right; text-align: right;
-}
-.rowx {
-  display: flex;
-}
-
-.btn--blue {
-  background: #0000B2; 
-  /*#4272d7;*/
-}
-
-.btn--blue:hover {
-  background: #3868cd;
-}
-select {
-  color: #000000;
-}
-.label{
-  color: #000000;
-display: none}
-iframe{
-
-}
-@media screen and (max-width: 600px) {.divresimg {width: 345px;}}@media screen and (max-width: 412px) {.divresimg {width: 150px;}}@media screen and (max-width: 375px) {.divresimg {width: 140px;}}@media screen and (min-width: 601px) {.divresimg {width: 200px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 150px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 150px;}}@media screen and (max-width: 734) {.divresimg {width: 100px;}}
-
+.Radio { display: inline-flex; align-items: center; }
+.Radio-Input { margin: 0 0.5rem 0; }
+.column-lx { flex: 1%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block; vertical-align: middle; padding: 0.3em 0; align-items: center; }
+.column-l { flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block; vertical-align: middle; padding: 0.3em 0; align-items: center; padding-right: 8px; width: fit-content; width: auto; min-width: min-content; max-width: max-content; }
+.column-lr { flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block; vertical-align: middle; padding: 0.3em 0; align-items: center; padding-right: 45px; width: fit-content; width: auto; min-width: min-content; max-width: max-content; }
+.column-r { flex: 35%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block; vertical-align: middle; padding: 0.3em 0; align-items: right; text-align: right; }
+.rowx { display: flex; }
+.btn--blue { background: #0000B2; }
+.btn--blue:hover { background: #3868cd; }
+select { color: #000000; }
+.label { color: #000000; display: none; }
+iframe {}
+@media screen and (max-width: 600px) {.divresimg {width: 345px;}}
+@media screen and (max-width: 412px) {.divresimg {width: 150px;}}
+@media screen and (max-width: 375px) {.divresimg {width: 140px;}}
+@media screen and (min-width: 601px) {.divresimg {width: 200px;}}
+@media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 150px;}}
+@media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 150px;}}
+@media screen and (max-width: 734px) {.divresimg {width: 100px;}}
 .divresbump {width: px;}
-
-@media screen and (max-width: 600px) {.divresbump {width: 345px; margin-left: -12px;}}@media screen and (max-width: 412px) {.divresbump {width: 350px; margin-left: -12px;}}@media screen and (max-width: 375px) {.divresbump {width: 260px; margin-left: -12px;}}@media screen and (min-width: 601px) {.divresbump {width: 550px; margin-left: -12px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresbump {width: 280px; margin-left: -12px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresbump {width: 480px; margin-left: -12px;}}@media screen and (max-width: 734) {.divresbump {width: 200px; margin-left: -12px;}}
-
-@media screen and (max-width: 600px) {.sbn {padding-right: 20px; padding-left: 20px;}}@media screen and (max-width: 412px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (max-width: 375px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (min-width: 601px) {.sbn {padding-right: 40px; padding-left: 40px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (max-width: 734px) {.sbn {padding-right: 10px; padding-left: 10px;}}
-    
-
-.row {
-    display: flex;
-    width: 100%;
-    margin-bottom: 20px; /* Add some space between rows if needed */
-}
-
-.field-25 {
-    flex: 0 0 30%; /* Flex shorthand to take 25% of the row */
-    margin-right: 2px; /* Optional: Add space between the fields */
-}
-
-.field-75 {
-    flex: 0 0 68%; /* Flex shorthand to take 75% of the row */
-}
-
-/* Optional: Add some styling to the select and input elements */
-select, input[type="text"] {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-.select2-container {
-    width: 100% !important;
-}
-.select2-selection--single {
-    border: 1px solid #ccc !important;
-    border-radius: 12px !important;
-    height: 50px !important;
-    display: flex !important;
-    align-items: center !important;
-}
-.select2-selection__rendered {
-    line-height: 50px !important;
-    padding-left: 10px !important;
-}
-.select2-selection__arrow {
-    height: 50px !important;
-}
-select.myselect:not(.select2-hidden-accessible) {
-    display: none !important;
-}
+@media screen and (max-width: 600px) {.divresbump {width: 345px; margin-left: -12px;}}
+@media screen and (max-width: 412px) {.divresbump {width: 350px; margin-left: -12px;}}
+@media screen and (max-width: 375px) {.divresbump {width: 260px; margin-left: -12px;}}
+@media screen and (min-width: 601px) {.divresbump {width: 550px; margin-left: -12px;}}
+@media screen and (min-width: 667px) and (max-width: 667px) {.divresbump {width: 280px; margin-left: -12px;}}
+@media screen and (min-width: 413px) and (max-width: 666px) {.divresbump {width: 480px; margin-left: -12px;}}
+@media screen and (max-width: 734px) {.divresbump {width: 200px; margin-left: -12px;}}
+@media screen and (max-width: 600px) {.sbn {padding-right: 20px; padding-left: 20px;}}
+@media screen and (max-width: 412px) {.sbn {padding-right: 10px; padding-left: 10px;}}
+@media screen and (max-width: 375px) {.sbn {padding-right: 10px; padding-left: 10px;}}
+@media screen and (min-width: 601px) {.sbn {padding-right: 40px; padding-left: 40px;}}
+@media screen and (min-width: 667px) and (max-width: 667px) {.sbn {padding-right: 50px; padding-left: 50px;}}
+@media screen and (min-width: 413px) and (max-width: 666px) {.sbn {padding-right: 50px; padding-left: 50px;}}
+@media screen and (max-width: 734px) {.sbn {padding-right: 10px; padding-left: 10px;}}
+.row { display: flex; width: 100%; margin-bottom: 20px; }
+.field-25 { flex: 0 0 30%; margin-right: 2px; }
+.field-75 { flex: 0 0 68%; }
+select, input[type="text"] { width: 100%; box-sizing: border-box; font-size: 16px; }
+.select2-container { width: 100% !important; display: block !important; }
+.select2-selection--single { border: 1px solid #ccc !important; border-radius: 12px !important; height: 50px !important; display: flex !important; align-items: center !important; }
+.select2-selection__rendered { line-height: 50px !important; padding-left: 10px !important; }
+.select2-selection__arrow { height: 50px !important; }
+.myselect { display: none !important; } /* Simplified to always hide native select */
     </style><link rel="stylesheet" href="./4ecc3dbb0b.css" media="all">
 
 </head>
@@ -297,18 +226,16 @@ select.myselect:not(.select2-hidden-accessible) {
     <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
 </div>
 
-<input type="hidden" name="hpf" id="hpf" value="">
-<input type="hidden" name="zq" id="zq" value="4374"><input type="hidden" name="unx" id="unx" value="0"><input type="hidden" name="pid" id="pid" value="22686"><input type="hidden" name="bumppid" id="bumppid" value="0"><input type="hidden" name="cid" id="cid" value="161"><input type="hidden" name="fid" id="fid" value="d06cfb527c4374"><input type="hidden" name="usp" value="0"><input type="hidden" name="grk" value=""><input type="hidden" name="pvar" id="pvar" value=""><input type="hidden" name="addedby" value=""></div>
-
-<input type="hidden" name="parent_url" value="https://detox.com.ng/curvy/?fbclid=IwY2xjawK5CwhleHRuA2FlbQIxMABicmlkETFoMTM2c2pEU1JBd0Rud0lJAR6-p-rC3z63JXHyXzNGpf7kB7VwWwCfQ2As-ZvLbFvxFJnUz_hmxNW62h0Jsw_aem_n_ovL3fWGd4_Cp04gNOhCw"></form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Jquery and Select2 JS from CDN -->
+    <!-- Jquery and Select2 JS from CDN with fallbacks -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./jquery-3.6.0.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    <script>window.Select2 || document.write('<script src="./select2.min.js"><\/script>')</script>
     <!-- Other Vendor JS-->
     <script src="./webfontloader.js.download"></script>
     <script src="./moment.min.js.download"></script>
@@ -321,38 +248,53 @@ select.myselect:not(.select2-hidden-accessible) {
     <script src="./4ecc3dbb0b.js.download"></script>
     <script src="./iframeResizer.contentWindow.min.js.download"></script>
 
-    <!-- Select2 Initialization -->
+    <!-- Select2 Initialization with Debugging -->
     <script>
     $(document).ready(function() {
-        // Check if Select2 is loaded
-        if (typeof $.fn.select2 === 'undefined') {
-            console.error('Select2 is not loaded. Check script includes.');
-            return;
+        try {
+            // Check if jQuery and Select2 are loaded
+            if (typeof jQuery === 'undefined') {
+                console.error('jQuery is not loaded.');
+                return;
+            }
+            if (typeof $.fn.select2 === 'undefined') {
+                console.error('Select2 is not loaded. Check CDN or local fallback.');
+                return;
+            }
+
+            console.log('Initializing Select2 for #state and #selectwrap');
+
+            // Destroy any existing Select2 instances
+            $('#state, #selectwrap').select2('destroy');
+
+            // Initialize Select2
+            $('#state, #selectwrap').select2({
+                minimumResultsForSearch: Infinity,
+                placeholder: function() {
+                    return $(this).find('option:selected').text().trim();
+                },
+                width: '100%'
+            }).on('select2:open', function() {
+                console.log('Select2 dropdown opened for', this.id);
+            });
+
+            // Ensure Select2 containers are visible
+            $('.select2-container').css('display', 'block');
+
+            // Hide native select elements
+            $('#state, #selectwrap').css('display', 'none');
+
+            console.log('Select2 initialization completed');
+
+            // Event listener for country (unchanged)
+            $('#country').change(function() {
+                var selectedCountry = $(this).val();
+                $('#phonecc').val(selectedCountry);
+                $('#phonewa').val(selectedCountry);
+            });
+        } catch (e) {
+            console.error('Error during Select2 initialization:', e);
         }
-
-        // Destroy any existing Select2 instances
-        $('#state, #selectwrap').select2('destroy');
-
-        // Initialize Select2
-        $('#state, #selectwrap').select2({
-            minimumResultsForSearch: Infinity,
-            placeholder: function() {
-                return $(this).find('option:selected').text().trim();
-            },
-            width: '100%'
-        }).on('select2:open', function() {
-            console.log('Select2 dropdown opened for', this.id);
-        });
-
-        // Hide native select elements
-        $('#state, #selectwrap').css('display', 'none');
-
-        // Event listener for country (unchanged)
-        $('#country').change(function() {
-            var selectedCountry = $(this).val();
-            $('#phonecc').val(selectedCountry);
-            $('#phonewa').val(selectedCountry);
-        });
     });
     </script>
 
@@ -425,6 +367,7 @@ select.myselect:not(.select2-hidden-accessible) {
                         },
                         width: '100%'
                     });
+                    $('.select2-container').css('display', 'block');
                     $('#state, #selectwrap').css('display', 'none');
                 } else {
                     alert("Submission failed. Try again.");
