@@ -6,6 +6,7 @@
     <title>BBL Gummies - Get Your Perfect Curves!</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <style>
         #benefits {
         margin: 40px 0;
@@ -197,9 +198,9 @@
     <section id="timer">
         <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Recommended By Doctor Brittany From United States</h2>
         <div style="max-width: 800px; margin: 0 auto;">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/upNJnHTmMDk
-" title="UGC Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+            <iframe id="video1" width="100%" height="450" src="https://www.youtube.com/embed/upNJnHTmMDk?enablejsapi=1&autoplay=0" title="UGC Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- Added unmute prompt -->
+            <p class="unmute-prompt" id="unmute-prompt1">Click anywhere to enable sound</p> </div>
 
         <p>🔥 Limited Offer Ends In:</p>
         <div id="countdown"></div>
@@ -216,8 +217,10 @@
             <div class="ugc-video-testimonial" style="text-align: center; margin-top: 30px;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Hear More From Our Happy Customer Who Made Us A Happy Feedback Video!</h3>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/euj-DJl65Fs" title="UGC Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                    <iframe id="video2" width="100%" height="450" src="https://www.youtube.com/embed/euj-DJl65Fs?enablejsapi=1&autoplay=0" title="UGC Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- Added unmute prompt -->
+                    <p class="unmute-prompt" id="unmute-prompt2">Click anywhere to enable sound</p>
+                 </div>
             </div>
         </div>
     </section>
@@ -396,38 +399,107 @@
     $("#bblOrderForm").submit(function (event) {
         event.preventDefault();
         const submitButton = $("#submit-btn");
-    submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
-    $("#spinner").show();
+        submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
+        $("#spinner").show();
 
         let name = $("#name").val();
-    let phone = $("#phone").val();
-    let address = $("#address").val();
-    let package = $("input[name='package']:checked").val();
+        let phone = $("#phone").val();
+        let address = $("#address").val();
+        let package = $("input[name='package']:checked").val();
 
-    // Combine name and package
-    let combinedName = `${name} (${package})`;
+        // Combine name and package
+        let combinedName = `${name} (${package})`;
 
-    // Prepare data to send
-    let formData = {
-        name: combinedName,
-        phone: phone,
-        address: address
-    };
+        // Prepare data to send
+        let formData = {
+            name: combinedName,
+            phone: phone,
+            address: address
+        };
 
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec", // Replace with Google Sheets script URL
+            url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec",
             method: "POST",
             data: formData,
             success: function () {
-                window.location.href = "success.html"; // Redirect to Success Page
+                window.location.href = "success.html";
             },
             error: function () {
-            alert("There was an error submitting your order. Please try again.");
-            submitButton.prop("disabled", false).css("opacity", "1").text("Submit Order Now");
-            $("#spinner").hide();
-        }
+                alert("There was an error submitting your order. Please try again.");
+                submitButton.prop("disabled", false).css("opacity", "1").text("Submit Order Now");
+                $("#spinner").hide();
+            }
         });
     });
-</script>
+
+    let player1, player2;
+        let hasInteracted = false; // Track user interaction
+
+        // Initialize YouTube players
+        function onYouTubeIframeAPIReady() {
+            player1 = new YT.Player('video1', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+            player2 = new YT.Player('video2', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // Mute videos initially for autoplay compliance
+            event.target.mute();
+            // Show unmute prompt
+            document.getElementById('unmute-prompt1').style.display = 'block';
+            document.getElementById('unmute-prompt2').style.display = 'block';
+        }
+
+        // Enable sound after user interaction
+        document.addEventListener('click', () => {
+            if (!hasInteracted) {
+                hasInteracted = true;
+                if (player1) player1.unMute();
+                if (player2) player2.unMute();
+                // Hide unmute prompts
+                document.getElementById('unmute-prompt1').style.display = 'none';
+                document.getElementById('unmute-prompt2').style.display = 'none';
+            }
+        }, { once: true }); // Run once
+
+        // Intersection Observer to detect when videos are in view
+        const observerOptions = {
+            threshold: 0.5 // Trigger when 50% of the video is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const videoId = entry.target.id;
+                    if (videoId === 'video1') {
+                        player1.playVideo();
+                        if (player2) player2.pauseVideo(); // Pause second video
+                    } else if (videoId === 'video2') {
+                        player2.playVideo();
+                        if (player1) player1.pauseVideo(); // Pause first video
+                    }
+                } else {
+                    // Pause video when it leaves the viewport
+                    
+                }
+            });
+        }, observerOptions);
+
+        // Observe both video iframes
+        document.addEventListener('DOMContentLoaded', () => {
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+            if (video1) observer.observe(video1);
+            if (video2) observer.observe(video2);
+        });
+    </script>
 </body>
 </html>
+
