@@ -109,6 +109,15 @@
       color: #777;
     }
 
+    #state{
+        margin-left: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 85%;
+    }
+    
+
     footer a {
       color: #c2185b;
       margin: 0 10px;
@@ -331,8 +340,8 @@
     <div class="guarantee-badge">
         <img src="images/cod.png" alt="Guarantee Badge" />
     </div>
-    
-   <form id="bblOrderForm">
+    <section id="order-form">
+        <form id="bblOrderForm">
     <div class="radio-button-segment">
         <h3>Select Your Package</h3>
         <label>
@@ -360,8 +369,57 @@
     </div>
 
     <div class="form-group">
-        <label for="address">Delivery Address:</label><br>
-        <textarea id="address" name="address" placeholder="Enter your your house address and state" required></textarea><br>
+        <label for="secondphone">Second Phone Number (Whatsapp Number):</label><br>
+        <input type="tel" id="secondphone" name="secondphone" placeholder="Enter second your phone number" required><br>
+    </div>
+
+    <div class="form-group" id="state">
+    <label for="state">State:</label><br>
+    <select id="state" name="state" required>
+        <option value="">Select your state</option>
+        <option value="Abia">Abia</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa Ibom">Akwa Ibom</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+        <option value="Borno">Borno</option>
+        <option value="Cross River">Cross River</option>
+        <option value="Delta">Delta</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Edo">Edo</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Kano">Kano</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Kebbi">Kebbi</option>
+        <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Ogun">Ogun</option>
+        <option value="Ondo">Ondo</option>
+        <option value="Osun">Osun</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="FCT">FCT</option>
+    </select><br>
+</div>
+
+    <div class="form-group">
+        <label for="address">Street Address:</label><br>
+        <textarea id="address" name="address" placeholder="Enter your your house address" required></textarea><br>
     </div>
 
     <div class="form-group">
@@ -371,8 +429,7 @@
             <p>Please wait...</p>
         </div>
     </div>
-
-</form>
+        </form>
     </section>
 <footer>
     <a href="privacy.html">Privacy Policy</a> |
@@ -404,6 +461,8 @@
 
         let name = $("#name").val();
         let phone = $("#phone").val();
+        let secondphone = $("#secondphone").val();
+        let state = $("#state").val();
         let address = $("#address").val();
         let package = $("input[name='package']:checked").val();
 
@@ -414,11 +473,13 @@
         let formData = {
             name: combinedName,
             phone: phone,
+            secondphone: secondphone,
+            state: state,
             address: address
         };
 
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwCtIFUi6d_U_b7KZEd536D7mh4kDHhJEFgYPhxKl_wjPhDMPLQ9ByCbDVhZ4WMZ8l5PA/exec",
+            url: "https://script.google.com/macros/s/AKfycbwweBxfMsbheBdt1d8QkI7gSz3W5XOGD0NCwx-907_13pfpFcMdai-zdVdfb21SaBt3qw/exec",
             method: "POST",
             data: formData,
             success: function () {
