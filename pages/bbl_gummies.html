@@ -375,7 +375,7 @@
 
     <div class="form-group" id="state">
     <label for="state">State:</label><br>
-    <select id="state" name="state" required>
+    <select id="state" name="state" onchange="closeDropdown(this)" required>
         <option value="">Select your state</option>
         <option value="Abia">Abia</option>
         <option value="Adamawa">Adamawa</option>
@@ -492,6 +492,14 @@
             }
         });
     });
+
+    function closeDropdown(element) {
+    element.blur();
+    const nextField = document.getElementById('address');
+    if (nextField) {
+        nextField.focus();
+    }
+}
 
     let player1, player2;
         let hasInteracted = false; // Track user interaction
