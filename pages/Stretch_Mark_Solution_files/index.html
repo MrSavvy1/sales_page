@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear By Jane - Scar and Stretch Mark Treatment Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Header -->
+            <div class="header">
+                <h1>Clear By Jane</h1>
+                <p>Professional Scar and Stretch Mark Treatment</p>
+            </div>
+
+            <form id="orderForm">
+                <!-- Required Fields Notice -->
+                <div class="notice">
+                    <p>Fields marked with an <span class="required">*</span> are required</p>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="form-section">
+                    <div class="section-header">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 12.5 3L21 8H7"></path>
+                        </svg>
+                        <h2>Please Choose Your Package Now <span class="required">*</span></h2>
+                    </div>
+                    
+                    <div class="package-options">
+                        <label class="package-option">
+                            <input type="radio" name="package" value="regular" checked>
+                            <span class="package-text">Regular Package (₦17,900 Total)</span>
+                        </label>
+                        <label class="package-option">
+                            <input type="radio" name="package" value="vip">
+                            <span class="package-text">VIP Package (₦30,500 Total)</span>
+                        </label>
+                        <label class="package-option">
+                            <input type="radio" name="package" value="vvip">
+                            <span class="package-text">VVIP Package (₦42,000 Total)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-grid">
+                    <!-- Name -->
+                    <div class="form-group">
+                        <div class="label-with-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <label>Name <span class="required">*</span></label>
+                        </div>
+                        <input type="text" id="name" placeholder="Please type in your full name" required>
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-group">
+                        <div class="label-with-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <label>Phone Number <span class="required">*</span></label>
+                        </div>
+                        <input type="tel" id="phone" placeholder="please type in a valid phone number (WhatsApp)" required>
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <div class="label-with-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <label>Email <span class="required">*</span></label>
+                        </div>
+                        <input type="email" id="email" placeholder="please type in email (For e-Receipt)" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <!-- State -->
+                    <div class="form-group">
+                        <div class="label-with-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <label>State (Location) <span class="required">*</span></label>
+                        </div>
+                        <select id="state" required>
+                            <option value="">Please Select Your State</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                            <option value="Cross River">Cross River</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Ebonyi">Ebonyi</option>
+                            <option value="Edo">Edo</option>
+                            <option value="Ekiti">Ekiti</option>
+                            <option value="Enugu">Enugu</option>
+                            <option value="FCT">FCT</option>
+                            <option value="Gombe">Gombe</option>
+                            <option value="Imo">Imo</option>
+                            <option value="Jigawa">Jigawa</option>
+                            <option value="Kaduna">Kaduna</option>
+                            <option value="Kano">Kano</option>
+                            <option value="Katsina">Katsina</option>
+                            <option value="Kebbi">Kebbi</option>
+                            <option value="Kogi">Kogi</option>
+                            <option value="Kwara">Kwara</option>
+                            <option value="Lagos">Lagos</option>
+                            <option value="Nasarawa">Nasarawa</option>
+                            <option value="Niger">Niger</option>
+                            <option value="Ogun">Ogun</option>
+                            <option value="Ondo">Ondo</option>
+                            <option value="Osun">Osun</option>
+                            <option value="Oyo">Oyo</option>
+                            <option value="Plateau">Plateau</option>
+                            <option value="Rivers">Rivers</option>
+                            <option value="Sokoto">Sokoto</option>
+                            <option value="Taraba">Taraba</option>
+                            <option value="Yobe">Yobe</option>
+                            <option value="Zamfara">Zamfara</option>
+                        </select>
+                        <div class="error-message" id="stateError"></div>
+                    </div>
+                </div>
+
+                <!-- Delivery Address -->
+                <div class="form-group">
+                    <div class="label-with-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                        <label>Delivery Address (Where You Want It Delivered To) <span class="required">*</span></label>
+                    </div>
+                    <textarea id="address" rows="3" placeholder="Please type in full address so we can process your order" required></textarea>
+                    <div class="error-message" id="addressError"></div>
+                </div>
+
+                <!-- One Time Offer -->
+                <div class="offer-section">
+                    <div class="offer-header">
+                        <h2>ONE TIME OFFER</h2>
+                        <p>Would You Like to Add to Your Order:</p>
+                    </div>
+
+                    <div class="offer-content">
+                        <h3>Kojic Smooth Skin and Even Tone Soap</h3>
+                        
+                        <div class="soap-images">
+                            <div class="soap-image black"></div>
+                            <div class="soap-image pink"></div>
+                            <div class="soap-image black"></div>
+                        </div>
+
+                        <div class="pricing">
+                            <p class="old-price">OLD PRICE: <span>₦6,000</span></p>
+                            <p class="new-price">NEW PRICE (50% DISCOUNT): <span>₦3,000</span></p>
+                            <p class="instruction">Kindly click the checkbox below to add this to your order now</p>
+                        </div>
+
+                        <div class="arrow">↓</div>
+                    </div>
+
+                    <label class="soap-checkbox">
+                        <input type="checkbox" id="addSoap">
+                        <span>Yes, I need this Soap added to my order</span>
+                    </label>
+                </div>
+
+                <!-- Total -->
+                <div class="total-section">
+                    <h3 id="totalAmount">Total: ₦17,900 Only</h3>
+                </div>
+
+                <!-- Ready Message -->
+                <div class="ready-section">
+                    <div class="ready-header">
+                        <span class="package-emoji">📦</span>
+                        <h3>Ready to receive your Scar and Stretch Mark cream in 4-24 hours?</h3>
+                    </div>
+                    <p>Click the button below to confirm your order. You'll pay only when it arrives.</p>
+                </div>
+
+                <!-- Confirm Button -->
+                <button type="submit" class="confirm-button">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span>Confirm & Place My Order</span>
+                </button>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product</th>
+                                <th>Number</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Scar and Stretch Mark (OnePackage)</td>
+                                <td>1</td>
+                                <td id="packagePrice">₦17,900</td>
+                            </tr>
+                            <tr class="gray-row">
+                                <td>2</td>
+                                <td>Delivery FEE</td>
+                                <td></td>
+                                <td>FREE</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td id="soapProduct"></td>
+                                <td id="soapQuantity">0</td>
+                                <td id="soapPrice">₦0</td>
+                            </tr>
+                            <tr class="gray-row">
+                                <td>4</td>
+                                <td>Waybill</td>
+                                <td></td>
+                                <td>₦0</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td colspan="3">TOTAL</td>
+                                <td id="summaryTotal">₦17,900</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Final Confirm Button -->
+                <button type="submit" class="confirm-button">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                    <span>Confirm & Place My Order</span>
+                </button>
+
+                <!-- Reviews -->
+                <div class="reviews-section">
+                    <div class="reviews-header">
+                        <div class="customer-avatars">
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                            <div class="avatar"></div>
+                        </div>
+                        <div class="rating-info">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p><strong>4.96</strong> from <strong>14,000+</strong> reviews</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="testimonial">
+                        <div class="testimonial-header">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <h4>Customer Testimonial:</h4>
+                        </div>
+                        <blockquote>
+                            "I almost didn't order because I thought it was just hype. But they delivered fast and the product worked. I'm glad I took it seriously!"
+                        </blockquote>
+                        <cite>— Chima, 28 (Imo)</cite>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const price = localStorage.getItem("selectedPrice");
+        
+          if (price) {
+            const radios = document.querySelectorAll("input[name='package']");
+            radios.forEach(radio => {
+              const labelText = radio.nextElementSibling.textContent;
+              if (labelText.includes("₦" + Number(price).toLocaleString())) {
+                radio.checked = true;
+        
+                // update total + summary if you already have those IDs
+                document.getElementById("packagePrice").textContent = "₦" + Number(price).toLocaleString();
+                document.getElementById("summaryTotal").textContent = "₦" + Number(price).toLocaleString();
+                document.getElementById("totalAmount").textContent = "Total: ₦" + Number(price).toLocaleString() + " Only";
+              }
+            });
+          }
+        });
+        </script>
+        
+
+    <script src="script.js"></script>
+</body>
+</html>
