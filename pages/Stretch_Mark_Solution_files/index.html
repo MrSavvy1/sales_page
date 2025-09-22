@@ -15,7 +15,7 @@
                 <p>Professional Scar and Stretch Mark Treatment</p>
             </div>
 
-            <form id="orderForm">
+            <form id="orderForm" >
                 <!-- Required Fields Notice -->
                 <div class="notice">
                     <p>Fields marked with an <span class="required">*</span> are required</p>
@@ -323,5 +323,36 @@
         
 
     <script src="script.js"></script>
+
+     
+     <script>
+       const scriptURL = "YOUR_GOOGLE_APPS_SCRIPT_URL"; // replace with deployed link
+     
+       document.getElementById("orderForm").addEventListener("submit", e => {
+         e.preventDefault();
+     
+         let data = {
+           name: document.getElementById("name").value,
+           phone: document.getElementById("phone").value,
+           email: document.getElementById("email").value,
+           state: document.getElementById("state").value,
+           address: document.getElementById("address").value,
+           package: document.querySelector("input[name='package']:checked").value,
+           addSoap: document.getElementById("addSoap").checked ? "Yes" : "No"
+         };
+     
+         fetch(scriptURL, {
+           method: "POST",
+           body: JSON.stringify(data)
+         })
+         .then(res => res.json())
+         .then(response => {
+           alert("✅ Order submitted successfully!");
+           document.getElementById("orderForm").reset();
+         })
+         .catch(error => alert("❌ Error: " + error.message));
+       });
+     </script>
+     
 </body>
 </html>
