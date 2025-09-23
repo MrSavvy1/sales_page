@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #a4c6de 0%, #359435 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fbfbfb 100%);
     min-height: 100vh;
 }
 
@@ -29,7 +29,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #39c52c, #5ba90c);
+    background: linear-gradient(135deg, #a72020, #a72020);
     color: white;
     padding: 40px 30px;
     text-align: center;
@@ -61,12 +61,12 @@ form {
 }
 
 .notice p {
-    color: #856404;
+    color: #bd9826;
     font-weight: 500;
 }
 
 .required {
-    color: #e74c3c;
+    color: #a72020;
     font-weight: bold;
 }
 
@@ -80,7 +80,7 @@ form {
     align-items: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #74b9ff, #22e309);
+    background: linear-gradient(135deg, #a72020, #a72020);
     color: white;
     border-radius: 15px;
 }
@@ -125,16 +125,16 @@ form {
     margin-right: 15px;
     width: 20px;
     height: 20px;
-    accent-color: #74b9ff;
+    accent-color: #a72020;
 }
 
 .package-option input[type="radio"]:checked + .package-text {
     font-weight: 600;
-    color: #0984e3;
+    color: #a72020;
 }
 
 .package-option:has(input:checked) {
-    border-color: #0984e3;
+    border-color: #a72020;
     background: #f8f9ff;
 }
 
@@ -167,7 +167,7 @@ form {
     width: 20px;
     height: 20px;
     margin-right: 8px;
-    color: #74b9ff;
+    color: #a72020;
 }
 
 .label-with-icon label {
@@ -195,7 +195,7 @@ input[type="tel"]:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #74b9ff;
+    border-color: #a72020;
     box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
 }
 
@@ -210,7 +210,7 @@ select {
 
 /* Error Messages */
 .error-message {
-    color: #e74c3c;
+    color: #a72020;
     font-size: 0.9em;
     margin-top: 5px;
     font-weight: 500;
@@ -220,7 +220,7 @@ select {
 .total-section {
     text-align: center;
     padding: 30px;
-    background: linear-gradient(135deg, #00b894, #00a085);
+    background: linear-gradient(135deg, #a72020, #a72020);
     border-radius: 15px;
     margin: 30px 0;
 }
@@ -269,7 +269,7 @@ select {
 /* Buttons */
 .confirm-button {
     width: 100%;
-    background: linear-gradient(135deg, #00b894, #00a085);
+    background: linear-gradient(135deg, #a72020, #a72020);
     color: white;
     border: none;
     padding: 20px 30px;
@@ -333,7 +333,7 @@ select {
 }
 
 .summary-table th {
-    background: #74b9ff;
+    background: #a72020;
     color: white;
     padding: 15px;
     text-align: left;
@@ -352,7 +352,7 @@ select {
 .summary-table .total-row {
     background: #e8f4fd;
     font-weight: 600;
-    color: #0984e3;
+    color: #a72020;
 }
 
 .summary-table .total-row td {
@@ -387,7 +387,7 @@ select {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    background: linear-gradient(135deg, #e3b6b6, #a72020);
     margin-left: -10px;
     border: 3px solid white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -403,7 +403,7 @@ select {
 
 .stars {
     font-size: 1.5em;
-    color: #f39c12;
+    color: #a72020;
     margin-bottom: 5px;
 }
 
@@ -430,7 +430,7 @@ select {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    color: #74b9ff;
+    color: #a72020;
 }
 
 .testimonial h4 {
@@ -448,7 +448,7 @@ select {
 }
 
 .testimonial cite {
-    color: #74b9ff;
+    color: #a72020;
     font-weight: 600;
     font-style: normal;
 }
