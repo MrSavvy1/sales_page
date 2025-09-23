@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #66c0ea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a4c6de 0%, #359435 100%);
     min-height: 100vh;
 }
 
@@ -29,7 +29,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #2c7bd0, #24ee3b);
+    background: linear-gradient(135deg, #39c52c, #5ba90c);
     color: white;
     padding: 40px 30px;
     text-align: center;
@@ -80,7 +80,7 @@ form {
     align-items: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    background: linear-gradient(135deg, #74b9ff, #22e309);
     color: white;
     border-radius: 15px;
 }
