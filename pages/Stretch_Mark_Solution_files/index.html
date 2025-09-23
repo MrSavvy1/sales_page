@@ -273,6 +273,16 @@
                 'vip': 40000,
                 'vvip': 58000
             };
+            document.getElementById("name").addEventListener("input", function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+
+        // Restrict phone and WhatsApp input to numbers only
+        ["phone", "waphone"].forEach(id => {
+            document.getElementById(id).addEventListener("input", function() {
+                this.value = this.value.replace(/\D/g, '');
+            });
+        });
 
             // Load package from localStorage on page load
             const savedPrice = localStorage.getItem("selectedPrice");
@@ -351,16 +361,7 @@
                 })
                 .then(response => response.text())
                 .then(result => {
-                    // Success - show confirmation
-                    alert("Order submitted successfully! We will contact you shortly to confirm your order and delivery details.");
-                    
-                    // Reset form
-                    document.getElementById("orderForm").reset();
-                    
-                    // Reset to default package
-                    radios[0].checked = true;
-                    updateSummary(packagePrices.regular);
-                    localStorage.setItem("selectedPrice", packagePrices.regular.toString());
+                    window.location.href = "success.html";
                 })
                 .catch(error => {
                     console.error('Error:', error);
