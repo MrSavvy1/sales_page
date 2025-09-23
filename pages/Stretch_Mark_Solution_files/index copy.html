@@ -11,11 +11,11 @@
         <div class="form-container">
             <!-- Header -->
             <div class="header">
-                <h1>Permanent Stretch Mark and Scar Remover</h1>
+                <h1>Permanent Strech Mark and Scar Remover</h1>
                 <p>Professional Scar and Stretch Mark Treatment</p>
             </div>
 
-            <form id="orderForm">
+            <form id="orderForm" >
                 <!-- Required Fields Notice -->
                 <div class="notice">
                     <p>Fields marked with an <span class="required">*</span> are required</p>
@@ -34,15 +34,15 @@
                     
                     <div class="package-options" id="selectwrap">
                         <label class="package-option">
-                            <input type="radio" name="package" value="regular" data-price="22000" checked>
+                            <input type="radio" name="package" value="regular" checked>
                             <span class="package-text">Regular Package (₦22,000 Total)</span>
                         </label>
                         <label class="package-option">
-                            <input type="radio" name="package" value="vip" data-price="40000">
+                            <input type="radio" name="package" value="vip">
                             <span class="package-text">VIP Package (₦40,000 Total)</span>
                         </label>
                         <label class="package-option">
-                            <input type="radio" name="package" value="vvip" data-price="58000">
+                            <input type="radio" name="package" value="vvip">
                             <span class="package-text">VVIP Package (₦58,000 Total)</span>
                         </label>
                     </div>
@@ -59,7 +59,7 @@
                             </svg>
                             <label>Name <span class="required">*</span></label>
                         </div>
-                        <input type="text" id="name" name="name" placeholder="Please type in your full name" required>
+                        <input type="text" id="name" placeholder="Please type in your full name" required>
                         <div class="error-message" id="nameError"></div>
                     </div>
 
@@ -71,11 +71,11 @@
                             </svg>
                             <label>Phone Number <span class="required">*</span></label>
                         </div>
-                        <input type="tel" id="phone" name="phone" placeholder="Please type in a valid phone number" required>
+                        <input type="tel" id="phone" placeholder="please type in a valid phone number" required>
                         <div class="error-message" id="phoneError"></div>
                     </div>
 
-                    <!-- WhatsApp number -->
+                    <!-- Whatsapp number -->
                     <div class="form-group">
                         <div class="label-with-icon">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -83,8 +83,8 @@
                             </svg>
                             <label>WhatsApp Number <span class="required">*</span></label>
                         </div>
-                        <input type="tel" id="waphone" name="waphone" placeholder="Please type in a valid WhatsApp phone number" required>
-                        <div class="error-message" id="waphoneError"></div>
+                        <input type="tel" id="waphone" placeholder="please type in a valid (WhatsApp) phone number (WhatsApp)" required>
+                        <div class="error-message" id="phoneError"></div>
                     </div>
 
                     <!-- State -->
@@ -96,7 +96,7 @@
                             </svg>
                             <label>State (Location) <span class="required">*</span></label>
                         </div>
-                        <select id="state" name="state" required>
+                        <select id="state" required>
                             <option value="">Please Select Your State</option>
                             <option value="Abia">Abia</option>
                             <option value="Adamawa">Adamawa</option>
@@ -149,13 +149,44 @@
                         </svg>
                         <label>Delivery Address (Where You Want It Delivered To) <span class="required">*</span></label>
                     </div>
-                    <textarea id="address" name="address" rows="3" placeholder="Please type in full address so we can process your order" required></textarea>
+                    <textarea id="address" rows="3" placeholder="Please type in full address so we can process your order" required></textarea>
                     <div class="error-message" id="addressError"></div>
+                </div>
+
+                <!-- One Time Offer -->
+                <div class="offer-section">
+                    <div class="offer-header">
+                        <h2>ONE TIME OFFER</h2>
+                        <p>Would You Like to Add to Your Order:</p>
+                    </div>
+
+                    <div class="offer-content">
+                        <h3>Kojic Smooth Skin and Even Tone Soap</h3>
+                        
+                        <div class="soap-images">
+                            <div class="soap-image black"></div>
+                            <div class="soap-image pink"></div>
+                            <div class="soap-image black"></div>
+                        </div>
+
+                        <div class="pricing">
+                            <p class="old-price">OLD PRICE: <span>₦6,000</span></p>
+                            <p class="new-price">NEW PRICE (50% DISCOUNT): <span>₦3,000</span></p>
+                            <p class="instruction">Kindly click the checkbox below to add this to your order now</p>
+                        </div>
+
+                        <div class="arrow">↓</div>
+                    </div>
+
+                    <label class="soap-checkbox">
+                        <input type="checkbox" id="addSoap">
+                        <span>Yes, I need this Soap added to my order</span>
+                    </label>
                 </div>
 
                 <!-- Total -->
                 <div class="total-section">
-                    <h3 id="totalAmount">Total: ₦22,000 Only</h3>
+                    <h3 id="totalAmount">Total: ₦17,900 Only</h3>
                 </div>
 
                 <!-- Ready Message -->
@@ -191,25 +222,31 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Scar and Stretch Mark (One Package)</td>
+                                <td>Scar and Stretch Mark (OnePackage)</td>
                                 <td>1</td>
-                                <td id="packagePrice">₦22,000</td>
+                                <td id="packagePrice">₦17,900</td>
                             </tr>
                             <tr class="gray-row">
                                 <td>2</td>
-                                <td>Delivery Fee</td>
-                                <td>-</td>
+                                <td>Delivery FEE</td>
+                                <td></td>
                                 <td>FREE</td>
                             </tr>
-                            <tr class="gray-row">
+                            <tr>
                                 <td>3</td>
+                                <td id="soapProduct"></td>
+                                <td id="soapQuantity">0</td>
+                                <td id="soapPrice">₦0</td>
+                            </tr>
+                            <tr class="gray-row">
+                                <td>4</td>
                                 <td>Waybill</td>
-                                <td>-</td>
+                                <td></td>
                                 <td>₦0</td>
                             </tr>
                             <tr class="total-row">
-                                <td colspan="3"><strong>TOTAL</strong></td>
-                                <td id="summaryTotal"><strong>₦22,000</strong></td>
+                                <td colspan="3">TOTAL</td>
+                                <td id="summaryTotal">₦17,900</td>
                             </tr>
                         </tbody>
                     </table>
@@ -262,167 +299,129 @@
             </form>
         </div>
     </div>
-    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", () => {
+          const price = localStorage.getItem("selectedPrice");
+        
+          if (price) {
             const radios = document.querySelectorAll("input[name='package']");
-            
-            // Package price mapping
-            const packagePrices = {
-                'regular': 22000,
-                'vip': 40000,
-                'vvip': 58000
-            };
-
-            // Load package from localStorage on page load
-            const savedPrice = localStorage.getItem("selectedPrice");
-            if (savedPrice) {
-                radios.forEach(radio => {
-                    if (radio.dataset.price === savedPrice) {
-                        radio.checked = true;
-                        updateSummary(Number(savedPrice));
-                    }
-                });
-            } else {
-                // Default to regular package
-                updateSummary(packagePrices.regular);
-                localStorage.setItem("selectedPrice", packagePrices.regular.toString());
-            }
-
-            // Listen for package changes
             radios.forEach(radio => {
-                radio.addEventListener("change", function() {
-                    if (this.checked) {
-                        const price = Number(this.dataset.price);
-                        localStorage.setItem("selectedPrice", price.toString());
-                        updateSummary(price);
-                    }
-                });
+              const labelText = radio.nextElementSibling.textContent;
+              if (labelText.includes("₦" + Number(price).toLocaleString())) {
+                radio.checked = true;
+        
+                // update total + summary if you already have those IDs
+                document.getElementById("packagePrice").textContent = "₦" + Number(price).toLocaleString();
+                document.getElementById("summaryTotal").textContent = "₦" + Number(price).toLocaleString();
+                document.getElementById("totalAmount").textContent = "Total: ₦" + Number(price).toLocaleString() + " Only";
+              }
             });
-
-            // Update summary function
-            function updateSummary(price) {
-                const formattedPrice = "₦" + price.toLocaleString();
-                
-                // Update total display
-                document.getElementById("totalAmount").textContent = "Total: " + formattedPrice + " Only";
-                
-                // Update summary table
-                document.getElementById("packagePrice").textContent = formattedPrice;
-                document.getElementById("summaryTotal").innerHTML = "<strong>" + formattedPrice + "</strong>";
-            }
-
-            // Form submission
-            document.getElementById("orderForm").addEventListener("submit", function(event) {
-                event.preventDefault();
-
-                // Validate form
-                if (!validateForm()) {
-                    return;
-                }
-
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyH8T3ThC-dNr6m878LXIoSJLFK4kxpcHzhZEqcDmFZHJrLd-CiRZrAnPpNUEYmRo4k9A/exec";
-                
-                // Get selected package details
-                const selectedPackageRadio = document.querySelector("input[name='package']:checked");
-                const packageText = selectedPackageRadio.nextElementSibling.textContent.trim();
-
-                // Prepare form data
-                const formData = new FormData();
-                formData.append('name', document.getElementById("name").value.trim());
-                formData.append('phone', document.getElementById("phone").value.trim());
-                formData.append('waphone', document.getElementById("waphone").value.trim());
-                formData.append('address', document.getElementById("address").value.trim());
-                formData.append('state', document.getElementById("state").value);
-                formData.append('package', packageText);
-
-                // Disable buttons during submission
-                const buttons = document.querySelectorAll(".confirm-button");
-                buttons.forEach(btn => {
-                    btn.disabled = true;
-                    btn.style.opacity = "0.6";
-                    btn.querySelector("span").textContent = "Submitting Your Order...";
-                });
-
-                // Submit to Google Sheets
-                fetch(scriptURL, {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(result => {
-                    // Success - show confirmation
-                    alert("Order submitted successfully! We will contact you shortly to confirm your order and delivery details.");
-                    
-                    // Reset form
-                    document.getElementById("orderForm").reset();
-                    
-                    // Reset to default package
-                    radios[0].checked = true;
-                    updateSummary(packagePrices.regular);
-                    localStorage.setItem("selectedPrice", packagePrices.regular.toString());
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert("Something went wrong. Please try again or contact us directly.");
-                })
-                .finally(() => {
-                    // Re-enable buttons
-                    buttons.forEach(btn => {
-                        btn.disabled = false;
-                        btn.style.opacity = "1";
-                        btn.querySelector("span").textContent = "Confirm & Place My Order";
-                    });
-                });
-            });
-
-            // Form validation function
-            function validateForm() {
-                let isValid = true;
-                
-                // Clear previous errors
-                document.querySelectorAll('.error-message').forEach(error => {
-                    error.textContent = '';
-                });
-
-                // Validate name
-                const name = document.getElementById("name").value.trim();
-                if (!name) {
-                    document.getElementById("nameError").textContent = "Name is required";
-                    isValid = false;
-                }
-
-                // Validate phone
-                const phone = document.getElementById("phone").value.trim();
-                if (!phone) {
-                    document.getElementById("phoneError").textContent = "Phone number is required";
-                    isValid = false;
-                }
-
-                // Validate WhatsApp phone
-                const waphone = document.getElementById("waphone").value.trim();
-                if (!waphone) {
-                    document.getElementById("waphoneError").textContent = "WhatsApp number is required";
-                    isValid = false;
-                }
-
-                // Validate state
-                const state = document.getElementById("state").value;
-                if (!state) {
-                    document.getElementById("stateError").textContent = "State is required";
-                    isValid = false;
-                }
-
-                // Validate address
-                const address = document.getElementById("address").value.trim();
-                if (!address) {
-                    document.getElementById("addressError").textContent = "Delivery address is required";
-                    isValid = false;
-                }
-
-                return isValid;
-            }
+          }
         });
-    </script>
+        </script>
+        
+
+    <script src="script.js"></script>
+
+     
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const radios = document.querySelectorAll("input[name='package']");
+          const soapCheckbox = document.getElementById("addSoap");
+        
+          // Load package from localStorage
+          let price = localStorage.getItem("selectedPrice");
+        
+          if (price) {
+            radios.forEach(radio => {
+              const labelText = radio.nextElementSibling.textContent;
+              if (labelText.includes("₦" + Number(price).toLocaleString())) {
+                radio.checked = true;
+                updateSummary(Number(price));
+              }
+            });
+          } else {
+            // Default first option if none stored
+            radios[0].checked = true;
+            const defaultPrice = Number(radios[0].dataset.price);
+            updateSummary(defaultPrice);
+            localStorage.setItem("selectedPrice", defaultPrice);
+          }
+        
+          // Watch for package change
+          radios.forEach(radio => {
+            radio.addEventListener("change", () => {
+              const newPrice = Number(radio.dataset.price);
+              localStorage.setItem("selectedPrice", newPrice);
+              updateSummary(newPrice);
+            });
+          });
+        
+          // Watch for soap add-on
+          soapCheckbox.addEventListener("change", () => {
+            const basePrice = Number(localStorage.getItem("selectedPrice")) || 17900;
+            updateSummary(basePrice);
+          });
+        
+          // Update summary UI
+          function updateSummary(basePrice) {
+            const soapPrice = soapCheckbox.checked ? 3000 : 0;
+            const total = basePrice + soapPrice;
+        
+            document.getElementById("packagePrice").textContent = "₦" + basePrice.toLocaleString();
+            document.getElementById("soapProduct").textContent = soapCheckbox.checked ? "Kojic Smooth Skin Soap" : "";
+            document.getElementById("soapQuantity").textContent = soapCheckbox.checked ? "1" : "0";
+            document.getElementById("soapPrice").textContent = "₦" + soapPrice.toLocaleString();
+            document.getElementById("summaryTotal").textContent = "₦" + total.toLocaleString();
+            document.getElementById("totalAmount").textContent = "Total: ₦" + total.toLocaleString() + " Only";
+          }
+        });
+        
+        // Google Sheets submission
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+        
+          const scriptURL = "https://script.google.com/macros/s/AKfycbyH8T3ThC-dNr6m878LXIoSJLFK4kxpcHzhZEqcDmFZHJrLd-CiRZrAnPpNUEYmRo4k9A/exec";
+        
+          const selectedPackage = document.querySelector("input[name='package']:checked")?.nextElementSibling.textContent.trim();
+          const soapAdded = document.getElementById("addSoap").checked ? "Yes" : "No";
+        
+          const formData = {
+            name: document.getElementById("name").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            waphone: document.getElementById("waphone").value.trim(),
+            address: document.getElementById("address").value.trim(),
+            state: document.getElementById("state").value.trim(),
+            package: selectedPackage,
+            addSoap: soapAdded
+          };
+        
+          const btns = document.querySelectorAll(".confirm-button");
+          btns.forEach(btn => {
+            btn.disabled = true;
+            btn.style.opacity = "0.6";
+            btn.querySelector("span").textContent = "Submitting Your Order...";
+          });
+        
+          fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(formData)
+          })
+          .then(res => res.json())
+          .then(response => {
+            window.location.href = "success.html";
+          })
+          .catch(error => {
+            alert("Something went wrong. Please try again.");
+            btns.forEach(btn => {
+              btn.disabled = false;
+              btn.style.opacity = "1";
+              btn.querySelector("span").textContent = "Confirm & Place My Order";
+            });
+          });
+        });
+        </script>
+        
+     
 </body>
 </html>
