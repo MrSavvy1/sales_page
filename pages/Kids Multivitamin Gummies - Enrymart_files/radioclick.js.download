@@ -1,0 +1,17 @@
+
+ $(function() {
+   $("input[name='pgmain']").click(function() {
+     if ($("#pgmain3").is(":checked")) {
+       $("#bankinfo").show();
+     } else {
+       $("#bankinfo").hide();
+     }
+   });
+});
+
+
+
+
+
+
+
