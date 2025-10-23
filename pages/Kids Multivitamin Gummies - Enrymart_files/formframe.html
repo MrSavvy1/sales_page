@@ -1229,28 +1229,43 @@ select, input[type="text"] {
     </script>
     
     <!-- Country to State AJAX -->
-    <script>
+<script>
     $(document).ready(function(){
+        // Check for duplicate state elements
+        if ($('#state').length > 1) {
+            console.warn('Multiple #state elements found:', $('#state').length);
+            // Remove duplicate state elements, keeping the first one
+            $('#state').slice(1).remove();
+        }
+    
         $('#country').on('change', function(){
             var countryID = $(this).val();
+            
+            // Clear existing state options and ensure dropdown is enabled
+            $('#state').html('<option value="">Loading states...</option>').prop('disabled', false);
+            
             if(countryID){
                 $.ajax({
-                    type:'POST',
-                    url:'formframestates.php',
-                    data:'countryid='+countryID,
-                    success:function(html){
-                        $('#state').html(html); 
+                    type: 'POST',
+                    url: 'formframestates.php',
+                    data: 'countryid=' + countryID,
+                    success: function(html){
+                        // Update state dropdown with new options
+                        $('#state').html(html).prop('disabled', false);
+                        console.log('State dropdown updated with options for countryID:', countryID);
                     },
                     error: function(xhr, status, error) {
                         console.error('Country states AJAX error:', error);
+                        $('#state').html('<option value="">Error loading states</option>').prop('disabled', false);
                     }
                 }); 
             } else {
-                $('#state').html('<option value="">Select country first</option>');
+                $('#state').html('<option value="">Select country first</option>').prop('disabled', false);
             }
         });
     });
     </script>
+    
     
     <!-- Country to Quantity AJAX -->
     <script>
