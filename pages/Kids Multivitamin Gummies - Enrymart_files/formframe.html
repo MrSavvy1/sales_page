@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0060)https://app.snipercrm.io/formframe?formid=489d32ddeb4793&c=0 -->
+
 <html lang="en" class="wf-fontawesome-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -137,7 +137,7 @@ select, input[type="text"] {
             <div class="card card-6 sbn" style="background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">
                 <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
 
-                    <form method="POST" action="https://app.snipercrm.io/processor" id="order_form" class="sniperform">
+                    <form method="POST" id="order_form" class="sniperform" action="">
 
 
 
@@ -1033,359 +1033,360 @@ select, input[type="text"] {
 
 <script src="./select2.full.min.js.download"></script>
   <script src="./4ecc3dbb0b.js.download"></script>
-
+<!-- Country Selection -->
+<script>
+    $(document).ready(function() {
+        $('#country').change(function() {
+            var selectedCountry = $(this).val();
+            $('#phonecc').val(selectedCountry);
+            $('#phonewa').val(selectedCountry);
+        });
+    });
+    </script>
+    
+    <!-- Product Bump Checkbox -->
     <script>
-        $(document).ready(function() {
-            // Event listener for when the country is selected
-            $('#country').change(function() {
-                var selectedCountry = $(this).val();
-                $('#phonecc').val(selectedCountry);
-                $('#phonewa').val(selectedCountry);
-          });
+    $(document).ready(function() {
+        $("#productidbump").click(function() {
+            if($(this).is(":checked")) {
+                $('.bumpquantity').attr('required', 'required');
+                $("#bumpqty").show();
+            } else {
+                $('.bumpquantity').removeAttr('required');
+                $("#bumpqty").hide();
+            }
         });
+    });
     </script>
-
-<script type="text/javascript">
-$("#productidbump").click(function() {
-    if($(this).is(":checked")) {
-      $('.bumpquantity').attr('required', 'required');
-        $("#bumpqty").show();
-    } else {
-      $('.bumpquantity').removeAttr('required');
-        $("#bumpqty").hide();
-    }
-});
-</script>
-
-<script type="text/javascript">
+    
+    <!-- Form Submission to Google Spreadsheet -->
+    <script>
+    $(document).ready(function() {
+        $("#order_form").submit(function(event) {
+            event.preventDefault();
+            const submitButton = $("#sniperbutton");
+            
+            // Basic validation
+            const name = $("#name").val().trim();
+            const phone = $("#phone").val().trim();
+            const waphone = $("#waphone").val().trim();
+            const address = $("#address").val().trim();
+            const state = $("#state").val().trim();
+            const package = $("#selectwrap").val().trim();
+            const cc = $("#coupon").val().trim();
+            const qty2 = $("input[name='quantity']:checked").val();
+            const hfcoupon = $("#hfcoupon").val().trim();
+            const storeid = $("#zq").val().trim();
+            const delivery_fee = $("#delivery_fee").val().trim();
+            const productid = $("#pid").val().trim();
+            const pvar = $("#pvar").val().trim();
+            const fid = $("#fid").val().trim();
+            const bumppid = $("#bumppid").val().trim();
+            const unx = $("#unx").val().trim();
+            const cid = $("#cid").val().trim();
+            const countryID = $("#country").val().trim();
+            const bumpquantity = $(".bumpquantity").val().trim();
+    
+            // Validation
+            if (!name) {
+                $("#nameopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!phone || phone.length < 7) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                $("#phone_error").show().fadeOut(5000);
+                return;
+            }
+            if (!waphone) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!address) {
+                $("#addressopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!state) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!package) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (cc == "") {
+                $("#cc-error").show().fadeOut(5000);
+                $("#coupon").focus();
+                return;
+            }
+            if (!qty2) {
+                $("#cc-qty").show().fadeOut(5000);
+                $(".quantity").focus();
+                return;
+            }
+    
+            // Update button state
+            submitButton.prop("disabled", true).css("opacity", "0.6").html("Submitting Your Order...");
+    
+            // Coupon validation via AJAX
+            $.post("ajaxDataCoupon.php", { 
+                cc: cc, 
+                qty2: qty2, 
+                hfcoupon: hfcoupon, 
+                storeid: storeid, 
+                delivery_fee: delivery_fee 
+            }, function(result) {
+                if(result == 0) {
+                    $("#coupon").val('');
+                    $("#c-error").show().fadeOut(5000);
+                    submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                    return;
+                } else {
+                    $("#c-table").show().fadeIn(3000);
+                    $('#c-table').append(result);
+    
+                    // Submit to Google Spreadsheet
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbyx_7ER59_I4sq5sERT-LKht_NpXJdrAMnNnZgXDxk4zn5rNl6zkRMEK0Si47ZkrsBsXA/exec";
+                    const formData = {
+                        name: name,
+                        phone: phone,
+                        waphone: waphone,
+                        address: address,
+                        state: state,
+                        package: $("#selectwrap option:selected").text().trim(),
+                        country: countryID
+                    };
+    
+                    fetch(scriptURL, {
+                        method: "POST",
+                        body: new URLSearchParams(formData)
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = './success.html';
+                        } else {
+                            alert("Submission failed. Try again.");
+                            submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Submission error:", error.message);
+                        alert("Something went wrong!");
+                        submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                    });
+                }
+            });
+        });
+    });
+    </script>
+    
+    <!-- State Selection AJAX -->
+    <script>
     $(document).ready(function(){
-    $('.sniperform').submit(function(){
-        $("#sniperbutton").html("Submitting Your Order...");
-        $("#sniperbutton").prop('disabled', true);
-    });
-});
-</script>
-
-
-<script>
-$(document).ready(function($){
-// hide messages 
-$("#c-error").hide();
-$("#cc-error").hide();
-$("#cc-qty").hide();
-$("#c-table").hide();
-// on submit...
-$('#sniperbuttonx').click(function(e){
-e.preventDefault();
-$("#c-error").hide();
-$('#c-table').find('tr').remove();
-
-
-var cc = $("#coupon").val();
-if(cc == ""){
-$("#cc-error").show();
-$("#coupon").focus();
-$("#cc-error").fadeOut(5000);
-return false;
-}
-
-
-
-
-var qty2 = $("input[name='quantity']:checked").val();
-
-if (!$(" input[name='quantity']:checked"). val()) {
-$("#cc-qty").show();
-$(".quantity").focus();
-$("#cc-qty").fadeOut(5000);
-return false;
-}
-
-
-var hfcoupon = $("#hfcoupon").val();
-var storeid = $("#zq").val();
-var delivery_fee = $("#delivery_fee").val();
-
-
-$.post("ajaxDataCoupon.php", { cc : cc, qty2 : qty2, hfcoupon : hfcoupon, storeid : storeid, delivery_fee : delivery_fee },
-
- 
-            function(result){  
-
-            //if the result is 0  
-            if(result == 0){  
-                //show that the code is correct 
-                $("#coupon").val(''); 
-                $("#c-error").show();
-                $("#c-error").fadeOut(5000); 
-            }
-            else{
-                //show that the code is not correct 
-                $("#c-table").show();
-                $("#c-table").fadeIn(3000);
-                $('#c-table').append(result);
-            }
-        });  
-
-});  
-
-});
-</script>
-
-
-
-<script>
-$(document).ready(function(){
-    $('#state').on('change', function(){
-        var state = $(this).val();
-        var storeid = $("#zq").val();
-        var unx = $("#unx").val();
-        if(state){
-            $.ajax({
-                type:'POST',
-                url:'states_delfee.php',
-                data: {state : state, storeid:storeid, unx: unx},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#c-statefeetable').html(html); 
-                }
-            }); 
-        }else{
-        }
-    });
-});
-</script>
-
-
-<script>
-$(document).ready(function(){
-    $('#selectwrap').on('change', function(){
-        var quantity = $(this).val();
-        var storeid = $("#zq").val();
-        var delivery_fee = $("#delivery_fee").val();
-        var unx = $("#unx").val();
-        if(quantity){
-            $.ajax({
-                type:'POST',
-                url:'states_delfeeqty.php',
-                data: {quantity : quantity, storeid:storeid, delivery_fee : delivery_fee, unx: unx},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#c-statefeetableqty').html(html); 
-                }
-            }); 
-        }else{
-        }
-    });
-});
-</script>
-
-
-
-<script>
-$(document).ready(function(){
-  //$("#state").hide();
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframestates.php',
-                data:'countryid='+countryID,
-                success:function(html){
-                    $('#state').html(html); 
-                    //$("#state").show();
-                }
-            }); 
-        }else{
-          $('#state').html('<option value="">Select country first</option>');
-        }
-    });
-});
-</script>
-
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#pid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#selectwrap').html(html); 
-                }
-            }); 
-        }else{
-          $('#selectwrap').html('<option value="">Select Quantity</option>');
-        }
-    });
-});
-</script>
-
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#pid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty2.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#qtyradio').html(html); 
-                }
-            }); 
-        }else{
-          
-        }
-    });
-});
-</script>
-
-
-
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#bumppid").val();
-var storeid = $("#zq").val();
-var pvar  = $("#pvar").val();
-var fid  = $("#fid").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqty3.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid, pvar: pvar, fid : fid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('#bumpqtyradio').html(html); 
-                }
-            }); 
-        }else{
-          
-        }
-    });
-});
-</script>
-
-
-<script>
-$(document).ready(function(){
-    $('#country').on('change', function(){
-        var countryID = $(this).val();
-        var productid = $("#bumppid").val();
-var storeid = $("#zq").val();
-        if(countryID){
-            $.ajax({
-                type:'POST',
-                url:'formframeqtybump.php',
-                data: {countryid: countryID, productid : productid, storeid : storeid},
-                //data:'countryid='+countryID,
-                success:function(html){
-                    $('.bumpquantity').html(html); 
-                }
-            }); 
-        }else{
-          $('.bumpquantity').html('<option value="">Select Quantity</option>');
-        }
-    });
-});
-</script>
-
-
-<script>
-function savePartialData() {
-    var phonenum = document.getElementById('phone').value;
-    var customername = document.getElementById('name').value;
-    var storeid = document.getElementById('zq').value;
-    var productid = document.getElementById('pid').value;
-    var formid = document.getElementById('fid').value;
-    var phonecc = document.getElementById('phonecc').value;
-    var cid = document.getElementById('cid').value;
-
-
-        if (phonenum !== '' && phonenum.length < 7) {
-            $("#phone_error").show(1000);
-            $("#phone_errorx").show(1000);
-            $("#sniperbutton").prop('disabled', true); 
-            return; 
-        }
-
-        else {
-            $("#phone_error").hide(1000);
-            $("#phone_errorx").hide(1000);
-            $("#sniperbutton").prop('disabled', false); 
-        }
-
-
-
-    if (phonenum) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://app.snipercrm.io/form_cb.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send("customername=" + customername + "&phonenum=" + phonenum + "&storeid=" + storeid + "&productid=" + productid + "&phonecc=" + phonecc + "&cid=" + cid + "&formid=" + formid + "&cb=" + 1);
-    }
-}
-</script>
-
-
-
-
-<script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
-
-
-
-
-
-<script>
-window.addEventListener("message", function(event) {
-            if (event.data && event.data.parentUrl) {
-                var parentUrl = event.data.parentUrl;
-
-                // Create a hidden input field for the parent URL
-                var hiddenField = document.createElement("input");
-                hiddenField.type = "hidden";
-                hiddenField.name = "parent_url";
-                hiddenField.value = parentUrl;
-
-                // Append the hidden input field to the form
-                var form = document.getElementById("order_form");
-                form.appendChild(hiddenField);
+        $('#state').on('change', function(){
+            var state = $(this).val();
+            var storeid = $("#zq").val();
+            var unx = $("#unx").val();
+            if(state){
+                $.ajax({
+                    type:'POST',
+                    url:'states_delfee.php',
+                    data: {state: state, storeid:storeid, unx: unx},
+                    success:function(html){
+                        $('#c-statefeetable').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('State AJAX error:', error);
+                    }
+                }); 
             }
         });
+    });
     </script>
-
+    
+    <!-- Quantity Selection AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#selectwrap').on('change', function(){
+            var quantity = $(this).val();
+            var storeid = $("#zq").val();
+            var delivery_fee = $("#delivery_fee").val();
+            var unx = $("#unx").val();
+            if(quantity){
+                $.ajax({
+                    type:'POST',
+                    url:'states_delfeeqty.php',
+                    data: {quantity: quantity, storeid:storeid, delivery_fee: delivery_fee, unx: unx},
+                    success:function(html){
+                        $('#c-statefeetableqty').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to State AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframestates.php',
+                    data:'countryid='+countryID,
+                    success:function(html){
+                        $('#state').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Country states AJAX error:', error);
+                    }
+                }); 
+            } else {
+                $('#state').html('<option value="">Select country first</option>');
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Quantity AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#selectwrap').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity AJAX error:', error);
+                    }
+                }); 
+            } else {
+                $('#selectwrap').html('<option value="">Select Quantity</option>');
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Quantity Radio AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty2.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#qtyradio').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity 2 AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Bump Quantity Radio AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty3.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#bumpqtyradio').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity 3 AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Bump Quantity AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqtybump.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid},
+                    success:function(html){
+                        $('.bumpquantity').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Bump quantity AJAX error:', error);
+                    }
+                }); 
+            } else {
+                $('.bumpquantity').html('<option value="">Select Quantity</option>');
+            }
+        });
+    });
+    </script>
+    
+    <!-- iFrame Resizer -->
+    <script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
+    
+    <!-- Parent URL Handler -->
+    <script>
+    window.addEventListener("message", function(event) {
+        if (event.data && event.data.parentUrl) {
+            var parentUrl = event.data.parentUrl;
+            var hiddenField = document.createElement("input");
+            hiddenField.type = "hidden";
+            hiddenField.name = "parent_url";
+            hiddenField.value = parentUrl;
+            var form = document.getElementById("order_form");
+            form.appendChild(hiddenField);
+        }
+    });
+    </script>
+    
+    <!-- iFrame Height Adjustment 
     <script>
     function sendHeight() {
-        var height = document.body.scrollHeight; // Get content height
+        var height = document.body.scrollHeight;
         window.parent.postMessage({ iframeHeight: height }, "*");
     }
-
-    // Send height when the page loads and when resized
     window.onload = sendHeight;
     window.addEventListener("resize", sendHeight);
-</script>
+    </script>
 
-
-
-
-
+-->
 
 
 </div></div><div style="clear: both; display: block; height: 0px;"></div></body><fatkun-drop-panel><template shadowrootmode="open">
