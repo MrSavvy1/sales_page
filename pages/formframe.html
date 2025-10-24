@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+
+<html lang="en" class="wf-fontawesome-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+        <!--<base target="_parent">--><base href="." target="_parent">
+
+    <!-- Title Page-->
+    <title>Order NOW!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+
+
+
+    <!-- Icons font CSS-->
+    <link href="./material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="./font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="./css(5)" rel="stylesheet">
+    <!-- Vendor CSS-->
+    <link href="./select2.min.css" rel="stylesheet" media="all">
+    <!--<link href="newform/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">-->
+
+    <!-- Main CSS-->
+    <link href="./main.css" rel="stylesheet" media="all">
+    <style type="text/css">
+.col_half1 {
+  width: 30%;
+  float: left;
+}
+.col_half2 {
+  width: 70%;
+  float: left;
+}
+.col_half3 {
+  width: 50%;
+  float: left;
+}
+.col_half4 {
+  width: 50%;
+  float: left;
+}
+.myselect {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.myselect option {
+  white-space: nowrap;
+  width: 100% border-bottom: 1px #ccc solid;
+  /* This doesn't work. */
+}
+.Radio {
+  display: inline-flex;
+  align-items: center;
+}
+.Radio-Input {
+  margin: 0 0.5rem 0;
+}
+.column-lx {
+  flex: 1%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;
+}
+.column-l {
+  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 8px;width: fit-content;width: auto;
+  min-width: min-content;
+  max-width: max-content;
+}
+.column-lr {
+  flex: 60%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: center;padding-right: 45px;width: fit-content;width: auto;
+  min-width: min-content;
+  max-width: max-content;
+}
+.column-r {
+  flex: 35%; line-height: 1.2; margin-bottom: 7px; margin-top: 7px; display: block;
+    vertical-align: middle; padding: 0.3em 0; align-items: right; text-align: right;
+}
+.rowx {
+  display: flex;
+}
+
+.btn--blue {
+  background: #EF0A2D; 
+  /*#4272d7;*/
+}
+
+.btn--blue:hover {
+  background: #3868cd;
+}
+select {
+  color: #000000;
+}
+.label{
+  color: #000000;
+display: none}
+iframe{
+
+}
+@media screen and (max-width: 600px) {.divresimg {width: 345px;}}@media screen and (max-width: 412px) {.divresimg {width: 150px;}}@media screen and (max-width: 375px) {.divresimg {width: 140px;}}@media screen and (min-width: 601px) {.divresimg {width: 200px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresimg {width: 150px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresimg {width: 150px;}}@media screen and (max-width: 734) {.divresimg {width: 100px;}}
+
+.divresbump {width: px;}
+
+@media screen and (max-width: 600px) {.divresbump {width: 345px; margin-left: -12px;}}@media screen and (max-width: 412px) {.divresbump {width: 350px; margin-left: -12px;}}@media screen and (max-width: 375px) {.divresbump {width: 260px; margin-left: -12px;}}@media screen and (min-width: 601px) {.divresbump {width: 550px; margin-left: -12px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.divresbump {width: 280px; margin-left: -12px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.divresbump {width: 480px; margin-left: -12px;}}@media screen and (max-width: 734) {.divresbump {width: 200px; margin-left: -12px;}}
+
+@media screen and (max-width: 600px) {.sbn {padding-right: 20px; padding-left: 20px;}}@media screen and (max-width: 412px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (max-width: 375px) {.sbn {padding-right: 10px; padding-left: 10px;}}@media screen and (min-width: 601px) {.sbn {padding-right: 40px; padding-left: 40px;}}@media screen and (min-width: 667px) and (max-width: 667px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (min-width: 413px) and (max-width: 666px) {.sbn {padding-right: 50px; padding-left: 50px;}}@media screen and (max-width: 734px) {.sbn {padding-right: 10px; padding-left: 10px;}}
+    
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px; /* Add some space between rows if needed */
+}
+
+.field-25 {
+    flex: 0 0 30%; /* Flex shorthand to take 25% of the row */
+    margin-right: 2px; /* Optional: Add space between the fields */
+}
+
+.field-75 {
+    flex: 0 0 68%; /* Flex shorthand to take 75% of the row */
+}
+
+/* Optional: Add some styling to the select and input elements */
+select, input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+    </style><link rel="stylesheet" href="./4ecc3dbb0b.css" media="all">
+
+
+</head>
+
+<body>
+    <div class="page-wrapper font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-6 sbn" style="background-color: #FFFFFF; padding-top: 15px; padding-bottom: 15px;">
+                <div class="card-body" style="background-color: #FFFFFF; padding: 10px; width: 100%">
+
+                    <form method="POST" id="order_form" class="sniperform" action="">
+
+
+
+<!--<div style="display: ">-->
+
+
+<div style="margin: 10px">
+<h2 align="center" style="font-size: 22px; color: #495057; font-family: ;">Please Fill The Form Below To Place Your Order</h2>
+<p align="center" style="color: #495057;"><b>Only Serious Buyers Should Fill The Form Below</b></p>
+</div>
+
+
+
+
+
+
+<div style="font-size: 22px; color: #495057; font-family: ;margin-bottom: 5px;" align="left"><label><strong>Select your package</strong></label></div>
+
+<div style="background-color: #FFFFFF;padding: 8px 2px;" align="left">
+<div class="rowx" style="border-bottom: 3px solid #000;padding: 2px 0px;">
+        <div class="column-l" style="margin-left: 2px;font-size: 20px; text-align: left; margin-left: 5px;color: #495057;font-family: "><strong>Product</strong></div>
+            <div class="column-r" style="font-size: 20px;color: #495057;font-family: "><strong>Price</strong></div>
+          </div>
+<div id="qtyradio">
+
+        
+
+                <div class="rowx" style="border-bottom: 1px solid #ccc;padding: 7px 0px; background-color: ; font-weight: bold; " align="left">
+        <div class="column-lx">
+          <label class="radio-container">
+          <input type="radio" name="quantity" value="144438" id="144438" class="quantity" required=""><span class="checkmark"></span></label></div>
+  <div class="column-l"><label for="144438" style="font-size: 18px; color: #495057; font-family: ">Buy 1 Bottle Plus Free Delivery (For 1 Child) 
+  1 Bottle   </label></div>
+  <div class="column-r"><label for="144438" style="font-size: 18px; color: #495057; font-family: ">₦25,000</label></div></div>
+    
+
+        
+        
+
+                <div class="rowx" style="border-bottom: 1px solid #ccc;padding: 7px 0px; background-color: ; font-weight: bold; " align="left">
+        <div class="column-lx">
+          <label class="radio-container">
+          <input type="radio" name="quantity" value="144439" id="144439" class="quantity" required=""><span class="checkmark"></span></label></div>
+  <div class="column-l"><label for="144439" style="font-size: 18px; color: #495057; font-family: ">Buy 2 Bottle Plus Free Delivery (For 2 Children) 
+  2 Bottle   </label></div>
+  <div class="column-r"><label for="144439" style="font-size: 18px; color: #495057; font-family: ">₦40,000</label></div></div>
+    
+
+        
+        
+
+                <div class="rowx" style="border-bottom: 1px solid #ccc;padding: 7px 0px; background-color: ; font-weight: bold; " align="left">
+        <div class="column-lx">
+          <label class="radio-container">
+          <input type="radio" name="quantity" value="144440" id="144440" class="quantity" required=""><span class="checkmark"></span></label></div>
+  <div class="column-l"><label for="144440" style="font-size: 18px; color: #495057; font-family: ">Buy 3 Bottle + 1 Free Bottle Plus Free Delivery (For 3 Children)) 
+  4 Bottle   </label></div>
+  <div class="column-r"><label for="144440" style="font-size: 18px; color: #495057; font-family: ">₦60,000</label></div></div>
+    
+
+        
+        
+
+                <div class="rowx" style="border-bottom: 1px solid #ccc;padding: 7px 0px; background-color: ; font-weight: bold; " align="left">
+        <div class="column-lx">
+          <label class="radio-container">
+          <input type="radio" name="quantity" value="144441" id="144441" class="quantity" required=""><span class="checkmark"></span></label></div>
+  <div class="column-l"><label for="144441" style="font-size: 18px; color: #495057; font-family: ">Buy 4 Bottle + 2 Free Bottle Plus Free Delivery (For 4 Children) 
+  6 Bottle   </label></div>
+  <div class="column-r"><label for="144441" style="font-size: 18px; color: #495057; font-family: ">₦85,000</label></div></div>
+    
+
+        </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+<!-- for no show of each variation qty text field, 0 select, 1 radio -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-12"><div class="input-group">
+<label class="label">Your Name *</label>
+<input class="input--style-4" type="text" name="name" id="name" value="" required="" placeholder="Your Name *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px"></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <label class="label">Your Phone Number *</label>
+
+  <div class="row">
+    <div class="field-25">
+        <select name="ccode1" class="input--style-4" id="phonecc" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px;" required="">
+<option value="161" selected="">+234 </option>
+                  <option value="1">+93 (Afghanistan)</option>
+                <option value="2">+358-18 (Aland Islands)</option>
+                <option value="3">+355 (Albania)</option>
+                <option value="4">+213 (Algeria)</option>
+                <option value="5">+1-684 (American Samoa)</option>
+                <option value="6">+376 (Andorra)</option>
+                <option value="7">+244 (Angola)</option>
+                <option value="8">+1-264 (Anguilla)</option>
+                <option value="9">+672 (Antarctica)</option>
+                <option value="10">+1-268 (Antigua And Barbuda)</option>
+                <option value="11">+54 (Argentina)</option>
+                <option value="12">+374 (Armenia)</option>
+                <option value="13">+297 (Aruba)</option>
+                <option value="14">+61 (Australia)</option>
+                <option value="15">+43 (Austria)</option>
+                <option value="16">+994 (Azerbaijan)</option>
+                <option value="17">+1-242 (Bahamas The)</option>
+                <option value="18">+973 (Bahrain)</option>
+                <option value="19">+880 (Bangladesh)</option>
+                <option value="20">+1-246 (Barbados)</option>
+                <option value="21">+375 (Belarus)</option>
+                <option value="22">+32 (Belgium)</option>
+                <option value="23">+501 (Belize)</option>
+                <option value="24">+229 (Benin)</option>
+                <option value="25">+1-441 (Bermuda)</option>
+                <option value="26">+975 (Bhutan)</option>
+                <option value="27">+591 (Bolivia)</option>
+                <option value="155">+599 (Bonaire, Sint Eustatius and Saba)</option>
+                <option value="28">+387 (Bosnia and Herzegovina)</option>
+                <option value="29">+267 (Botswana)</option>
+                <option value="30">+0055 (Bouvet Island)</option>
+                <option value="31">+55 (Brazil)</option>
+                <option value="32">+246 (British Indian Ocean Territory)</option>
+                <option value="33">+673 (Brunei)</option>
+                <option value="34">+359 (Bulgaria)</option>
+                <option value="35">+226 (Burkina Faso)</option>
+                <option value="36">+257 (Burundi)</option>
+                <option value="37">+855 (Cambodia)</option>
+                <option value="38">+237 (Cameroon)</option>
+                <option value="39">+1 (Canada)</option>
+                <option value="40">+238 (Cape Verde)</option>
+                <option value="41">+1-345 (Cayman Islands)</option>
+                <option value="42">+236 (Central African Republic)</option>
+                <option value="43">+235 (Chad)</option>
+                <option value="44">+56 (Chile)</option>
+                <option value="45">+86 (China)</option>
+                <option value="46">+61 (Christmas Island)</option>
+                <option value="47">+61 (Cocos (Keeling) Islands)</option>
+                <option value="48">+57 (Colombia)</option>
+                <option value="49">+269 (Comoros)</option>
+                <option value="50">+242 (Congo)</option>
+                <option value="52">+682 (Cook Islands)</option>
+                <option value="53">+506 (Costa Rica)</option>
+                <option value="54">+225 (Cote DIvoire (Ivory Coast))</option>
+                <option value="55">+385 (Croatia)</option>
+                <option value="56">+53 (Cuba)</option>
+                <option value="249">+599 (Curacao)</option>
+                <option value="57">+357 (Cyprus)</option>
+                <option value="58">+420 (Czech Republic)</option>
+                <option value="51">+243 (Democratic Republic of the Congo)</option>
+                <option value="59">+45 (Denmark)</option>
+                <option value="60">+253 (Djibouti)</option>
+                <option value="61">+1-767 (Dominica)</option>
+                <option value="62">+1-809 (Dominican Republic)</option>
+                <option value="63">+670 (East Timor)</option>
+                <option value="64">+593 (Ecuador)</option>
+                <option value="65">+20 (Egypt)</option>
+                <option value="66">+503 (El Salvador)</option>
+                <option value="67">+240 (Equatorial Guinea)</option>
+                <option value="68">+291 (Eritrea)</option>
+                <option value="69">+372 (Estonia)</option>
+                <option value="70">+251 (Ethiopia)</option>
+                <option value="71">+500 (Falkland Islands)</option>
+                <option value="72">+298 (Faroe Islands)</option>
+                <option value="73">+679 (Fiji Islands)</option>
+                <option value="74">+358 (Finland)</option>
+                <option value="75">+33 (France)</option>
+                <option value="76">+594 (French Guiana)</option>
+                <option value="77">+689 (French Polynesia)</option>
+                <option value="78">+262 (French Southern Territories)</option>
+                <option value="79">+241 (Gabon)</option>
+                <option value="80">+220 (Gambia The)</option>
+                <option value="81">+995 (Georgia)</option>
+                <option value="82">+49 (Germany)</option>
+                <option value="83">+233 (Ghana)</option>
+                <option value="84">+350 (Gibraltar)</option>
+                <option value="85">+30 (Greece)</option>
+                <option value="86">+299 (Greenland)</option>
+                <option value="87">+1-473 (Grenada)</option>
+                <option value="88">+590 (Guadeloupe)</option>
+                <option value="89">+1-671 (Guam)</option>
+                <option value="90">+502 (Guatemala)</option>
+                <option value="91">+44-1481 (Guernsey and Alderney)</option>
+                <option value="92">+224 (Guinea)</option>
+                <option value="93">+245 (Guinea-Bissau)</option>
+                <option value="94">+592 (Guyana)</option>
+                <option value="95">+509 (Haiti)</option>
+                <option value="96">+672 (Heard Island and McDonald Islands)</option>
+                <option value="97">+504 (Honduras)</option>
+                <option value="98">+852 (Hong Kong S.A.R.)</option>
+                <option value="99">+36 (Hungary)</option>
+                <option value="100">+354 (Iceland)</option>
+                <option value="101">+91 (India)</option>
+                <option value="102">+62 (Indonesia)</option>
+                <option value="103">+98 (Iran)</option>
+                <option value="104">+964 (Iraq)</option>
+                <option value="105">+353 (Ireland)</option>
+                <option value="106">+972 (Israel)</option>
+                <option value="107">+39 (Italy)</option>
+                <option value="108">+1-876 (Jamaica)</option>
+                <option value="109">+81 (Japan)</option>
+                <option value="110">+44-1534 (Jersey)</option>
+                <option value="111">+962 (Jordan)</option>
+                <option value="112">+7 (Kazakhstan)</option>
+                <option value="113">+254 (Kenya)</option>
+                <option value="114">+686 (Kiribati)</option>
+                <option value="248">+383 (Kosovo)</option>
+                <option value="117">+965 (Kuwait)</option>
+                <option value="118">+996 (Kyrgyzstan)</option>
+                <option value="119">+856 (Laos)</option>
+                <option value="120">+371 (Latvia)</option>
+                <option value="121">+961 (Lebanon)</option>
+                <option value="122">+266 (Lesotho)</option>
+                <option value="123">+231 (Liberia)</option>
+                <option value="124">+218 (Libya)</option>
+                <option value="125">+423 (Liechtenstein)</option>
+                <option value="126">+370 (Lithuania)</option>
+                <option value="127">+352 (Luxembourg)</option>
+                <option value="128">+853 (Macau S.A.R.)</option>
+                <option value="129">+389 (Macedonia)</option>
+                <option value="130">+261 (Madagascar)</option>
+                <option value="131">+265 (Malawi)</option>
+                <option value="132">+60 (Malaysia)</option>
+                <option value="133">+960 (Maldives)</option>
+                <option value="134">+223 (Mali)</option>
+                <option value="135">+356 (Malta)</option>
+                <option value="136">+44-1624 (Man (Isle of))</option>
+                <option value="137">+692 (Marshall Islands)</option>
+                <option value="138">+596 (Martinique)</option>
+                <option value="139">+222 (Mauritania)</option>
+                <option value="140">+230 (Mauritius)</option>
+                <option value="141">+262 (Mayotte)</option>
+                <option value="142">+52 (Mexico)</option>
+                <option value="143">+691 (Micronesia)</option>
+                <option value="144">+373 (Moldova)</option>
+                <option value="145">+377 (Monaco)</option>
+                <option value="146">+976 (Mongolia)</option>
+                <option value="147">+382 (Montenegro)</option>
+                <option value="148">+1-664 (Montserrat)</option>
+                <option value="149">+212 (Morocco)</option>
+                <option value="150">+258 (Mozambique)</option>
+                <option value="151">+95 (Myanmar)</option>
+                <option value="152">+264 (Namibia)</option>
+                <option value="153">+674 (Nauru)</option>
+                <option value="154">+977 (Nepal)</option>
+                <option value="156">+31 (Netherlands)</option>
+                <option value="157">+687 (New Caledonia)</option>
+                <option value="158">+64 (New Zealand)</option>
+                <option value="159">+505 (Nicaragua)</option>
+                <option value="160">+227 (Niger)</option>
+                <option value="161">+234 (Nigeria)</option>
+                <option value="162">+683 (Niue)</option>
+                <option value="163">+672 (Norfolk Island)</option>
+                <option value="115">+850 (North Korea)</option>
+                <option value="164">+1-670 (Northern Mariana Islands)</option>
+                <option value="165">+47 (Norway)</option>
+                <option value="166">+968 (Oman)</option>
+                <option value="167">+92 (Pakistan)</option>
+                <option value="168">+680 (Palau)</option>
+                <option value="169">+970 (Palestinian Territory Occupied)</option>
+                <option value="170">+507 (Panama)</option>
+                <option value="171">+675 (Papua new Guinea)</option>
+                <option value="172">+595 (Paraguay)</option>
+                <option value="173">+51 (Peru)</option>
+                <option value="174">+63 (Philippines)</option>
+                <option value="175">+870 (Pitcairn Island)</option>
+                <option value="176">+48 (Poland)</option>
+                <option value="177">+351 (Portugal)</option>
+                <option value="178">+1-787 (Puerto Rico)</option>
+                <option value="179">+974 (Qatar)</option>
+                <option value="180">+262 (Reunion)</option>
+                <option value="181">+40 (Romania)</option>
+                <option value="182">+7 (Russia)</option>
+                <option value="183">+250 (Rwanda)</option>
+                <option value="184">+290 (Saint Helena)</option>
+                <option value="185">+1-869 (Saint Kitts And Nevis)</option>
+                <option value="186">+1-758 (Saint Lucia)</option>
+                <option value="187">+508 (Saint Pierre and Miquelon)</option>
+                <option value="188">+1-784 (Saint Vincent And The Grenadines)</option>
+                <option value="189">+590 (Saint-Barthelemy)</option>
+                <option value="190">+590 (Saint-Martin (French part))</option>
+                <option value="191">+685 (Samoa)</option>
+                <option value="192">+378 (San Marino)</option>
+                <option value="193">+239 (Sao Tome and Principe)</option>
+                <option value="194">+966 (Saudi Arabia)</option>
+                <option value="195">+221 (Senegal)</option>
+                <option value="196">+381 (Serbia)</option>
+                <option value="197">+248 (Seychelles)</option>
+                <option value="198">+232 (Sierra Leone)</option>
+                <option value="199">+65 (Singapore)</option>
+                <option value="250">+1721 (Sint Maarten (Dutch part))</option>
+                <option value="200">+421 (Slovakia)</option>
+                <option value="201">+386 (Slovenia)</option>
+                <option value="202">+677 (Solomon Islands)</option>
+                <option value="203">+252 (Somalia)</option>
+                <option value="204">+27 (South Africa)</option>
+                <option value="205">+500 (South Georgia)</option>
+                <option value="116">+82 (South Korea)</option>
+                <option value="206">+211 (South Sudan)</option>
+                <option value="207">+34 (Spain)</option>
+                <option value="208">+94 (Sri Lanka)</option>
+                <option value="209">+249 (Sudan)</option>
+                <option value="210">+597 (Suriname)</option>
+                <option value="211">+47 (Svalbard And Jan Mayen Islands)</option>
+                <option value="212">+268 (Swaziland)</option>
+                <option value="213">+46 (Sweden)</option>
+                <option value="214">+41 (Switzerland)</option>
+                <option value="215">+963 (Syria)</option>
+                <option value="216">+886 (Taiwan)</option>
+                <option value="217">+992 (Tajikistan)</option>
+                <option value="218">+255 (Tanzania)</option>
+                <option value="219">+66 (Thailand)</option>
+                <option value="220">+228 (Togo)</option>
+                <option value="221">+690 (Tokelau)</option>
+                <option value="222">+676 (Tonga)</option>
+                <option value="223">+1-868 (Trinidad And Tobago)</option>
+                <option value="224">+216 (Tunisia)</option>
+                <option value="225">+90 (Turkey)</option>
+                <option value="226">+993 (Turkmenistan)</option>
+                <option value="227">+1-649 (Turks And Caicos Islands)</option>
+                <option value="228">+688 (Tuvalu)</option>
+                <option value="229">+256 (Uganda)</option>
+                <option value="230">+380 (Ukraine)</option>
+                <option value="231">+971 (United Arab Emirates)</option>
+                <option value="232">+44 (United Kingdom)</option>
+                <option value="233">+1 (United States)</option>
+                <option value="234">+1 (United States Minor Outlying Islands)</option>
+                <option value="235">+598 (Uruguay)</option>
+                <option value="236">+998 (Uzbekistan)</option>
+                <option value="237">+678 (Vanuatu)</option>
+                <option value="238">+379 (Vatican City State (Holy See))</option>
+                <option value="239">+58 (Venezuela)</option>
+                <option value="240">+84 (Vietnam)</option>
+                <option value="241">+1-284 (Virgin Islands (British))</option>
+                <option value="242">+1-340 (Virgin Islands (US))</option>
+                <option value="243">+681 (Wallis And Futuna Islands)</option>
+                <option value="244">+212 (Western Sahara)</option>
+                <option value="245">+967 (Yemen)</option>
+                <option value="246">+260 (Zambia)</option>
+                <option value="247">+263 (Zimbabwe)</option>
+        </select>
+    </div>
+    <div class="field-75">
+        <input type="number" class="input--style-4" name="phone" onblur="savePartialData()" id="phone" value="" required="" placeholder="Your Phone Number *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px;; width: 100% !important">
+        <span style="color: red; display: none;" id="phone_error"><b>Error: Phone number is not complete</b></span>
+    </div>
+</div>
+
+
+
+<label class="label">Your WhatsApp Number *</label>
+  <div class="row">
+    <div class="field-25">
+        <select name="ccode2" class="input--style-4" id="phonewa" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px;" required="">
+<option value="161" selected="">+234 </option>
+                  <option value="1">+93 (Afghanistan)</option>
+                <option value="2">+358-18 (Aland Islands)</option>
+                <option value="3">+355 (Albania)</option>
+                <option value="4">+213 (Algeria)</option>
+                <option value="5">+1-684 (American Samoa)</option>
+                <option value="6">+376 (Andorra)</option>
+                <option value="7">+244 (Angola)</option>
+                <option value="8">+1-264 (Anguilla)</option>
+                <option value="9">+672 (Antarctica)</option>
+                <option value="10">+1-268 (Antigua And Barbuda)</option>
+                <option value="11">+54 (Argentina)</option>
+                <option value="12">+374 (Armenia)</option>
+                <option value="13">+297 (Aruba)</option>
+                <option value="14">+61 (Australia)</option>
+                <option value="15">+43 (Austria)</option>
+                <option value="16">+994 (Azerbaijan)</option>
+                <option value="17">+1-242 (Bahamas The)</option>
+                <option value="18">+973 (Bahrain)</option>
+                <option value="19">+880 (Bangladesh)</option>
+                <option value="20">+1-246 (Barbados)</option>
+                <option value="21">+375 (Belarus)</option>
+                <option value="22">+32 (Belgium)</option>
+                <option value="23">+501 (Belize)</option>
+                <option value="24">+229 (Benin)</option>
+                <option value="25">+1-441 (Bermuda)</option>
+                <option value="26">+975 (Bhutan)</option>
+                <option value="27">+591 (Bolivia)</option>
+                <option value="155">+599 (Bonaire, Sint Eustatius and Saba)</option>
+                <option value="28">+387 (Bosnia and Herzegovina)</option>
+                <option value="29">+267 (Botswana)</option>
+                <option value="30">+0055 (Bouvet Island)</option>
+                <option value="31">+55 (Brazil)</option>
+                <option value="32">+246 (British Indian Ocean Territory)</option>
+                <option value="33">+673 (Brunei)</option>
+                <option value="34">+359 (Bulgaria)</option>
+                <option value="35">+226 (Burkina Faso)</option>
+                <option value="36">+257 (Burundi)</option>
+                <option value="37">+855 (Cambodia)</option>
+                <option value="38">+237 (Cameroon)</option>
+                <option value="39">+1 (Canada)</option>
+                <option value="40">+238 (Cape Verde)</option>
+                <option value="41">+1-345 (Cayman Islands)</option>
+                <option value="42">+236 (Central African Republic)</option>
+                <option value="43">+235 (Chad)</option>
+                <option value="44">+56 (Chile)</option>
+                <option value="45">+86 (China)</option>
+                <option value="46">+61 (Christmas Island)</option>
+                <option value="47">+61 (Cocos (Keeling) Islands)</option>
+                <option value="48">+57 (Colombia)</option>
+                <option value="49">+269 (Comoros)</option>
+                <option value="50">+242 (Congo)</option>
+                <option value="52">+682 (Cook Islands)</option>
+                <option value="53">+506 (Costa Rica)</option>
+                <option value="54">+225 (Cote DIvoire (Ivory Coast))</option>
+                <option value="55">+385 (Croatia)</option>
+                <option value="56">+53 (Cuba)</option>
+                <option value="249">+599 (Curacao)</option>
+                <option value="57">+357 (Cyprus)</option>
+                <option value="58">+420 (Czech Republic)</option>
+                <option value="51">+243 (Democratic Republic of the Congo)</option>
+                <option value="59">+45 (Denmark)</option>
+                <option value="60">+253 (Djibouti)</option>
+                <option value="61">+1-767 (Dominica)</option>
+                <option value="62">+1-809 (Dominican Republic)</option>
+                <option value="63">+670 (East Timor)</option>
+                <option value="64">+593 (Ecuador)</option>
+                <option value="65">+20 (Egypt)</option>
+                <option value="66">+503 (El Salvador)</option>
+                <option value="67">+240 (Equatorial Guinea)</option>
+                <option value="68">+291 (Eritrea)</option>
+                <option value="69">+372 (Estonia)</option>
+                <option value="70">+251 (Ethiopia)</option>
+                <option value="71">+500 (Falkland Islands)</option>
+                <option value="72">+298 (Faroe Islands)</option>
+                <option value="73">+679 (Fiji Islands)</option>
+                <option value="74">+358 (Finland)</option>
+                <option value="75">+33 (France)</option>
+                <option value="76">+594 (French Guiana)</option>
+                <option value="77">+689 (French Polynesia)</option>
+                <option value="78">+262 (French Southern Territories)</option>
+                <option value="79">+241 (Gabon)</option>
+                <option value="80">+220 (Gambia The)</option>
+                <option value="81">+995 (Georgia)</option>
+                <option value="82">+49 (Germany)</option>
+                <option value="83">+233 (Ghana)</option>
+                <option value="84">+350 (Gibraltar)</option>
+                <option value="85">+30 (Greece)</option>
+                <option value="86">+299 (Greenland)</option>
+                <option value="87">+1-473 (Grenada)</option>
+                <option value="88">+590 (Guadeloupe)</option>
+                <option value="89">+1-671 (Guam)</option>
+                <option value="90">+502 (Guatemala)</option>
+                <option value="91">+44-1481 (Guernsey and Alderney)</option>
+                <option value="92">+224 (Guinea)</option>
+                <option value="93">+245 (Guinea-Bissau)</option>
+                <option value="94">+592 (Guyana)</option>
+                <option value="95">+509 (Haiti)</option>
+                <option value="96">+672 (Heard Island and McDonald Islands)</option>
+                <option value="97">+504 (Honduras)</option>
+                <option value="98">+852 (Hong Kong S.A.R.)</option>
+                <option value="99">+36 (Hungary)</option>
+                <option value="100">+354 (Iceland)</option>
+                <option value="101">+91 (India)</option>
+                <option value="102">+62 (Indonesia)</option>
+                <option value="103">+98 (Iran)</option>
+                <option value="104">+964 (Iraq)</option>
+                <option value="105">+353 (Ireland)</option>
+                <option value="106">+972 (Israel)</option>
+                <option value="107">+39 (Italy)</option>
+                <option value="108">+1-876 (Jamaica)</option>
+                <option value="109">+81 (Japan)</option>
+                <option value="110">+44-1534 (Jersey)</option>
+                <option value="111">+962 (Jordan)</option>
+                <option value="112">+7 (Kazakhstan)</option>
+                <option value="113">+254 (Kenya)</option>
+                <option value="114">+686 (Kiribati)</option>
+                <option value="248">+383 (Kosovo)</option>
+                <option value="117">+965 (Kuwait)</option>
+                <option value="118">+996 (Kyrgyzstan)</option>
+                <option value="119">+856 (Laos)</option>
+                <option value="120">+371 (Latvia)</option>
+                <option value="121">+961 (Lebanon)</option>
+                <option value="122">+266 (Lesotho)</option>
+                <option value="123">+231 (Liberia)</option>
+                <option value="124">+218 (Libya)</option>
+                <option value="125">+423 (Liechtenstein)</option>
+                <option value="126">+370 (Lithuania)</option>
+                <option value="127">+352 (Luxembourg)</option>
+                <option value="128">+853 (Macau S.A.R.)</option>
+                <option value="129">+389 (Macedonia)</option>
+                <option value="130">+261 (Madagascar)</option>
+                <option value="131">+265 (Malawi)</option>
+                <option value="132">+60 (Malaysia)</option>
+                <option value="133">+960 (Maldives)</option>
+                <option value="134">+223 (Mali)</option>
+                <option value="135">+356 (Malta)</option>
+                <option value="136">+44-1624 (Man (Isle of))</option>
+                <option value="137">+692 (Marshall Islands)</option>
+                <option value="138">+596 (Martinique)</option>
+                <option value="139">+222 (Mauritania)</option>
+                <option value="140">+230 (Mauritius)</option>
+                <option value="141">+262 (Mayotte)</option>
+                <option value="142">+52 (Mexico)</option>
+                <option value="143">+691 (Micronesia)</option>
+                <option value="144">+373 (Moldova)</option>
+                <option value="145">+377 (Monaco)</option>
+                <option value="146">+976 (Mongolia)</option>
+                <option value="147">+382 (Montenegro)</option>
+                <option value="148">+1-664 (Montserrat)</option>
+                <option value="149">+212 (Morocco)</option>
+                <option value="150">+258 (Mozambique)</option>
+                <option value="151">+95 (Myanmar)</option>
+                <option value="152">+264 (Namibia)</option>
+                <option value="153">+674 (Nauru)</option>
+                <option value="154">+977 (Nepal)</option>
+                <option value="156">+31 (Netherlands)</option>
+                <option value="157">+687 (New Caledonia)</option>
+                <option value="158">+64 (New Zealand)</option>
+                <option value="159">+505 (Nicaragua)</option>
+                <option value="160">+227 (Niger)</option>
+                <option value="161">+234 (Nigeria)</option>
+                <option value="162">+683 (Niue)</option>
+                <option value="163">+672 (Norfolk Island)</option>
+                <option value="115">+850 (North Korea)</option>
+                <option value="164">+1-670 (Northern Mariana Islands)</option>
+                <option value="165">+47 (Norway)</option>
+                <option value="166">+968 (Oman)</option>
+                <option value="167">+92 (Pakistan)</option>
+                <option value="168">+680 (Palau)</option>
+                <option value="169">+970 (Palestinian Territory Occupied)</option>
+                <option value="170">+507 (Panama)</option>
+                <option value="171">+675 (Papua new Guinea)</option>
+                <option value="172">+595 (Paraguay)</option>
+                <option value="173">+51 (Peru)</option>
+                <option value="174">+63 (Philippines)</option>
+                <option value="175">+870 (Pitcairn Island)</option>
+                <option value="176">+48 (Poland)</option>
+                <option value="177">+351 (Portugal)</option>
+                <option value="178">+1-787 (Puerto Rico)</option>
+                <option value="179">+974 (Qatar)</option>
+                <option value="180">+262 (Reunion)</option>
+                <option value="181">+40 (Romania)</option>
+                <option value="182">+7 (Russia)</option>
+                <option value="183">+250 (Rwanda)</option>
+                <option value="184">+290 (Saint Helena)</option>
+                <option value="185">+1-869 (Saint Kitts And Nevis)</option>
+                <option value="186">+1-758 (Saint Lucia)</option>
+                <option value="187">+508 (Saint Pierre and Miquelon)</option>
+                <option value="188">+1-784 (Saint Vincent And The Grenadines)</option>
+                <option value="189">+590 (Saint-Barthelemy)</option>
+                <option value="190">+590 (Saint-Martin (French part))</option>
+                <option value="191">+685 (Samoa)</option>
+                <option value="192">+378 (San Marino)</option>
+                <option value="193">+239 (Sao Tome and Principe)</option>
+                <option value="194">+966 (Saudi Arabia)</option>
+                <option value="195">+221 (Senegal)</option>
+                <option value="196">+381 (Serbia)</option>
+                <option value="197">+248 (Seychelles)</option>
+                <option value="198">+232 (Sierra Leone)</option>
+                <option value="199">+65 (Singapore)</option>
+                <option value="250">+1721 (Sint Maarten (Dutch part))</option>
+                <option value="200">+421 (Slovakia)</option>
+                <option value="201">+386 (Slovenia)</option>
+                <option value="202">+677 (Solomon Islands)</option>
+                <option value="203">+252 (Somalia)</option>
+                <option value="204">+27 (South Africa)</option>
+                <option value="205">+500 (South Georgia)</option>
+                <option value="116">+82 (South Korea)</option>
+                <option value="206">+211 (South Sudan)</option>
+                <option value="207">+34 (Spain)</option>
+                <option value="208">+94 (Sri Lanka)</option>
+                <option value="209">+249 (Sudan)</option>
+                <option value="210">+597 (Suriname)</option>
+                <option value="211">+47 (Svalbard And Jan Mayen Islands)</option>
+                <option value="212">+268 (Swaziland)</option>
+                <option value="213">+46 (Sweden)</option>
+                <option value="214">+41 (Switzerland)</option>
+                <option value="215">+963 (Syria)</option>
+                <option value="216">+886 (Taiwan)</option>
+                <option value="217">+992 (Tajikistan)</option>
+                <option value="218">+255 (Tanzania)</option>
+                <option value="219">+66 (Thailand)</option>
+                <option value="220">+228 (Togo)</option>
+                <option value="221">+690 (Tokelau)</option>
+                <option value="222">+676 (Tonga)</option>
+                <option value="223">+1-868 (Trinidad And Tobago)</option>
+                <option value="224">+216 (Tunisia)</option>
+                <option value="225">+90 (Turkey)</option>
+                <option value="226">+993 (Turkmenistan)</option>
+                <option value="227">+1-649 (Turks And Caicos Islands)</option>
+                <option value="228">+688 (Tuvalu)</option>
+                <option value="229">+256 (Uganda)</option>
+                <option value="230">+380 (Ukraine)</option>
+                <option value="231">+971 (United Arab Emirates)</option>
+                <option value="232">+44 (United Kingdom)</option>
+                <option value="233">+1 (United States)</option>
+                <option value="234">+1 (United States Minor Outlying Islands)</option>
+                <option value="235">+598 (Uruguay)</option>
+                <option value="236">+998 (Uzbekistan)</option>
+                <option value="237">+678 (Vanuatu)</option>
+                <option value="238">+379 (Vatican City State (Holy See))</option>
+                <option value="239">+58 (Venezuela)</option>
+                <option value="240">+84 (Vietnam)</option>
+                <option value="241">+1-284 (Virgin Islands (British))</option>
+                <option value="242">+1-340 (Virgin Islands (US))</option>
+                <option value="243">+681 (Wallis And Futuna Islands)</option>
+                <option value="244">+212 (Western Sahara)</option>
+                <option value="245">+967 (Yemen)</option>
+                <option value="246">+260 (Zambia)</option>
+                <option value="247">+263 (Zimbabwe)</option>
+        </select>
+    </div>
+    <div class="field-75">
+        <input type="number" class="input--style-4" name="waphone" id="waphone" required="" value="" placeholder="Your WhatsApp Number *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px;; width: 100% !important">
+        <span style="color: red; display: none;" id="waphone_error"><b>Error: WhatsApp number is not complete...</b></span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div>
+<div class="col-12"><div class="input-group">
+<label class="label">Your Email Address *</label>
+<input class="input--style-4" type="email" name="email" value="" placeholder="Your Email Address (for your e-receipt) *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px" required=""></div>
+
+
+
+
+
+
+<div>
+<div class="col-12"><div class="input-group">
+<label class="label">Your Address *</label>
+<input class="input--style-4" type="text" name="address" value="" id="address" required="" placeholder="Your Address *" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px"></div></div></div>
+
+
+
+
+
+
+
+
+
+<label class="label">Your Delivery State *</label>
+<div class="rs-select2 js-select-simple select--no-search-dx">
+<select name="state" id="state" class="myselect select2-hidden-accessible" style="-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;height: 50px;font-size: 18px" required="" tabindex="-1" aria-hidden="true">
+  <option value="" selected="selected">Your Delivery State * </option>
+                <option value="Lagos">Lagos</option>
+                <option value="Abuja">Abuja</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 580px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-container"><span class="select2-selection__rendered" id="select2-state-container" title="Your Delivery State * ">Your Delivery State * </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span><div class="select-dropdown"></div></div>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+ 
+<table style="margin-bottom: -5px; border: 0; border-collapse: collapse;font-size: 18px; color: #495057; width: 100%" cellspacing="20">
+<tbody><tr style=" background-color: transparent; border: none;" id="c-statefeetable"></tr>
+<tr style=" background-color: transparent; border: none;" id="c-statefeetableqty"></tr>
+</tbody><tbody>
+
+</tbody>
+</table>
+
+
+
+
+
+
+<div style="font-size: 18px; display: none;" align="center" id="c-error"><label style="color: #ff0000"><strong> Coupon Code is invalid!</strong></label></div>
+
+<div style="font-size: 18px; display: none;" align="center" id="cc-error"><label style="color: #ff0000"><strong> Please type Coupon Code...</strong></label></div>
+
+<div style="font-size: 18px; display: none;" align="center" id="cc-qty"><label style="color: #ff0000"><strong> Please select product quantity above</strong></label></div>
+
+
+
+
+<table style="margin-bottom: -5px; border-collapse: collapse; font-size: 18px; width: 100%; display: none;" cellspacing="20" id="c-table">
+<tbody>
+</tbody>
+</table>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<!--dup-->
+
+
+
+
+
+
+ 
+
+
+<!--
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="comtxt" style="display: none;">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<div style="margin:auto" align="center">
+
+
+
+
+<div style="font-size: 18px; display: none;" align="center" id="nameopt-error"><label style="color: #ff0000"><strong> Please type your name above</strong></label></div>
+
+<div style="font-size: 18px; display: none;" align="center" id="phoneopt-error"><label style="color: #ff0000"><strong> Please type your phone number above</strong></label></div>
+
+<div style="font-size: 18px; display: none;" align="center" id="addressopt-error"><label style="color: #ff0000"><strong> Please type your address above</strong></label></div>
+
+<div style="font-size: 18px; display: none;" align="center" id="cc-qtyx"><label style="color: #ff0000"><strong> Please select your package above</strong></label></div>
+
+
+
+
+<div style="font-size: 18px; display: none;" align="center" id="var1-error"><label style="color: #ff0000"><strong> Please type quantity for product variation above</strong></label></div>
+
+
+
+<div style="margin-bottom: 10px; font-size: 18px; color: #495057; font-family: " align="center"><strong> </strong></div>
+
+
+
+
+
+
+<div class="p-t-15" align="center">
+                            <button id="sniperbutton" class="btn btn--radius-2 btn--blue" type="submit" style="width: auto;font-size:22px;border-color: #40FF00;color: #FFFFFF;font-weight: bold;-moz-border-radius: 12px;-webkit-border-radius: 12px;border-radius: 12px;font-family: " name="submit">SUMMIT ORDER </button><br>
+        <span style="color: red; display: none;" id="phone_errorx"><h2><b>Error: Phone number above is not complete</b></h2></span>
+</div>
+
+<input type="hidden" name="hpf" id="hpf" value="">
+
+<input type="hidden" name="zq" id="zq" value="4793"><input type="hidden" name="unx" id="unx" value="0"><input type="hidden" name="pid" id="pid" value="21046"><input type="hidden" name="bumppid" id="bumppid" value="0"><input type="hidden" name="cid" id="cid" value="161"><input type="hidden" name="fid" id="fid" value="489d32ddeb4793"><input type="hidden" name="usp" value="0"><input type="hidden" name="grk" value=""><input type="hidden" name="pvar" id="pvar" value=""><input type="hidden" name="addedby" value=""></div>
+
+
+
+
+                        
+                    
+                </div>
+            </div><input type="hidden" name="parent_url" value="https://www.enrymart.com.ng/kids-multivitamin-gummies/"></form>
+        </div>
+    </div>
+    
+
+
+    <!-- Jquery JS-->
+    <script src="./webfontloader.js.download"></script><script src="./jquery.min(2).js.download"></script>
+    <!-- Vendor JS-->
+    
+    <script src="./moment.min.js.download"></script>
+    <script src="./daterangepicker.js.download"></script>
+
+    <!-- Main JS-->
+    <script src="./global.js.download"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="./btn.js.download"></script>
+
+<script type="text/javascript" src="./radioclick.js.download"></script>
+
+<script type="text/javascript" src="./btnfxnew.js.download"></script>
+
+
+<script src="./select2.full.min.js.download"></script>
+  <script src="./4ecc3dbb0b.js.download"></script>
+<!-- Country Selection -->
+<script>
+    $(document).ready(function() {
+        $('#country').change(function() {
+            var selectedCountry = $(this).val();
+            $('#phonecc').val(selectedCountry);
+            $('#phonewa').val(selectedCountry);
+        });
+    });
+    </script>
+    
+    <!-- Product Bump Checkbox -->
+    <script>
+    $(document).ready(function() {
+        $("#productidbump").click(function() {
+            if($(this).is(":checked")) {
+                $('.bumpquantity').attr('required', 'required');
+                $("#bumpqty").show();
+            } else {
+                $('.bumpquantity').removeAttr('required');
+                $("#bumpqty").hide();
+            }
+        });
+    });
+    </script>
+    
+    <!-- Form Submission to Google Spreadsheet -->
+    <script>
+    $(document).ready(function() {
+        $("#order_form").submit(function(event) {
+            
+            event.preventDefault();
+            const submitButton = $("#sniperbutton");
+            
+            // Basic validation
+            const name = $("#name").val().trim();
+            const phone = $("#phone").val().trim();
+            const waphone = $("#waphone").val().trim();
+            const address = $("#address").val().trim();
+            const state = $("#state").val().trim();
+            const package = $("#selectwrap").val().trim();
+            const cc = $("#coupon").val().trim();
+            const qty2 = $("input[name='quantity']:checked").val();
+            const hfcoupon = $("#hfcoupon").val().trim();
+            const storeid = $("#zq").val().trim();
+            const delivery_fee = $("#delivery_fee").val().trim();
+            const productid = $("#pid").val().trim();
+            const pvar = $("#pvar").val().trim();
+            const fid = $("#fid").val().trim();
+            const bumppid = $("#bumppid").val().trim();
+            const unx = $("#unx").val().trim();
+            const cid = $("#cid").val().trim();
+            const countryID = $("#country").val().trim();
+            const bumpquantity = $(".bumpquantity").val().trim();
+    
+            // Validation
+            if (!name) {
+                $("#nameopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!phone || phone.length < 7) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                $("#phone_error").show().fadeOut(5000);
+                return;
+            }
+            if (!waphone) {
+                $("#phoneopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!address) {
+                $("#addressopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!state) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (!package) {
+                $("#packageopt-error").show().fadeOut(5000);
+                return;
+            }
+            if (cc == "") {
+                $("#cc-error").show().fadeOut(5000);
+                $("#coupon").focus();
+                return;
+            }
+            if (!qty2) {
+                $("#cc-qty").show().fadeOut(5000);
+                $(".quantity").focus();
+                return;
+            }
+    
+            // Update button state
+            submitButton.prop("disabled", true).css("opacity", "0.6").html("Submitting Your Order...");
+    
+            // Coupon validation via AJAX
+            $.post("ajaxDataCoupon.php", { 
+                cc: cc, 
+                qty2: qty2, 
+                hfcoupon: hfcoupon, 
+                storeid: storeid, 
+                delivery_fee: delivery_fee 
+            }, function(result) {
+                if(result == 0) {
+                    $("#coupon").val('');
+                    $("#c-error").show().fadeOut(5000);
+                    submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                    return;
+                } else {
+                    $("#c-table").show().fadeIn(3000);
+                    $('#c-table').append(result);
+    
+                    // Submit to Google Spreadsheet
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbyx_7ER59_I4sq5sERT-LKht_NpXJdrAMnNnZgXDxk4zn5rNl6zkRMEK0Si47ZkrsBsXA/exec";
+                    const formData = {
+                        name: name,
+                        phone: phone,
+                        waphone: waphone,
+                        address: address,
+                        state: state,
+                        package: $("#selectwrap option:selected").text().trim(),
+                        country: countryID
+                    };
+    
+                    fetch(scriptURL, {
+                        method: "POST",
+                        body: new URLSearchParams(formData)
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = './success.html';
+                        } else {
+                            alert("Submission failed. Try again.");
+                            submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Submission error:", error.message);
+                        alert("Something went wrong!");
+                        submitButton.prop("disabled", false).css("opacity", "1").html("Place My Order");
+                    });
+                }
+            });
+        });
+    });
+    </script>
+    
+    <!-- State Selection AJAX -->
+    <script>
+$(document).ready(function() {
+  // 🔹 Style and enable #state
+  const state = $('#state');
+  state.prop('disabled', false);
+  state.css({
+    'z-index': '99999',
+    'position': 'relative'
+  });
+  if ($.fn.select2) {
+    state.select2();
+  }
+
+  console.log('✅ Script ran successfully inside formframe.html');
+
+  // 🔹 When #state changes, run the AJAX call
+  state.on('change', function() {
+    const selectedState = $(this).val();
+    const storeid = $("#zq").val();
+    const unx = $("#unx").val();
+
+    if (selectedState) {
+      $.ajax({
+        type: 'POST',
+        url: 'states_delfee.php',
+        data: {
+          state: selectedState,
+          storeid: storeid,
+          unx: unx
+        },
+        success: function(html) {
+          $('#c-statefeetable').html(html);
+        },
+        error: function(xhr, status, error) {
+          console.error('State AJAX error:', error);
+        }
+      });
+    }
+  });
+});
+</script>
+
+    
+    <!-- Quantity Selection AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#selectwrap').on('change', function(){
+            var quantity = $(this).val();
+            var storeid = $("#zq").val();
+            var delivery_fee = $("#delivery_fee").val();
+            var unx = $("#unx").val();
+            if(quantity){
+                $.ajax({
+                    type:'POST',
+                    url:'states_delfeeqty.php',
+                    data: {quantity: quantity, storeid:storeid, delivery_fee: delivery_fee, unx: unx},
+                    success:function(html){
+                        $('#c-statefeetableqty').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to State AJAX -->
+<script>
+    $(document).ready(function(){
+        // Check for duplicate state elements
+        if ($('#state').length > 1) {
+            console.warn('Multiple #state elements found:', $('#state').length);
+            // Remove duplicate state elements, keeping the first one
+            $('#state').slice(1).remove();
+        }
+    
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            
+            // Clear existing state options and ensure dropdown is enabled
+            $('#state').html('<option value="">Loading states...</option>').prop('disabled', false);
+            
+            if(countryID){
+                $.ajax({
+                    type: 'POST',
+                    url: 'formframestates.php',
+                    data: 'countryid=' + countryID,
+                    success: function(html){
+                        // Update state dropdown with new options
+                        $('#state').html(html).prop('disabled', false);
+                    console.log('State dropdown updated with options for countryID:', countryID);
+                },
+                    error: function(xhr, status, error) {
+                        console.error('Country states AJAX error:', error);
+                        $('#state').html('<option value="">Error loading states</option>').prop('disabled', false);
+                    }
+                }); 
+            } else {
+                $('#state').html('<option value="">Select country first</option>').prop('disabled', false);
+            }
+        });
+    });
+    </script>
+    
+    
+    <!-- Country to Quantity AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#selectwrap').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity AJAX error:', error);
+                    }
+                }); 
+            } else {
+                $('#selectwrap').html('<option value="">Select Quantity</option>');
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Quantity Radio AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#pid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty2.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#qtyradio').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity 2 AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Bump Quantity Radio AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            var pvar = $("#pvar").val();
+            var fid = $("#fid").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqty3.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid, pvar: pvar, fid: fid},
+                    success:function(html){
+                        $('#bumpqtyradio').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Quantity 3 AJAX error:', error);
+                    }
+                }); 
+            }
+        });
+    });
+    </script>
+    
+    <!-- Country to Bump Quantity AJAX -->
+    <script>
+    $(document).ready(function(){
+        $('#country').on('change', function(){
+            var countryID = $(this).val();
+            var productid = $("#bumppid").val();
+            var storeid = $("#zq").val();
+            if(countryID){
+                $.ajax({
+                    type:'POST',
+                    url:'formframeqtybump.php',
+                    data: {countryid: countryID, productid: productid, storeid: storeid},
+                    success:function(html){
+                        $('.bumpquantity').html(html); 
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Bump quantity AJAX error:', error);
+                    }
+                }); 
+            } else {
+                $('.bumpquantity').html('<option value="">Select Quantity</option>');
+            }
+        });
+    });
+    </script>
+    
+    <!-- iFrame Resizer -->
+    <script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
+    
+    <!-- Parent URL Handler -->
+    <script>
+    window.addEventListener("message", function(event) {
+        if (event.data && event.data.parentUrl) {
+            var parentUrl = event.data.parentUrl;
+            var hiddenField = document.createElement("input");
+            hiddenField.type = "hidden";
+            hiddenField.name = "parent_url";
+            hiddenField.value = parentUrl;
+            var form = document.getElementById("order_form");
+            form.appendChild(hiddenField);
+        }
+    });
+    </script>
+    
+    <!-- iFrame Height Adjustment 
+    <script>
+    function sendHeight() {
+        var height = document.body.scrollHeight;
+        window.parent.postMessage({ iframeHeight: height }, "*");
+    }
+    window.onload = sendHeight;
+    window.addEventListener("resize", sendHeight);
+    </script>
+
+-->
+
+
+</div></div><div style="clear: both; display: block; height: 0px;"></div>
+
+<script>
+    $(document).ready(function(){
+      $('#state').css('z-index', '99999').css('position', 'relative');
+      console.log("State dropdown style applied inside iframe");
+    });
+    </script>
+    
+    
+</body><fatkun-drop-panel><template shadowrootmode="open">
+<div id="fatkun-drop-area" class="fatkun-drop-area">
+    <div id="fatkun-drop-panel-close-btn">×</div>
+    <div class="fatkun-drop-area-content">
+        <div class="fatkun-left-panel">
+            <div class="fatkun-drop-area-item" folder-id="">
+                <div>
+                    <div class="icon"><div class="fake-svg"></div></div>
+                    <div class="title">Drag and drop</div>
+                    <div class="description">The image dropped here will be downloaded by Fatkun</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template></fatkun-drop-panel></html>
