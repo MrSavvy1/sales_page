@@ -239,7 +239,7 @@ src="https://www.facebook.com/tr?id=841373331244415&ev=PageView&noscript=1"
 									<div class="elementor-button-wrapper">
 					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://wa.me/2349022154322?text=Hi%20Saviour%2C%20I%27ve%20made%20payment%20of%20%E2%82%A65%2C000%20for%20the%20Smartphone%20Video%20Editing%20Course.%0A%0AFull%20Name%3A%20%0APayment%20Proof%3A%20%5BPlease%20Attach%20Screenshot%5D">
 						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">SUBMIT PROOF OF PAYMENT</span>
+									<span id="signupButton" class="elementor-button-text">SUBMIT PROOF OF PAYMENT</span>
 					</span>
 					</a>
 				</div>
@@ -277,6 +277,7 @@ src="https://www.facebook.com/tr?id=841373331244415&ev=PageView&noscript=1"
 
 
 <a aria-label="Scroll to the top of the page" href="https://jimiwest.com/bank-transfer/#" id="scroll-top" class="scroll-top-right"><i class=" fa fa-angle-up" aria-hidden="true" role="img"></i></a>
+
 
 
 
@@ -337,6 +338,12 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 </script>
 <script src="./Bank Transfer – Jimiwest_files/frontend.min.js.download" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
 <script src="./Bank Transfer – Jimiwest_files/social.js.download" id="oss-social-share-script-js"></script>
-
+<script>
+document.getElementById('signupButton').addEventListener('click', function() {
+  fbq('trackCustom', 'ButtonClick', {
+    button_name: 'Sign Up'
+  });
+});
+</script>
 
 </body></html>
