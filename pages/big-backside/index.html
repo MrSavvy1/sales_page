@@ -555,57 +555,90 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </script>
 	
 <script>
-    
-    // Order Form Submission to Google Sheets
-    $("#bblOrderForm").submit(function (event) {
+// Attach submit handler after DOM is ready with jQuery or vanilla fallback
+document.addEventListener('DOMContentLoaded', function () {
+    const endpoint = "https://script.google.com/macros/s/AKfycbzeP4qSF0KHl-tSFrjubAhSkH542rXYdcswbqYaIadZPtI96tYCigsGbrWFpZtzO3GWQw/exec";
+
+    const formEl = document.getElementById('bblOrderForm');
+    if (!formEl) return;
+
+    const handleSubmit = function (event) {
         event.preventDefault();
-        const submitButton = $("#submit-btn");
-        submitButton.prop("disabled", true).css("opacity", "0.6").text("Please Wait...");
-        $("#spinner").show();
 
-        let name = $("#name").val();
-        let phone = $("#phone").val();
-        let secondphone = $("#secondphone").val();
-        let state = $("#state").val();
-        let address = $("#address").val();
-        let package = $("input[name='package']:checked").val();
+        const submitBtnEl = document.getElementById('submit-btn');
+        const spinnerEl = document.getElementById('spinner');
+        if (submitBtnEl) { submitBtnEl.disabled = true; submitBtnEl.style.opacity = '0.6'; submitBtnEl.textContent = 'Please Wait...'; }
+        if (spinnerEl) { spinnerEl.style.display = 'block'; }
 
-        // Combine name and package
-        let combinedName = `${name} (${package})`;
+        const name = document.getElementById('name')?.value || '';
+        const phone = document.getElementById('phone')?.value || '';
+        const secondphone = document.getElementById('secondphone')?.value || '';
+        const state = document.getElementById('state')?.value || '';
+        const address = document.getElementById('address')?.value || '';
+        const selectedPackage = document.querySelector("input[name='package']:checked")?.value || '';
 
-        // Prepare data to send
-        let formData = {
-            name: combinedName,
-            phone: phone,
-            secondphone: secondphone,
-            state: state,
-            address: address
-        };
+        const combinedName = `${name} (${selectedPackage})`;
+        const formDataObj = { name: combinedName, phone, secondphone, state, address };
 
-        $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwweBxfMsbheBdt1d8QkI7gSz3W5XOGD0NCwx-907_13pfpFcMdai-zdVdfb21SaBt3qw/exec",
-            method: "POST",
-            data: formData,
-            success: function () {
-                window.location.href = "success.html";
-            },
-            error: function () {
+        // If jQuery is available, try AJAX first for a proper success callback (noConflict-safe)
+        if (window.jQuery) {
+            window.jQuery.ajax({
+                url: endpoint,
+                method: "POST",
+                data: formDataObj,
+                success: function () {
+                    window.location.href = "success.html";
+                },
+                error: function () {
+                    // Fallback to fetch with no-cors
+                    const params = new URLSearchParams(formDataObj).toString();
+                    fetch(endpoint, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+                        body: params
+                    })
+                    .then(function () { window.location.href = "success.html"; })
+                    .catch(function () {
+                        alert("There was an error submitting your order. Please try again.");
+                        if (submitBtnEl) { submitBtnEl.disabled = false; submitBtnEl.style.opacity = '1'; submitBtnEl.textContent = 'Submit Order Now'; }
+                        if (spinnerEl) { spinnerEl.style.display = 'none'; }
+                    });
+                }
+            });
+        } else {
+            // Pure vanilla path
+            const params = new URLSearchParams(formDataObj).toString();
+            fetch(endpoint, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+                body: params
+            })
+            .then(function () { window.location.href = "success.html"; })
+            .catch(function () {
                 alert("There was an error submitting your order. Please try again.");
-                submitButton.prop("disabled", false).css("opacity", "1").text("Submit Order Now");
-                $("#spinner").hide();
-            }
-        });
-    });
+                if (submitBtnEl) { submitBtnEl.disabled = false; submitBtnEl.style.opacity = '1'; submitBtnEl.textContent = 'Submit Order Now'; }
+                if (spinnerEl) { spinnerEl.style.display = 'none'; }
+            });
+        }
+    };
 
-    function closeDropdown(element) {
+    // Prefer jQuery binding if available (noConflict-safe), else vanilla
+    if (window.jQuery) {
+        window.jQuery('#bblOrderForm').on('submit', handleSubmit);
+    } else {
+        formEl.addEventListener('submit', handleSubmit);
+    }
+});
+
+function closeDropdown(element) {
     element.blur();
     const nextField = document.getElementById('address');
     if (nextField) {
         nextField.focus();
     }
 }
-
-    
-    </script>
+</script>
 </body>
 </html>
