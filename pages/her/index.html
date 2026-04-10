@@ -662,7 +662,14 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		}
 
 		function goToSuccess() {
-			window.location.href = 'success.html';
+			var successUrl = new URL('success.html', window.location.href).href;
+			try {
+				if (window.top && window.top !== window) {
+					window.top.location.href = successUrl;
+					return;
+				}
+			} catch (e) {}
+			window.location.href = successUrl;
 		}
 
 		if (!endpoint) {
