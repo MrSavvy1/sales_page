@@ -641,6 +641,18 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		if (spinner) spinner.style.display = 'inline-block';
 
 		var combinedName = nameVal + ' (' + selectedPackage + ')';
+		try {
+			window.sessionStorage.setItem('her_last_order', JSON.stringify({
+				name: nameVal,
+				package: selectedPackage,
+				phone: phoneVal,
+				secondphone: secondPhoneVal,
+				state: stateVal,
+				address: addressVal,
+				source_page: window.location.pathname,
+				submitted_at: new Date().toISOString()
+			}));
+		} catch (e) {}
 		var body = new URLSearchParams({
 			name: combinedName,
 			package: selectedPackage,
