@@ -152,6 +152,143 @@ justify-content: center; /* Horizontal center */
     background-color: #d62828;
 }
 
+.combo-upsell-card {
+    margin: 18px auto 12px;
+    padding: 22px 16px;
+    border-radius: 18px;
+    background: linear-gradient(155deg, #fff6fb 0%, #ffe5f1 55%, #ffd8ea 100%);
+    border: 2px solid #ff4f88;
+    box-shadow: 0 14px 30px rgba(225, 29, 72, 0.25);
+    text-align: center;
+    max-width: 760px;
+}
+
+.combo-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #e11d48, #f43f5e);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 7px 14px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.combo-upsell-card h2 {
+    font-size: clamp(1.3rem, 3.8vw, 2rem);
+    color: #7a1037;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.combo-subtext {
+    font-size: 1.05rem;
+    color: #4b2d3b;
+    margin: 0 0 16px;
+}
+
+.combo-product-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 14px;
+}
+
+.combo-product-card {
+    background: #ffffff;
+    border: 1px solid #ffc1d8;
+    border-radius: 12px;
+    padding: 12px 10px;
+    color: #3b0a23;
+    font-weight: 700;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.combo-plus {
+    font-size: 1.8rem;
+    color: #e11d48;
+    font-weight: 800;
+}
+
+.combo-list {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+    text-align: left;
+}
+
+.combo-list li {
+    background: #fff;
+    border-left: 4px solid #f43f5e;
+    border-radius: 8px;
+    padding: 9px 10px;
+    margin-bottom: 7px;
+    color: #2f2f35;
+    font-weight: 600;
+}
+
+.combo-benefit {
+    font-size: 1rem;
+    color: #831843;
+    font-weight: 800;
+    margin: 10px 0 12px;
+}
+
+.combo-price-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 14px;
+    background: #fff;
+    border: 2px dashed #e11d48;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 0 auto;
+}
+
+.combo-price-label {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 700;
+}
+
+.combo-old-price {
+    font-size: 1rem;
+    color: #71717a;
+    text-decoration: line-through;
+}
+
+.combo-price {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    color: #e11d48;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.combo-note {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #7e22ce;
+    font-weight: 800;
+}
+
+@media (max-width: 640px) {
+    .combo-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .combo-plus {
+        line-height: 1;
+    }
+}
+
 
 </style>
 <style id="astra-theme-css-inline-css">
@@ -293,7 +430,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 				<div class="elementor-element elementor-element-d3ba817 elementor-widget elementor-widget-image" data-id="d3ba817" data-element_type="widget" data-widget_type="image.default">
 															<img fetchpriority="high" decoding="async" width="1024" height="930" src="images/bummmmm-1024x930.jpeg" class="attachment-large size-large wp-image-119" alt="" srcset="images/bummmmm-1024x930.jpeg 1024w, images/bummmmm-300x273.jpeg 300w, images/bummmmm-768x698.jpeg 768w, images/bummmmm.jpeg 1080w" sizes="(max-width: 1024px) 100vw, 1024px">															</div>
 				<div class="elementor-element elementor-element-7c46a75e elementor-widget elementor-widget-heading" data-id="7c46a75e" data-element_type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">We all want a more curvy shape, fuller hips and a rounder bum-bum that will boost our confidence and get us more quality men</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default">We all want a more curvy shape, fuller hips and a rounder bum-bum that will boost our confidence and enhance your overall appearance</h2>				</div>
 				<div class="elementor-element elementor-element-46c036c5 elementor-widget elementor-widget-heading" data-id="46c036c5" data-element_type="widget" data-widget_type="heading.default">
 					<h2 class="elementor-heading-title elementor-size-default">We all need our clothes to fit us well and bring out our curves that will make even fellow women jealous</h2>				</div>
 				<div class="elementor-element elementor-element-1e295aa9 elementor-widget elementor-widget-heading" data-id="1e295aa9" data-element_type="widget" data-widget_type="heading.default">
@@ -347,8 +484,30 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 				</span>
 				</h3>
 						</div>
-				<div class="elementor-element elementor-element-158ea512 elementor-widget elementor-widget-heading" data-id="158ea512" data-element_type="widget" data-widget_type="heading.default">
-					<h2 class="elementor-heading-title elementor-size-default">First 11 Customers Get Zahidi Vital Plus Hip Capsules worth 18500 For Free</h2>				</div>
+                <div class="elementor-element elementor-element-158ea512 elementor-widget elementor-widget-heading" data-id="158ea512" data-element_type="widget" data-widget_type="heading.default">
+                    <div class="combo-upsell-card">
+                        <span class="combo-badge">LIMITED POWER COMBO</span>
+                        <h2 class="elementor-heading-title elementor-size-default">Double Your Results with This Power Combo 🍑🔥</h2>
+                        <p class="combo-subtext">Why settle for slow progress when you can boost your transformation?</p>
+                        <div class="combo-product-grid">
+                            <div class="combo-product-card">Booty Gummies<br>Natural Curve Support</div>
+                            <div class="combo-plus">+</div>
+                            <div class="combo-product-card">Zahidi Vital Plus<br>Targeted Hip &amp; Shape Boost</div>
+                        </div>
+                        <ul class="combo-list">
+                            <li>✔ Two formulas working together for faster visible results</li>
+                            <li>✔ Better shape definition and fuller curve support</li>
+                            <li>✔ Best value compared to buying separately</li>
+                        </ul>
+                        <p class="combo-benefit">💥 Two powerful formulas working together for faster, more noticeable results</p>
+                        <div class="combo-price-wrap">
+                            <span class="combo-price-label">All for just</span>
+                            <span class="combo-old-price">₦43,500</span>
+                            <span class="combo-price">₦30,000</span>
+                        </div>
+                        <p class="combo-note">Select “Power Combo” below to claim this deal now.</p>
+                    </div>
+                </div>
 				<div class="elementor-element elementor-element-6c575ca8 elementor-widget elementor-widget-image" data-id="6c575ca8" data-element_type="widget" data-widget_type="image.default">
 															<img loading="lazy" decoding="async" width="676" height="1024" src="images/ZAHIDI-676x1024.jpg" class="attachment-large size-large wp-image-135" alt="" srcset="images/ZAHIDI-676x1024.jpg 676w, images/ZAHIDI-198x300.jpg 198w, images/ZAHIDI-768x1163.jpg 768w, images/ZAHIDI.jpg 1014w" sizes="(max-width: 676px) 100vw, 676px">															</div>
 				<div class="elementor-element elementor-element-6dfdd9ac elementor-widget elementor-widget-heading" data-id="6dfdd9ac" data-element_type="widget" data-widget_type="heading.default">
@@ -357,17 +516,37 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <form id="bblOrderForm" method="post" action="https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI5iCXYmnDNFycMtK1rviqMDc5exXTXjh43fqO2YuUJ1LVrbzB35kzrw/exec" onsubmit="return handleOrderSubmit(event)">
     <div class="radio-button-segment">
         <h3>Select Your Package</h3>
+        
         <label>
-            <input type="radio" name="package" value="1 Bottle (25,000 Naira)" required>
+            <input type="radio" name="package" value="1 Bottle (25,000 Naira)">
             1 Bottle - 25,000 Naira
         </label><br>
+
+        <label>
+            <input type="radio" name="package" value="Power Combo (30,000 Naira)" required>
+            1 Booty Gummies + 1 Zahidi Vital Plus Pack  - 30,000 Naira (Power Combo)*
+        </label><br>
+
         <label>
             <input type="radio" name="package" value="2 Bottles (45,000 Naira)">
             2 Bottles - 45,000 Naira **(Recommended)
         </label><br>
+
+        <label>
+            <input type="radio" name="package" value="Power Combo (30,000 Naira)" required>
+            2 Booty Gummies + 2 Zahidi Vital Plus Pack  - 52,000 Naira (Power Combo)**
+        </label><br>
+
         <label>
             <input type="radio" name="package" value="3 Bottles (65,000 Naira)">
             3 Bottles - 65,000 Naira **(Complete Dosage plus 1 free gift)
+        </label>
+
+        <br>
+
+        <label>
+            <input type="radio" name="package" value="Power Combo (30,000 Naira)" required>
+            3 Booty Gummies + 3 Zahidi Vital Plus Pack  - 70,000 Naira (Power Combo)***
         </label>
     </div>
     <div class="caution-section" style="background-color: #ffcccb; padding: 15px; border: 5px solid #e63946; border-radius: 5px; margin: 20px 0; text-align: center;">
