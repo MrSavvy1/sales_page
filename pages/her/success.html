@@ -24,120 +24,28 @@
     }
 
   </style>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1229416282508721');
-fbq('track', 'PageView');
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  // Initialize both Pixels
+  fbq('init', '1229416282508721');
+  fbq('init', '652009984376432');
+
+  // Fire PageView for both
+  fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1229416282508721&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '652009984376432');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=652009984376432&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<script>
-(function () {
-  var PIXEL_ID = '1229416282508721';
-  var ACCESS_TOKEN = window.FB_CAPI_ACCESS_TOKEN || 'EAAQZAMde34oQBRHigUCei20DZAYNoIXdyO5rtnLWSMYIBFgGG0yIPcH3d8zjAoq7QJczN2DBr4BFt36t1TGUmP311XaZAhZAwFWDaOrJWmNkLPXKNxg5OM76MJbG7IO98LWTwIBJqlugDrvUZB29Y9G2B8i6iYKx20yGLrZCKme34U2DKZBSydzgcjZBjusnnAZDZD';
 
-  function getStoredOrder() {
-    try {
-      var raw = window.sessionStorage.getItem('her_last_order');
-      return raw ? JSON.parse(raw) : {};
-    } catch (e) {
-      return {};
-    }
-  }
-
-  function extractValue(packageText) {
-    var match = String(packageText || '').match(/([0-9][0-9,]*)/);
-    return match ? Number(match[1].replace(/,/g, '')) : 0;
-  }
-
-  function makeEventId() {
-    return 'her_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-  }
-
-  function sendCapi() {
-    if (!ACCESS_TOKEN || ACCESS_TOKEN === 'EAAQZAMde34oQBRHigUCei20DZAYNoIXdyO5rtnLWSMYIBFgGG0yIPcH3d8zjAoq7QJczN2DBr4BFt36t1TGUmP311XaZAhZAwFWDaOrJWmNkLPXKNxg5OM76MJbG7IO98LWTwIBJqlugDrvUZB29Y9G2B8i6iYKx20yGLrZCKme34U2DKZBSydzgcjZBjusnnAZDZD') return;
-
-    var order = getStoredOrder();
-    var eventId = makeEventId();
-    var purchaseValue = extractValue(order.package);
-    var payload = {
-      data: [{
-        event_name: 'Purchase',
-        event_time: Math.floor(Date.now() / 1000),
-        event_id: eventId,
-        action_source: 'website',
-        event_source_url: window.location.href,
-        user_data: {
-          client_user_agent: navigator.userAgent
-        },
-        custom_data: {
-          currency: 'NGN',
-          value: purchaseValue,
-          content_name: order.package || 'Order Success'
-        }
-      }]
-    };
-
-    try {
-      if (window.fbq) {
-        window.fbq('track', 'Purchase', {
-          currency: 'NGN',
-          value: purchaseValue,
-          content_name: order.package || 'Order Success'
-        }, { eventID: eventId });
-      }
-    } catch (e) {}
-
-    var endpoint = 'https://graph.facebook.com/v18.0/' + PIXEL_ID + '/events?access_token=' + encodeURIComponent(ACCESS_TOKEN);
-    var payloadBlob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-
-    if (navigator.sendBeacon && navigator.sendBeacon(endpoint, payloadBlob)) {
-      return;
-    }
-
-    fetch(endpoint, {
-      method: 'POST',
-      body: JSON.stringify(payload),
-      mode: 'no-cors',
-      credentials: 'omit',
-      keepalive: true
-    }).catch(function () {});
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', sendCapi);
-  } else {
-    sendCapi();
-  }
-})();
-</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1229416282508721&ev=PageView&noscript=1"/>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=652009984376432&ev=PageView&noscript=1"/>
+</noscript>
 </head>
 <body>
   <div class="container">
