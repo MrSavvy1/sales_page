@@ -468,7 +468,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       setFieldErrors({});
       // Redirect to success page after 1.5 seconds
       setTimeout(() => {
-        window.location.href = "/pages/success.html";
+        window.location.href = "/success.html";
       }, 1500);
     };
 
