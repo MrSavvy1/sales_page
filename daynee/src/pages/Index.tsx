@@ -354,9 +354,9 @@ const ORDER_PACKAGES = [
   { value: "1 Bottle (25,000 Naira)", label: "1 Bottle - 25,000 Naira" },
   { value: "1 Bottle + Zahidi Combo (30,000 Naira)", label: "1 Bottle + 1 Zahidi Vital Plus Pack — 30,000 Naira (Power Combo) ⭐" },
   { value: "2 Bottles (45,000 Naira)", label: "2 Bottles - 45,000 Naira  (Recommended)" },
-  { value: "2 Bottles + Zahidi Combo (55,000 Naira)", label: "2 Bottles + 2 Zahidi Vital Plus Pack — 52,000 Naira (Power Combo) ⭐⭐" },
-  { value: "3 Bottles (65,000 Naira)", label: "3 Bottles - 65,000 Naira (Complete Dosage + 1 free gift)" },
-  { value: "3 Bottles + Zahidi Combo (70,000 Naira)", label: "3 Bottles + 3 Zahidi Vital Plus Pack — 70,000 Naira (Power Combo) ⭐⭐⭐" },
+  { value: "2 Bottles + 2 Zahidi Pack Combo (55,000 Naira)", label: "2 Bottles + 2 Zahidi Vital Plus Pack — 55,000 Naira (Power Combo) ⭐⭐" },
+  { value: "3 Bottles (65,000 Naira)", label: "3 Bottles - 65,000 Naira (Complete Dosage )" },
+  { value: "3 Bottles + 3 Zahidi Pack Combo (70,000 Naira)", label: "3 Bottles + 3 Zahidi Vital Plus Pack — 70,000 Naira (Complete Dosage + Power Combo) ⭐⭐⭐" },
 ];
 
 const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI5iCXYmnDNFycMtK1rviqMDc5exXTXjh43fqO2YuUJ1LVrbzB35kzrw/exec";
@@ -364,6 +364,8 @@ const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI
 const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
   const [pkg, setPkg] = useState(defaultPack || ORDER_PACKAGES[1].value);
   const [submitting, setSubmitting] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [showAgreementError, setShowAgreementError] = useState(false);
 
   useEffect(() => {
     if (defaultPack) setPkg(defaultPack);
@@ -371,6 +373,14 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    if (!agreedToTerms) {
+      setShowAgreementError(true);
+      toast({ title: "Please check the agreement box", variant: "destructive" });
+      return;
+    }
+    
+    setShowAgreementError(false);
     const form = e.currentTarget;
     const fd = new FormData(form);
     const name = String(fd.get("name") || "").trim();
@@ -458,11 +468,11 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       </div>
 
       <div
-        className="rounded-xl border-2 border-destructive/60 bg-destructive/10 p-4 text-center"
+        className="rounded-xl border-2 border-destructive/60 bg-destructive/15 p-6 text-center shadow-lg"
         role="alert"
       >
-        <div className="font-display font-bold text-destructive mb-1">⚠️ Important Notice</div>
-        <p className="text-sm text-foreground/90">
+        <div className="font-display font-extrabold text-destructive mb-2 text-2xl">⚠️ IMPORTANT NOTICE</div>
+        <p className="text-base text-foreground/95 font-semibold leading-relaxed">
           Please do not fill out this form if you are not ready to receive this product within 1–2 days.
           A lot is spent to deliver this product for free to you. Thank you for your understanding.
         </p>
@@ -470,17 +480,17 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
 
       <div className="space-y-2">
         <Label htmlFor="name">Full Name</Label>
-        <Input id="name" name="name" required />
+        <Input id="name" name="name" type="text" pattern="[a-zA-Z\s]*" required />
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" name="phone" type="tel" required />
+          <Input id="phone" name="phone" type="tel" pattern="[0-9]*" inputMode="numeric" required />
         </div>
         <div className="space-y-2">
           <Label htmlFor="secondphone">Second Phone (WhatsApp)</Label>
-          <Input id="secondphone" name="secondphone" type="tel" required />
+          <Input id="secondphone" name="secondphone" type="tel" pattern="[0-9]*" inputMode="numeric" required />
         </div>
       </div>
 
@@ -505,10 +515,35 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
         <Textarea id="address" name="address" required />
       </div>
 
+      <div className={`flex items-start gap-3 p-3 rounded-lg border-2 transition-colors ${
+        showAgreementError 
+          ? "bg-destructive/10 border-destructive/60" 
+          : "bg-primary/5 border-primary/20"
+      }`}>
+        <input
+          type="checkbox"
+          id="agreement"
+          checked={agreedToTerms}
+          onChange={(e) => {
+            setAgreedToTerms(e.target.checked);
+            setShowAgreementError(false);
+          }}
+          className="mt-1 h-5 w-5 cursor-pointer accent-primary"
+        />
+        <div className="flex-1">
+          <label htmlFor="agreement" className="text-sm text-foreground/90 cursor-pointer block">
+            I hereby agree that I have the amount to pay and will be available to receive this delivery within today or tomorrow. I am ready to take calls from the delivery agent.
+          </label>
+          {showAgreementError && (
+            <p className="text-xs text-destructive font-semibold mt-1">✓ Please check this box to continue</p>
+          )}
+        </div>
+      </div>
+
       <Button
         type="submit"
-        disabled={submitting}
-        className="w-full h-14 gradient-primary text-primary-foreground font-bold text-base shadow-glow animate-pulse-glow"
+        disabled={submitting || !agreedToTerms}
+        className="w-full h-14 gradient-primary text-primary-foreground font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? (
           <>
@@ -605,8 +640,8 @@ const TestimonialGrid = ({ items }: { items: TestimonialItem[] }) => (
 const Index = () => {
   const PACK_NAME_TO_VALUE: Record<string, string> = {
     "Starter": "1 Bottle (25,000 Naira)",
-    "Curve Combo ⭐": "1 Bottle + Zahidi Combo (30,000 Naira)",
-    "Full Transformation": "2 Bottles + Zahidi Combo (52,000 Naira)",
+    "Curve Combo ⭐": "1 Gummies Bottle + 1 Zahidi Pack Combo (30,000 Naira)",
+    "Full Transformation": "2 Bottles + 2 Zahidi Pack Combos (55,000 Naira)",
   };
   const [selectedPack, setSelectedPack] = useState<string>("1 Bottle + Zahidi Combo (30,000 Naira)");
   const selectPack = (name: string) => setSelectedPack(PACK_NAME_TO_VALUE[name] || name);
