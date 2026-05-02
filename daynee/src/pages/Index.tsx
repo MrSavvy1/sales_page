@@ -230,7 +230,7 @@ const packs = [
   },
   {
     name: "Curve Combo ⭐",
-    qty: "Gummies + Zahidi",
+    qty: "1 Gummies Bottle +  1 Zahidi Pack",
     price: "₦30,000",
     old: "₦45,000",
     discount: "FASTEST RESULTS — 2 Week Boost",
@@ -248,7 +248,7 @@ const packs = [
   },
   {
     name: "Full Transformation",
-    qty: "2 Bottles + 2 Zahidi",
+    qty: "2 Gummies Bottles + 2 Zahidi Pack",
     price: "₦55,000",
     old: "₦75,000",
     discount: "56% OFF — Lock-In Pack",
@@ -354,7 +354,7 @@ const ORDER_PACKAGES = [
   { value: "1 Bottle (25,000 Naira)", label: "1 Bottle - 25,000 Naira" },
   { value: "1 Bottle + Zahidi Combo (30,000 Naira)", label: "1 Bottle + 1 Zahidi Vital Plus Pack — 30,000 Naira (Power Combo) ⭐" },
   { value: "2 Bottles (45,000 Naira)", label: "2 Bottles - 45,000 Naira  (Recommended)" },
-  { value: "2 Bottles + Zahidi Combo (52,000 Naira)", label: "2 Bottles + 2 Zahidi Vital Plus Pack — 52,000 Naira (Power Combo) ⭐⭐" },
+  { value: "2 Bottles + Zahidi Combo (55,000 Naira)", label: "2 Bottles + 2 Zahidi Vital Plus Pack — 52,000 Naira (Power Combo) ⭐⭐" },
   { value: "3 Bottles (65,000 Naira)", label: "3 Bottles - 65,000 Naira (Complete Dosage + 1 free gift)" },
   { value: "3 Bottles + Zahidi Combo (70,000 Naira)", label: "3 Bottles + 3 Zahidi Vital Plus Pack — 70,000 Naira (Power Combo) ⭐⭐⭐" },
 ];
@@ -571,7 +571,7 @@ const LazyVideo = ({ src, poster }: { src: string; poster?: string }) => {
 };
 
 const TestimonialGrid = ({ items }: { items: TestimonialItem[] }) => (
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
     {items.map((t, i) => (
       <Card
         key={i}
@@ -828,12 +828,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Visual */}
               <div className="relative">
-                <div className="flex items-center justify-center gap-4">
-                  <img src={bottleImg} alt="Daynee Hip & Butt Gummies" loading="lazy" width={400} height={533} className="h-56 md:h-72 w-auto object-contain drop-shadow-2xl" />
-                  <div className="h-12 w-12 rounded-full gradient-gold flex items-center justify-center shrink-0 shadow-glow">
+                <div className="flex items-center justify-center gap-2 sm:gap-4 px-1 sm:px-0">
+                  <img src={bottleImg} alt="Daynee Hip & Butt Gummies" loading="lazy" width={400} height={533} className="h-48 sm:h-56 md:h-72 w-auto max-w-[42%] object-contain drop-shadow-2xl" />
+                  <div className="mx-1 h-10 w-10 sm:h-12 sm:w-12 rounded-full gradient-gold flex items-center justify-center shrink-0 shadow-glow">
                     <Plus className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <img src={zahidiImg} alt="Zahidi Vita Plus capsules pack" loading="lazy" width={400} height={400} className="h-48 md:h-64 w-auto object-contain drop-shadow-2xl" />
+                  <img src={zahidiImg} alt="Zahidi Vita Plus capsules pack" loading="lazy" width={400} height={400} className="h-40 sm:h-48 md:h-64 w-auto max-w-[42%] object-contain drop-shadow-2xl" />
                 </div>
                 <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 gradient-primary text-primary-foreground font-bold px-4 py-1.5 shadow-glow">
                   ⚡ Fastest Results
