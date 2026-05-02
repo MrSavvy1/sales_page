@@ -649,11 +649,11 @@ const Index = () => {
             <Badge className="bg-secondary/80 border border-primary/30 text-primary mb-6 px-3 py-1.5 text-xs uppercase tracking-widest">
               <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2" /> For Naturally Curvier Hips & Butt
             </Badge>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-6">
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6">
               Fuller Hips, Rounder Butt —{" "}
-              <span className="text-gradient-rose">the Natural Way.</span>
+              <span className="text-primary">the Natural Way.</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+            <p className="text-xl md:text-lg text-muted-foreground/85 mb-8 max-w-xl leading-relaxed">
               Daynee Hip & Butt Enhancing Gummies use natural phytoestrogens, whey protein and creatine to shape your curves — without surgery, injections or weight gain anywhere else.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
@@ -726,10 +726,10 @@ const Index = () => {
             <Badge className="gradient-primary text-primary-foreground border-none px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
               <Heart className="h-3.5 w-3.5 mr-1.5" /> Real customer results
             </Badge>
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold mb-3">
-              Watch the <span className="text-gradient-rose">curves come in</span>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-3">
+              Watch the <span className="text-primary">curves come in</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Real Nigerian women. Real before & afters. No filters, no edits.
             </p>
           </div>
@@ -757,10 +757,10 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">How Daynee works</div>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-4">
-              A <span className="italic text-gradient-rose">"triple threat"</span> for natural curves
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-4">
+              A <span className="italic text-primary">"triple threat"</span> for natural curves
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Daynee balances feminine hormones, supports glute muscle growth, and improves skin elasticity — all in a tasty gummy.
             </p>
           </div>
@@ -816,10 +816,10 @@ const Index = () => {
             <Badge className="gradient-primary text-primary-foreground border-none px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
               <Flame className="h-3.5 w-3.5 mr-1.5" /> Want results in 2 weeks?
             </Badge>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-4">
-              The <span className="text-gradient-rose">Daynee + Zahidi</span> Combo
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-4">
+              The <span className="text-primary">Daynee + Zahidi</span> Combo
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Our gummies provide the <strong className="text-foreground">building blocks</strong>. Zahidi Vita Plus tells your body <strong className="text-foreground">how fast to use them</strong>. Together, customers see visible curves in as little as 2 weeks.
             </p>
           </div>
@@ -843,7 +843,7 @@ const Index = () => {
               {/* Copy */}
               <div>
                 <h3 className="font-display text-2xl md:text-3xl font-extrabold mb-4">
-                  Why customers add <span className="text-gradient-gold">Zahidi Vita Plus</span>
+                  Why customers add <span className="text-accent">Zahidi Vita Plus</span>
                 </h3>
                 <ul className="space-y-3 mb-6">
                   {[
@@ -862,8 +862,8 @@ const Index = () => {
                 <div className="bg-secondary/60 border border-border rounded-xl p-4 mb-6">
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Combo Pricing</div>
                   <div className="flex items-end gap-3">
-                    <div className="font-display text-3xl font-extrabold text-gradient-gold">₦30,000</div>
-                    <div className="text-muted-foreground line-through mb-1">₦45,000</div>
+                    <div className="font-display text-3xl font-extrabold text-accent">₦30,000</div>
+                    <div className="text-muted-foreground/50 line-through mb-1">₦45,000</div>
                     <Badge className="bg-success/15 border border-success/40 text-success ml-auto">Save ₦15,000</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground mt-2">
@@ -892,8 +892,8 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">Real women, real curves</div>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold">
-              What happened after <span className="italic text-gradient-rose">the combo</span>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold">
+              What happened after <span className="italic text-primary">the combo</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -953,10 +953,10 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">More results from real customers</div>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-4">
-              Still not sure? <span className="italic text-gradient-rose">See for yourself.</span>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-4">
+              Still not sure? <span className="italic text-primary">See for yourself.</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Verified videos and photos from women across Nigeria using Daynee Hip & Butt Gummies.
             </p>
           </div>
@@ -978,10 +978,10 @@ const Index = () => {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">Choose your pack</div>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-4">
-              Pick the plan that <span className="italic text-gradient-rose">gets you curvy</span>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-4">
+              Pick the plan that <span className="italic text-primary">gets you curvy</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Free delivery, pay on delivery. Combo packs include the Zahidi Vita Plus accelerator.
             </p>
           </div>
@@ -1049,8 +1049,8 @@ const Index = () => {
         <div className="container max-w-3xl">
           <Card className="gradient-card border-primary/30 p-10 text-center">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">Zero risk</div>
-            <h2 className="font-display text-4xl font-extrabold mb-6">
-              You see curves. Or <span className="italic text-gradient-rose">we refund.</span>
+            <h2 className="font-display text-5xl font-extrabold mb-6">
+              You see curves. Or <span className="italic text-primary">we refund.</span>
             </h2>
             <div className="h-20 w-20 rounded-full gradient-primary flex items-center justify-center mx-auto mb-5 shadow-glow">
               <ShieldCheck className="h-10 w-10 text-primary-foreground" />
@@ -1068,8 +1068,8 @@ const Index = () => {
         <div className="container max-w-3xl">
           <div className="text-center mb-12">
             <div className="text-sm uppercase tracking-widest text-primary mb-3">Got questions?</div>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold">
-              Frequently asked <span className="italic text-gradient-rose">questions</span>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold">
+              Frequently asked <span className="italic text-primary">questions</span>
             </h2>
           </div>
           <Accordion type="single" collapsible className="space-y-3">
@@ -1090,8 +1090,8 @@ const Index = () => {
         <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(700px circle at 50% 0%, hsl(var(--primary) / 0.3), transparent 70%)" }} />
         <div className="container max-w-3xl relative text-center">
           <div className="text-sm uppercase tracking-widest text-primary mb-3">Claim your pack</div>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-8">
-            Order now — <span className="italic text-gradient-rose">promo price</span> won't last
+          <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-8">
+            Order now — <span className="italic text-primary">promo price</span> won't last
           </h2>
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6">
             <Clock className="h-4 w-4" /> Promo price expires in:
