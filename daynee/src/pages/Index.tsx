@@ -220,7 +220,7 @@ const packs = [
   {
     name: "Starter",
     qty: "1 Bottle",
-    price: "₦18,500",
+    price: "₦25,000",
     old: "₦35,000",
     discount: "47% OFF Today",
     features: ["1 bottle — 60 vegan gummies", "30-day supply", "Free delivery", "Pay on delivery"],
@@ -231,8 +231,8 @@ const packs = [
   {
     name: "Curve Combo ⭐",
     qty: "Gummies + Zahidi",
-    price: "₦27,500",
-    old: "₦55,000",
+    price: "₦30,000",
+    old: "₦45,000",
     discount: "FASTEST RESULTS — 2 Week Boost",
     features: [
       "1 bottle Daynee Gummies (60 ct)",
@@ -248,13 +248,13 @@ const packs = [
   },
   {
     name: "Full Transformation",
-    qty: "2 Bottles + Zahidi",
-    price: "₦42,000",
-    old: "₦95,000",
+    qty: "2 Bottles + 2 Zahidi",
+    price: "₦55,000",
+    old: "₦75,000",
     discount: "56% OFF — Lock-In Pack",
     features: [
-      "2 bottles Daynee Gummies (120 ct)",
-      "1 pack Zahidi Vita Plus",
+      "2 bottles Daynee Gummies (120 pcs)",
+      "2 pack Zahidi Vita Plus",
       "Full 8-week curve cycle",
       "Free priority delivery",
       "Pay on delivery",
@@ -401,6 +401,10 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       });
       form.reset();
       setPkg(ORDER_PACKAGES[1].value);
+      // Redirect to success page after 1.5 seconds
+      setTimeout(() => {
+        window.location.href = "/pages/success.html";
+      }, 1500);
     };
 
     try {
@@ -858,9 +862,9 @@ const Index = () => {
                 <div className="bg-secondary/60 border border-border rounded-xl p-4 mb-6">
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Combo Pricing</div>
                   <div className="flex items-end gap-3">
-                    <div className="font-display text-3xl font-extrabold text-gradient-gold">₦27,500</div>
-                    <div className="text-muted-foreground line-through mb-1">₦55,000</div>
-                    <Badge className="bg-success/15 border border-success/40 text-success ml-auto">Save ₦27,500</Badge>
+                    <div className="font-display text-3xl font-extrabold text-gradient-gold">₦30,000</div>
+                    <div className="text-muted-foreground line-through mb-1">₦45,000</div>
+                    <Badge className="bg-success/15 border border-success/40 text-success ml-auto">Save ₦15,000</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground mt-2">
                     Take 2 gummies in the morning + 1 Zahidi tablet at night after eating.

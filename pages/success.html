@@ -2,307 +2,294 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Order Success</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Successful - Thank You!</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    .container { max-width: 600px; margin: 0 auto; }
-    .message { font-size: 24px; color: #4CAF50; }
-    .btn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; text-decoration: none; }
-    .btn:hover { background-color: #45a049; }
-    footer {
-      margin-top: 40px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      padding: 50px 40px;
+      text-align: center;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.6s ease-out;
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .success-icon svg {
+      width: 50px;
+      height: 50px;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      color: #667eea;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .message {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .order-details {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      text-align: left;
+      border-left: 4px solid #667eea;
+    }
+
+    .order-details h3 {
+      color: #333;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .order-details p {
+      color: #666;
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .order-details strong {
+      color: #333;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #f8f9fa;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #999;
     }
 
     footer a {
-      color: #c2185b;
-      margin: 0 10px;
+      color: #667eea;
       text-decoration: none;
+      margin: 0 12px;
     }
 
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .next-steps {
+      background: #f0f4ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .next-steps h3 {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .next-steps ol {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-left: 20px;
+    }
+
+    .next-steps li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
-<!-- Meta Pixel Code -->
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1118914833405653');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1118914833405653&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
- 
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1262894761489831');
-  fbq('track', 'PageView');
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Initialize both Pixels
+    fbq('init', '1229416282508721');
+    fbq('init', '652009984376432');
+
+    // Track Purchase event
+    fbq('track', 'Purchase', {value: 0.00, currency: 'USD'});
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1262894761489831&ev=PageView&noscript=1"
-  /></noscript>
-  
-  <!-- End First Meta Pixel Code -->
 
-
-  <!-- Second Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '652009984376432');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=652009984376432&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
-  <!-- Third Meta Pixel Code -->
-   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1131533912292692');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1131533912292692&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1131533912292692');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1131533912292692&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-  <!-- End Meta Pixel Code -->
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1587006176046498');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1587006176046498&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1229416282508721&ev=Purchase&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=652009984376432&ev=Purchase&noscript=1"/>
+  </noscript>
 </head>
 <body>
   <div class="container">
-    <h1>Thank You!</h1>
-    <p class="message">Your order has been successfully placed.</p>
-    <!-- <a href="./index.html" class="btn">Back to Home</a> -->
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <h1>Order Confirmed! 🎉</h1>
+    <p class="subtitle">Thank you for your purchase</p>
+
+    <p class="message">
+      Your order has been successfully received and is now being processed. 
+      Our team will contact you shortly to confirm the delivery details and provide you with tracking information.
+    </p>
+
+    <div class="order-details">
+      <h3>📋 What Happens Next?</h3>
+      <p><strong>Order Status:</strong> Confirmed</p>
+      <p><strong>Next Step:</strong> We will call you to confirm delivery</p>
+      <p><strong>Estimated Time:</strong> Within 24 hours</p>
+    </div>
+
+    <div class="next-steps">
+      <h3>Expected Delivery Process:</h3>
+      <ol>
+        <li><strong>Confirmation Call:</strong> Our team will call to confirm your order details</li>
+        <li><strong>Payment Verification:</strong> We'll process your payment securely</li>
+        <li><strong>Dispatch:</strong> Your package will be prepared and shipped</li>
+        <li><strong>Delivery:</strong> You'll receive tracking updates via SMS/Call</li>
+      </ol>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <a href="/pages/contact.html" class="btn btn-secondary">Contact Support</a>
+    </div>
+
+    <footer>
+      <a href="/pages/privacy.html">Privacy Policy</a> |
+      <a href="/pages/terms.html">Terms & Conditions</a> |
+      <a href="/pages/contact.html">Contact Us</a>
+    </footer>
   </div>
-
-<footer>
-  <a href="privacy.html">Privacy Policy</a> |
-  <a href="terms.html">Terms & Conditions</a> |
-  <a href="contact.html">Contact Us</a>
-</footer>
-
-
-  <!-- Track Purchase Event via Facebook Pixel -->
-  <script>
-    const purchaseValue = 30.00;
-    const currency = 'USD';
-    
-    fbq('track', 'Purchase', {
-      value: purchaseValue,
-      currency: currency
-    });
-  </script>
-
- <!-- Optional Conversions API Call 
- <script>
-  const enableConversionsAPI1 = true; // Toggle this to false to disable
-
-  if (enableConversionsAPI1) {
-    const accessToken = 'EAANZBgDqRpCsBO0GwT3WlgRpbFPc5y2k2Ne99NczQbsVvsls7crd9ZBjisffgP1OHBaPfzZBZBLkfjtd3Afhucck8HIEtLuqZA47fXCe20RlT3mtQuFtp3qhse8ZCjP91qRG3fYadXKb95Q59qQyNVIaNd09RoyzL0e15ZArsgwA24ho5CbUzybSHSxvljpILvkfQZDZD'; // Replace with real token
-    const pixelId = '1262894761489831'; // Replace with your Pixel ID
-    const apiVersion = 'v18.0'; // Or whatever version you're using
-    
-    const eventData = {
-      data: [
-        {
-          event_name: "Purchase",
-          event_time: Math.floor(Date.now() / 1000),
-          action_source: "website",
-          event_source_url: window.location.href,
-          user_data: {
-            // Ideally hash this server-side for security
-            em: ["7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"], // Hashed email
-            ph: [null]
-          },
-          custom_data: {
-            currency: currency,
-            value: purchaseValue
-          },
-          original_event_data: {
-            event_name: "Purchase",
-            event_time: Math.floor(Date.now() / 1000)
-          }
-        }
-      ]
-    };
-
-    fetch(`https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${accessToken}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(eventData)
-    })
-    .then(res => res.json())
-    .then(response => console.log("Conversions API response:", response))
-    .catch(error => console.error("Error sending to Conversions API:", error));
-  }
-</script>
-
-<script>
-  const enableConversionsAPI2 = true; // Toggle this to false to disable
-
-  if (enableConversionsAPI2) {
-    const accessToken = 'EAANZBgDqRpCsBOZCUQ2gnJnItSHmRWrO1ZBV6wVpMl34N3yHzJMPPzGBlu2uzellJkZBVWClkwF9DPjKdng9b97QloL0t9wgwI0XMVRCdlZCK4H3bzq1vFFNo4iQE4VhnJdb0sVypoDY7NuMjJVI8WmhTZCAqBXYwDcrZAZBQ5OBCzHHHsfBMBEmBYtanlSKi33OYwZDZD'; // Replace with real token
-    
-    const pixelId = '545412165244596'; // Replace with your Pixel ID
-    const apiVersion = 'v18.0'; // Or whatever version you're using
-    
-    const eventData = {
-      data: [
-        {
-          event_name: "Purchase",
-          event_time: Math.floor(Date.now() / 1000),
-          action_source: "website",
-          event_source_url: window.location.href,
-          user_data: {
-            // Ideally hash this server-side for security
-            em: ["7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"], // Hashed email
-            ph: [null]
-          },
-          custom_data: {
-            currency: currency,
-            value: purchaseValue
-          },
-          original_event_data: {
-            event_name: "Purchase",
-            event_time: Math.floor(Date.now() / 1000)
-          }
-        }
-      ]
-    };
-
-    fetch(`https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${accessToken}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(eventData)
-    })
-    .then(res => res.json())
-    .then(response => console.log("Conversions API response:", response))
-    .catch(error => console.error("Error sending to Conversions API:", error));
-  }
-</script>
-
-*/ -->
-
-  <!-- Optional Conversions API Call -->
-  <script>
-    const enableConversionsAPI = true; // Toggle this to false to disable
-
-    if (enableConversionsAPI) {
-      const accessToken = 'EAAYp96OGjP8BO1iqrv23hY93HsJUbN7pTPAHCEmUEMUu3ojFSshZBK1Mnj2v7jX3NLfdIBZBGzXgMRhsfnDeiWvPyy17mc1LCg0k2sN89v5sa9JchbarusdmYRE9ZBRczeezOgmxtoSxzsw6d9ZBFZCb0sbFFXGWY5sAWcpFc6h9ALBTA1DZB1QigwI4xbliwsTwZDZD'; // Replace with real token
-      const pixelId = '652009984376432'; // Replace with your Pixel ID
-      const apiVersion = 'v18.0'; // Or whatever version you're using
-      
-      const eventData = {
-        data: [
-          {
-            event_name: "Purchase",
-            event_time: Math.floor(Date.now() / 1000),
-            action_source: "website",
-            event_source_url: window.location.href,
-            user_data: {
-              // Ideally hash this server-side for security
-              em: ["7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"], // Hashed email
-              ph: [null]
-            },
-            custom_data: {
-              currency: currency,
-              value: purchaseValue
-            },
-            original_event_data: {
-              event_name: "Purchase",
-              event_time: Math.floor(Date.now() / 1000)
-            }
-          }
-        ]
-      };
-
-      fetch(`https://graph.facebook.com/${apiVersion}/${pixelId}/events?access_token=${accessToken}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(eventData)
-      })
-      .then(res => res.json())
-      .then(response => console.log("Conversions API response:", response))
-      .catch(error => console.error("Error sending to Conversions API:", error));
-    }
-  </script>
 </body>
 </html>
