@@ -362,15 +362,12 @@ const ORDER_PACKAGES = [
 const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI5iCXYmnDNFycMtK1rviqMDc5exXTXjh43fqO2YuUJ1LVrbzB35kzrw/exec";
 
 const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
-  const [pkg, setPkg] = useState("");
+  const [pkg, setPkg] = useState(""); // This starts empty
   const [submitting, setSubmitting] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [showAgreementError, setShowAgreementError] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
-
-  useEffect(() => {
-    if (defaultPack) setPkg(defaultPack);
-  }, [defaultPack]);
+ 
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
