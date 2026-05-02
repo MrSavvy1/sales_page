@@ -362,10 +362,11 @@ const ORDER_PACKAGES = [
 const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI5iCXYmnDNFycMtK1rviqMDc5exXTXjh43fqO2YuUJ1LVrbzB35kzrw/exec";
 
 const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
-  const [pkg, setPkg] = useState(defaultPack || ORDER_PACKAGES[1].value);
+  const [pkg, setPkg] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [showAgreementError, setShowAgreementError] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     if (defaultPack) setPkg(defaultPack);
@@ -374,13 +375,6 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    if (!agreedToTerms) {
-      setShowAgreementError(true);
-      toast({ title: "Please check the agreement box", variant: "destructive" });
-      return;
-    }
-    
-    setShowAgreementError(false);
     const form = e.currentTarget;
     const fd = new FormData(form);
     const name = String(fd.get("name") || "").trim();
@@ -389,10 +383,70 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
     const state = String(fd.get("state") || "").trim();
     const address = String(fd.get("address") || "").trim();
 
+    const errors: { [key: string]: string } = {};
+
+    // Validate name - only alphabets and spaces
+    if (!name) {
+      errors.name = "Full name is required";
+    } else if (!/^[a-zA-Z\s]*$/.test(name)) {
+      errors.name = "Name should only contain letters and spaces";
+    }
+
+    if (!phone) {
+      errors.phone = "Phone number is required";
+    }
+
+    if (!secondphone) {
+      errors.secondphone = "WhatsApp number is required";
+    }
+
+    if (!state) {
+      errors.state = "State is required";
+    }
+
+    if (!address) {
+      errors.address = "Street address is required";
+    }
+
     if (!pkg) {
-      toast({ title: "Please select a package", variant: "destructive" });
+      errors.package = "Please select a package";
+    }
+
+    if (!agreedToTerms) {
+      setShowAgreementError(true);
+      setFieldErrors(errors);
+      toast({ title: "You must agree to the terms to continue", variant: "destructive" });
+      
+      // Focus on agreement checkbox
+      const agreementCheckbox = document.getElementById("agreement");
+      agreementCheckbox?.scrollIntoView({ behavior: "smooth", block: "center" });
+      agreementCheckbox?.focus();
+      
       return;
     }
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      
+      // Find the first field with an error
+      const firstErrorField = Object.keys(errors)[0];
+      const element = document.getElementById(firstErrorField);
+      
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+        element.focus();
+      }
+      
+      toast({ 
+        title: `Please fill in all required fields`, 
+        variant: "destructive" 
+      });
+      
+      return;
+    }
+
+    setShowAgreementError(false);
+    setFieldErrors({});
 
     setSubmitting(true);
     const body = new URLSearchParams({
@@ -410,7 +464,8 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
         description: "Our team will call you shortly to confirm delivery.",
       });
       form.reset();
-      setPkg(ORDER_PACKAGES[1].value);
+      setPkg("");
+      setFieldErrors({});
       // Redirect to success page after 1.5 seconds
       setTimeout(() => {
         window.location.href = "/pages/success.html";
@@ -447,9 +502,12 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
-      <div className="space-y-3">
+      <div id="package" className="space-y-3">
         <Label className="text-base font-display font-bold">Select Your Package</Label>
-        <RadioGroup value={pkg} onValueChange={setPkg} className="grid gap-2">
+        <RadioGroup value={pkg} onValueChange={(val) => {
+          setPkg(val);
+          setFieldErrors({ ...fieldErrors, package: "" });
+        }} className="grid gap-2">
           {ORDER_PACKAGES.map((p) => (
             <label
               key={p.value}
@@ -465,6 +523,11 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
             </label>
           ))}
         </RadioGroup>
+        {fieldErrors.package && (
+          <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+            ✕ {fieldErrors.package}
+          </p>
+        )}
       </div>
 
       <div
@@ -480,17 +543,56 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
 
       <div className="space-y-2">
         <Label htmlFor="name">Full Name</Label>
-        <Input id="name" name="name" type="text" pattern="[a-zA-Z\s]*" required />
+        <Input 
+          id="name" 
+          name="name" 
+          type="text" 
+          placeholder="Enter your full name"
+          onInput={(e) => {
+            const input = e.currentTarget;
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+          }}
+          required 
+        />
+        {fieldErrors.name && (
+          <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+            ✕ {fieldErrors.name}
+          </p>
+        )}
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" name="phone" type="tel" pattern="[0-9]*" inputMode="numeric" required />
+          <Input 
+            id="phone" 
+            name="phone" 
+            type="tel" 
+            pattern="[0-9]*" 
+            inputMode="numeric" 
+            required 
+          />
+          {fieldErrors.phone && (
+            <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+              ✕ {fieldErrors.phone}
+            </p>
+          )}
         </div>
         <div className="space-y-2">
           <Label htmlFor="secondphone">Second Phone (WhatsApp)</Label>
-          <Input id="secondphone" name="secondphone" type="tel" pattern="[0-9]*" inputMode="numeric" required />
+          <Input 
+            id="secondphone" 
+            name="secondphone" 
+            type="tel" 
+            pattern="[0-9]*" 
+            inputMode="numeric" 
+            required 
+          />
+          {fieldErrors.secondphone && (
+            <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+              ✕ {fieldErrors.secondphone}
+            </p>
+          )}
         </div>
       </div>
 
@@ -508,11 +610,21 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
+        {fieldErrors.state && (
+          <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+            ✕ {fieldErrors.state}
+          </p>
+        )}
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="address">Street Address</Label>
         <Textarea id="address" name="address" required />
+        {fieldErrors.address && (
+          <p className="text-sm text-destructive font-semibold flex items-center gap-1">
+            ✕ {fieldErrors.address}
+          </p>
+        )}
       </div>
 
       <div className={`flex items-start gap-3 p-3 rounded-lg border-2 transition-colors ${
