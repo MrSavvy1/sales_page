@@ -708,16 +708,7 @@ const Index = () => {
       </section>
 
       {/* Lifestyle banner */}
-      <section className="py-12 bg-background">
-        <div className="container grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl overflow-hidden border-2 border-primary/30 shadow-card-soft">
-            <img src={curvyImg} alt="Confident curvy woman with full hips" loading="lazy" width={1024} height={1024} className="w-full h-auto" />
-          </div>
-          <div className="rounded-2xl overflow-hidden border-2 border-primary/30 shadow-card-soft">
-            <img src={lifestyleImg} alt="Confident Nigerian women with curvy figures" loading="lazy" width={1024} height={1024} className="w-full h-auto" />
-          </div>
-        </div>
-      </section>
+   
 
       {/* Testimonials — Hook (top of page) */}
       <section className="py-16 bg-background">
