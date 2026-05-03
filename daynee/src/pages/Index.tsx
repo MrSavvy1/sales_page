@@ -421,8 +421,11 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
         element.focus();
       }
       
+      // Show individual toast for first error
+      const firstError = Object.values(errors)[0];
       toast({ 
-        title: `Please fill in all required fields`, 
+        title: "Validation Error",
+        description: firstError,
         variant: "destructive" 
       });
       
@@ -650,7 +653,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
 
       <Button
         type="submit"
-        disabled={submitting || !agreedToTerms}
+        disabled={submitting}
         className="w-full h-14 gradient-primary text-primary-foreground font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? (
