@@ -409,19 +409,6 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       errors.package = "Please select a package";
     }
 
-    if (!agreedToTerms) {
-      setShowAgreementError(true);
-      setFieldErrors(errors);
-      toast({ title: "You must agree to the terms to continue", variant: "destructive" });
-      
-      // Focus on agreement checkbox
-      const agreementCheckbox = document.getElementById("agreement");
-      agreementCheckbox?.scrollIntoView({ behavior: "smooth", block: "center" });
-      agreementCheckbox?.focus();
-      
-      return;
-    }
-
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors);
       
@@ -438,6 +425,18 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
         title: `Please fill in all required fields`, 
         variant: "destructive" 
       });
+      
+      return;
+    }
+
+    if (!agreedToTerms) {
+      setShowAgreementError(true);
+      toast({ title: "Please tick the agreement box to continue", variant: "destructive" });
+      
+      // Scroll to agreement checkbox
+      const agreementCheckbox = document.getElementById("agreement");
+      agreementCheckbox?.scrollIntoView({ behavior: "smooth", block: "center" });
+      agreementCheckbox?.focus();
       
       return;
     }
