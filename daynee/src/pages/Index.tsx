@@ -752,7 +752,7 @@ const Index = () => {
     "Curve Combo ⭐": "1 Gummies Bottle + 1 Zahidi Pack Combo (30,000 Naira)",
     "Full Transformation": "2 Bottles + 2 Zahidi Pack Combos (55,000 Naira)",
   };
-  const [selectedPack, setSelectedPack] = useState<string>("1 Bottle + Zahidi Combo (30,000 Naira)");
+  const [selectedPack, setSelectedPack] = useState<string>("");
   const selectPack = (name: string) => setSelectedPack(PACK_NAME_TO_VALUE[name] || name);
 
   return (
