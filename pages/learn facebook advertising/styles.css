@@ -1,0 +1,391 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+/* HEADER */
+
+.header{
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  background:#0f172a;
+  z-index:1000;
+  border-bottom:1px solid #1e293b;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#38bdf8;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO SECTION */
+
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:80px 8%;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero-content h1{
+  font-size:52px;
+  line-height:1.2;
+  margin-bottom:30px;
+  color:#fff;
+}
+
+.hero-content p{
+  font-size:18px;
+  color:#cbd5e1;
+  margin-bottom:40px;
+}
+
+/* CTA SECTION */
+
+.cta-section{
+  margin:30px 0;
+}
+
+.whatsapp-cta{
+  
+  padding:30px;
+  border-radius:15px;
+  margin:30px 0;
+}
+
+.urgency{
+  font-size:16px;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+
+.whatsapp-btn{
+  display:inline-block;
+  padding:16px 40px;
+  background:#0ea853;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  font-size:16px;
+  transition:all .3s;
+  border:2px solid #0ea853;
+  cursor:pointer;
+}
+
+.whatsapp-btn:hover{
+  background:transparent;
+  color:#0ea853;
+  transform:scale(1.05);
+}
+
+.whatsapp-btn.large{
+  padding:18px 50px;
+  font-size:18px;
+}
+
+/* INSTRUCTOR SECTION */
+
+.instructor-section{
+  padding:80px 8%;
+  background:#111827;
+}
+
+.instructor-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.instructor-image{
+  text-align:center;
+}
+
+.instructor-image img{
+  width:100%;
+  max-width:400px;
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+}
+
+.instructor-content h2{
+  font-size:42px;
+  margin-bottom:30px;
+  color:#38bdf8;
+}
+
+.instructor-highlights{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.highlight{
+  padding:20px;
+  background:#0f172a;
+  border-left:4px solid #38bdf8;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.highlight strong{
+  color:#38bdf8;
+}
+
+/* CURRICULUM SECTION */
+
+.curriculum-section{
+  padding:80px 8%;
+}
+
+.curriculum-section h2{
+  font-size:42px;
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.curriculum-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+  gap:25px;
+  margin-bottom:40px;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.curriculum-item{
+  background:#111827;
+  padding:25px;
+  border-radius:12px;
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.checkmark{
+  font-size:24px;
+  flex-shrink:0;
+  color:#0ea853;
+}
+
+.curriculum-item p{
+  color:#cbd5e1;
+  font-size:15px;
+}
+
+.curriculum-section .cta-section{
+  text-align:center;
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials-section{
+  padding:80px 8%;
+  background:#111827;
+}
+
+.testimonials-section h2{
+  font-size:42px;
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+  max-width:600px;
+  margin:0 auto;
+}
+
+.testimonial-card{
+  background:#0f172a;
+  padding:0;
+  border-radius:15px;
+  text-align:center;
+  transition:all .3s;
+  border:1px solid #1e293b;
+  overflow:hidden;
+}
+
+.testimonial-card:hover{
+  transform:translateY(-5px);
+  border-color:#38bdf8;
+  box-shadow:0 10px 30px rgba(56, 189, 248, 0.1);
+}
+
+.testimonial-img{
+  width:100%;
+  height:100%;
+  border-radius:0;
+  object-fit:cover;
+  margin:0;
+  border:none;
+  display:block;
+}
+
+.testimonial-text{
+  font-size:14px;
+  color:#cbd5e1;
+  margin:20px;
+  font-style:italic;
+  line-height:1.6;
+}
+
+.testimonial-author{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:0 20px 20px 20px;
+}
+
+.testimonial-author strong{
+  color:#38bdf8;
+  font-size:16px;
+}
+
+.testimonial-author span{
+  color:#94a3b8;
+  font-size:13px;
+}
+
+/* FINAL CTA SECTION */
+
+.final-cta-section{
+  padding:80px 8%;
+  text-align:center;
+  background:linear-gradient(135deg, #0f172a 0%, #111827 100%);
+}
+
+.final-cta-content{
+  max-width:800px;
+  margin:0 auto;
+}
+
+.final-cta-content h2{
+  font-size:42px;
+  margin-bottom:30px;
+}
+
+.note{
+  font-size:15px;
+  color:#cbd5e1;
+  margin-bottom:25px;
+  line-height:1.8;
+}
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  border-top:1px solid #1e293b;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1024px){
+  .instructor-container{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .instructor-content h2{
+    font-size:36px;
+  }
+}
+
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:36px;
+  }
+
+  .hero{
+    padding:60px 5%;
+  }
+
+  .curriculum-list{
+    grid-template-columns:1fr;
+  }
+
+  .testimonials-grid{
+    grid-template-columns:1fr;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .instructor-section,
+  .curriculum-section,
+  .testimonials-section,
+  .final-cta-section{
+    padding:60px 5%;
+  }
+
+  .section-title h2,
+  .final-cta-content h2,
+  .testimonials-section h2,
+  .curriculum-section h2{
+    font-size:32px;
+  }
+}
+
+@media(max-width:480px){
+  .hero-content h1{
+    font-size:28px;
+  }
+
+  .whatsapp-btn{
+    padding:14px 20px;
+    font-size:14px;
+  }
+
+  .whatsapp-btn.large{
+    padding:16px 30px;
+    font-size:16px;
+  }
+
+  .testimonial-img{
+    width:60px;
+    height:60px;
+  }
+
+  .header{
+    padding:15px 5%;
+  }
+}
