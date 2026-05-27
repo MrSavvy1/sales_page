@@ -34,15 +34,15 @@
                     
                     <div class="package-options" id="selectwrap">
                         <label class="package-option">
-                            <input type="radio" name="package" value="regular" data-price="19500" checked>
+                            <input type="radio" name="package" value="regular" data-price="15000" checked>
                             <span class="package-text">Regular Package (₦15,000 Total)</span>
                         </label>
                         <label class="package-option">
-                            <input type="radio" name="package" value="vip" data-price="35000">
+                            <input type="radio" name="package" value="vip" data-price="28000">
                             <span class="package-text">VIP Package (₦28,000 Total)</span>
                         </label>
                         <label class="package-option">
-                            <input type="radio" name="package" value="vvip" data-price="50000">
+                            <input type="radio" name="package" value="vvip" data-price="33000">
                             <span class="package-text">VVIP Package (₦33,000 Total)</span>
                         </label>
                     </div>
@@ -269,10 +269,9 @@
             
             // Package price mapping
             const packagePrices = {
-                'regular': 22000,
-                'vip': 40000,
-                'vvip': 58000
-            };
+                'regular': 15000,
+                'vip': 28000,
+                'vvip': 33000            };
             document.getElementById("name").addEventListener("input", function() {
             this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
         });
