@@ -614,7 +614,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       <Button
         type="submit"
         disabled={submitting}
-        className="w-full h-14 bg-accent-1 text-white font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full h-14 bg-accent-1 text-primary-foreground font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? (
           <>
@@ -657,7 +657,7 @@ const LazyVideo = ({ src, poster }: { src: string; poster?: string }) => {
         <div className="absolute inset-0 bg-black/30 group-hover/play:bg-black/20 transition-smooth" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center shadow-glow">
-            <span className="text-white text-xl ml-1">▶</span>
+            <span className="text-primary-foreground text-xl ml-1">▶</span>
           </div>
         </div>
       </button>
@@ -720,7 +720,7 @@ const Index = () => {
   return (
     <div className="min-h-screen gradient-hero text-foreground">
       {/* Marquee */}
-      <div className="gradient-banner text-white py-2.5 overflow-hidden border-b border-black/20">
+      <div className="gradient-banner text-primary-foreground py-2.5 overflow-hidden border-b border-black/20">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((t, i) => (
             <span key={i} className="mx-6 text-sm font-semibold flex items-center gap-2">
@@ -741,7 +741,7 @@ const Index = () => {
             <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
             12 packs left at promo price
           </div>
-          <Button className="bg-accent-1 text-white font-semibold shadow-glow" onClick={scrollToOrder}>
+          <Button className="bg-accent-1 text-primary-foreground font-semibold shadow-glow" onClick={scrollToOrder}>
             Order Now <ArrowRight className="ml-1 h-4 w-4" />
           </Button>
         </div>
@@ -769,7 +769,7 @@ const Index = () => {
                 </Badge>
               ))}
             </div>
-            <Button size="lg" onClick={scrollToOrder} className="bg-accent-1 text-white font-bold text-base h-14 px-8 shadow-glow animate-pulse-glow">
+            <Button size="lg" onClick={scrollToOrder} className="bg-accent-1 text-primary-foreground font-bold text-base h-14 px-8 shadow-glow animate-pulse-glow">
               Get My Curves Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <div className="flex items-center gap-4 mt-8">
@@ -932,7 +932,7 @@ const Index = () => {
                   </div>
                   <img src={zahidiImg} alt="Zahidi Vita Plus capsules pack" loading="lazy" width={400} height={400} className="h-40 sm:h-48 md:h-64 w-auto max-w-[42%] object-contain drop-shadow-2xl" />
                 </div>
-                <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-accent-2 text-white font-bold px-4 py-1.5 shadow-glow">
+                <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-accent-2 text-primary-foreground font-bold px-4 py-1.5 shadow-glow">
                   ⚡ Fastest Results
                 </Badge>
               </div>
@@ -970,7 +970,7 @@ const Index = () => {
 
                 <Button
                   size="lg"
-                  className="w-full bg-accent-2 text-white font-bold h-14 shadow-glow animate-pulse-glow"
+                  className="w-full bg-accent-2 text-primary-foreground font-bold h-14 shadow-glow animate-pulse-glow"
                   onClick={() => { selectPack("Curve Combo ⭐"); scrollToForm(); }}
                 >
                   <Sparkles className="mr-2 h-5 w-5" /> Add the Combo to My Order
@@ -1197,7 +1197,7 @@ const Index = () => {
           <Button
             size="lg"
             onClick={scrollToOrder}
-            className="bg-accent-1 text-white font-bold text-lg h-16 px-12 mt-10 shadow-glow animate-pulse-glow"
+            className="bg-accent-1 text-primary-foreground font-bold text-lg h-16 px-12 mt-10 shadow-glow animate-pulse-glow"
           >
             <Sparkles className="mr-2 h-5 w-5" /> Get My Curves NOW!
           </Button>
