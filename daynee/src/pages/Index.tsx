@@ -718,7 +718,7 @@ const Index = () => {
   const selectPack = (name: string) => setSelectedPack(PACK_NAME_TO_VALUE[name] || name);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen gradient-hero text-foreground">
       {/* Marquee */}
       <div className="gradient-banner text-white py-2.5 overflow-hidden border-b border-black/20">
         <div className="flex animate-marquee whitespace-nowrap">
@@ -731,7 +731,7 @@ const Index = () => {
       </div>
 
       {/* Nav */}
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-secondary/70 border-b border-border">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2 font-display font-extrabold text-xl">
             <span className="text-foreground">Day</span>
@@ -817,7 +817,7 @@ const Index = () => {
    
 
       {/* Testimonials — Hook (top of page) */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-secondary/20">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <Badge className="bg-accent-1/10 text-accent-1 border border-accent-1/20 px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
@@ -1204,7 +1204,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-8 border-t border-border bg-background">
+      <footer className="py-8 border-t border-border bg-secondary/40">
         <div className="container text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} Daynee. 100% Natural · NAFDAC Compliant · Free Delivery Nationwide.
         </div>
