@@ -24,6 +24,8 @@
 
     --accent: 215 16% 88%;
     --accent-foreground: 222 47% 11%;
+    --accent-1: 180 60% 38%; /* teal */
+    --accent-2: 10 85% 55%;  /* coral */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -58,16 +60,16 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: "ss01", "cv11";
-    font-weight: 400;
-    font-size: 1.06rem;
-    line-height: 1.75;
+    font-weight: 700;
+    font-size: 1.12rem;
+    line-height: 1.8;
   }
   h1, h2, h3, h4 {
     font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
     @apply tracking-tight;
   }
   p, span, li {
-    @apply font-medium leading-8;
+    @apply font-bold leading-8;
   }
   @media (max-width: 640px) {
     p, li {
@@ -98,6 +100,10 @@
   .text-primary {
     color: hsl(var(--foreground));
   }
+  .bg-accent-1 { background: hsl(var(--accent-1)); }
+  .bg-accent-2 { background: hsl(var(--accent-2)); }
+  .text-accent-1 { color: hsl(var(--accent-1)); }
+  .text-accent-2 { color: hsl(var(--accent-2)); }
 }
 
 @keyframes marquee {

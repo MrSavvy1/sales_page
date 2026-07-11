@@ -370,7 +370,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    const form = e.currentTarget;
+    const form = e.currentTarge t;
     const fd = new FormData(form);
     const name = String(fd.get("name") || "").trim();
     const phone = String(fd.get("phone") || "").trim();
@@ -614,7 +614,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       <Button
         type="submit"
         disabled={submitting}
-        className="w-full h-14 gradient-primary text-primary-foreground font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full h-14 bg-accent-1 text-white font-bold text-base shadow-glow animate-pulse-glow disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? (
           <>
@@ -694,7 +694,7 @@ const TestimonialGrid = ({ items }: { items: TestimonialItem[] }) => (
               className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
             />
           )}
-          <Badge className="absolute top-2 left-2 gradient-primary text-primary-foreground text-[10px] uppercase tracking-wider border-none">
+          <Badge className="absolute top-2 left-2 bg-accent-1/10 text-accent-1 text-[10px] uppercase tracking-wider border-none">
             {t.type === "video" ? "🎥 Video" : "📸 Photo"}
           </Badge>
         </div>
@@ -741,7 +741,7 @@ const Index = () => {
             <span className="h-2 w-2 rounded-full bg-success animate-pulse" />
             12 packs left at promo price
           </div>
-          <Button className="gradient-primary text-primary-foreground font-semibold shadow-glow" onClick={scrollToOrder}>
+          <Button className="bg-accent-1 text-white font-semibold shadow-glow" onClick={scrollToOrder}>
             Order Now <ArrowRight className="ml-1 h-4 w-4" />
           </Button>
         </div>
@@ -752,7 +752,7 @@ const Index = () => {
         <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ backgroundImage: "radial-gradient(600px circle at 80% 20%, hsl(var(--primary) / 0.3), transparent 60%), radial-gradient(500px circle at 10% 80%, hsl(var(--accent) / 0.15), transparent 60%)" }} />
         <div className="container relative py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <Badge className="bg-secondary/80 border border-primary/30 text-primary mb-6 px-3 py-1.5 text-xs uppercase tracking-widest">
+            <Badge className="bg-accent-1/10 border border-accent-1/20 text-accent-1 mb-6 px-3 py-1.5 text-xs uppercase tracking-widest">
               <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2" /> For Naturally Curvier Hips & Butt
             </Badge>
             <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] mb-6">
@@ -769,7 +769,7 @@ const Index = () => {
                 </Badge>
               ))}
             </div>
-            <Button size="lg" onClick={scrollToOrder} className="gradient-primary text-primary-foreground font-bold text-base h-14 px-8 shadow-glow animate-pulse-glow">
+            <Button size="lg" onClick={scrollToOrder} className="bg-accent-1 text-white font-bold text-base h-14 px-8 shadow-glow animate-pulse-glow">
               Get My Curves Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <div className="flex items-center gap-4 mt-8">
@@ -820,7 +820,7 @@ const Index = () => {
       <section className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <Badge className="gradient-primary text-primary-foreground border-none px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
+            <Badge className="bg-accent-1/10 text-accent-1 border border-accent-1/20 px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
               <Heart className="h-3.5 w-3.5 mr-1.5" /> Real customer results
             </Badge>
             <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-3">
@@ -836,7 +836,7 @@ const Index = () => {
 
 
       {/* Trust badges */}
-      <section className="py-10 bg-secondary/30 border-y border-border">
+      <section className="py-10 bg-accent-1/8 border-y border-border">
         <div className="container grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {trustBadges.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-2 text-sm">
@@ -906,15 +906,15 @@ const Index = () => {
       </section>
 
       {/* UPSELL — COMBO */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden bg-accent-2/8">
         <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ backgroundImage: "radial-gradient(700px circle at 50% 50%, hsl(var(--primary) / 0.25), transparent 70%)" }} />
         <div className="container relative">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <Badge className="gradient-primary text-primary-foreground border-none px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
+            <Badge className="gradient-primary text-primary-foreground border border-border px-3 py-1.5 mb-4 uppercase tracking-widest text-xs">
               <Flame className="h-3.5 w-3.5 mr-1.5" /> Want results in 2 weeks?
             </Badge>
             <h2 className="font-display text-5xl md:text-6xl font-extrabold mb-4">
-              The <span className="text-primary">Daynee + Zahidi</span> Combo
+              The <span className="text-accent-2">Daynee + Zahidi</span> Combo
             </h2>
             <p className="text-lg text-muted-foreground/85 leading-relaxed">
               Our gummies provide the <strong className="text-foreground">building blocks</strong>. Zahidi Vita Plus tells your body <strong className="text-foreground">how fast to use them</strong>. Together, customers see visible curves in as little as 2 weeks.
@@ -932,7 +932,7 @@ const Index = () => {
                   </div>
                   <img src={zahidiImg} alt="Zahidi Vita Plus capsules pack" loading="lazy" width={400} height={400} className="h-40 sm:h-48 md:h-64 w-auto max-w-[42%] object-contain drop-shadow-2xl" />
                 </div>
-                <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 gradient-primary text-primary-foreground font-bold px-4 py-1.5 shadow-glow">
+                <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-accent-2 text-white font-bold px-4 py-1.5 shadow-glow">
                   ⚡ Fastest Results
                 </Badge>
               </div>
@@ -970,7 +970,7 @@ const Index = () => {
 
                 <Button
                   size="lg"
-                  className="w-full gradient-primary text-primary-foreground font-bold h-14 shadow-glow animate-pulse-glow"
+                  className="w-full bg-accent-2 text-white font-bold h-14 shadow-glow animate-pulse-glow"
                   onClick={() => { selectPack("Curve Combo ⭐"); scrollToForm(); }}
                 >
                   <Sparkles className="mr-2 h-5 w-5" /> Add the Combo to My Order
@@ -1197,7 +1197,7 @@ const Index = () => {
           <Button
             size="lg"
             onClick={scrollToOrder}
-            className="gradient-primary text-primary-foreground font-bold text-lg h-16 px-12 mt-10 shadow-glow animate-pulse-glow"
+            className="bg-accent-1 text-white font-bold text-lg h-16 px-12 mt-10 shadow-glow animate-pulse-glow"
           >
             <Sparkles className="mr-2 h-5 w-5" /> Get My Curves NOW!
           </Button>
