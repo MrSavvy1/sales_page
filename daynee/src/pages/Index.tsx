@@ -364,8 +364,6 @@ const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzNx523zf-GvmYI
 const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
   const [pkg, setPkg] = useState(""); // This starts empty
   const [submitting, setSubmitting] = useState(false);
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
-  const [showAgreementError, setShowAgreementError] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<{ [key: string]: string }>({});
  
 
@@ -432,19 +430,6 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
       return;
     }
 
-    if (!agreedToTerms) {
-      setShowAgreementError(true);
-      toast({ title: "Please tick the agreement box to continue", variant: "destructive" });
-      
-      // Scroll to agreement checkbox
-      const agreementCheckbox = document.getElementById("agreement");
-      agreementCheckbox?.scrollIntoView({ behavior: "smooth", block: "center" });
-      agreementCheckbox?.focus();
-      
-      return;
-    }
-
-    setShowAgreementError(false);
     setFieldErrors({});
 
     setSubmitting(true);
@@ -513,8 +498,8 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
               htmlFor={`pkg-${p.value}`}
               className={`flex items-start gap-3 rounded-xl border p-3 md:p-4 cursor-pointer transition-smooth ${
                 pkg === p.value
-                  ? "border-primary bg-primary/10"
-                  : "border-border bg-secondary/30 hover:border-primary/40"
+                  ? "border-foreground/20 bg-secondary"
+                  : "border-border bg-secondary/30 hover:border-foreground/20"
               }`}
             >
               <RadioGroupItem id={`pkg-${p.value}`} value={p.value} className="mt-1" />
@@ -624,31 +609,6 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
             ✕ {fieldErrors.address}
           </p>
         )}
-      </div>
-
-      <div className={`flex items-start gap-3 p-3 rounded-lg border-2 transition-colors ${
-        showAgreementError 
-          ? "bg-destructive/10 border-destructive/60" 
-          : "bg-primary/5 border-primary/20"
-      }`}>
-        <input
-          type="checkbox"
-          id="agreement"
-          checked={agreedToTerms}
-          onChange={(e) => {
-            setAgreedToTerms(e.target.checked);
-            setShowAgreementError(false);
-          }}
-          className="mt-1 h-5 w-5 cursor-pointer accent-primary"
-        />
-        <div className="flex-1">
-          <label htmlFor="agreement" className="text-sm text-foreground/90 cursor-pointer block">
-            I hereby agree that I have the amount to pay and will be available to receive this delivery within today or tomorrow. I am ready to take calls from the delivery agent.
-          </label>
-          {showAgreementError && (
-            <p className="text-xs text-destructive font-semibold mt-1">✓ Please check this box to continue</p>
-          )}
-        </div>
       </div>
 
       <Button
@@ -1129,12 +1089,12 @@ const Index = () => {
                 key={p.name}
                 className={`relative p-7 transition-smooth ${
                   p.highlight
-                    ? "gradient-card border-primary shadow-glow scale-[1.02]"
-                    : "gradient-card border-border hover:border-primary/40"
+                    ? "gradient-card border-border shadow-glow scale-[1.02]"
+                    : "gradient-card border-border hover:border-foreground/20"
                 }`}
               >
                 {p.badge && (
-                  <Badge className={`absolute -top-3 left-1/2 -translate-x-1/2 ${p.highlight ? "gradient-primary text-primary-foreground" : "bg-secondary text-foreground border-border"} font-bold px-4 py-1.5 whitespace-nowrap`}>
+                    <Badge className={`absolute -top-3 left-1/2 -translate-x-1/2 ${p.highlight ? "gradient-primary text-primary-foreground border border-border" : "bg-secondary text-foreground border-border"} font-bold px-4 py-1.5 whitespace-nowrap`}>
                     {p.badge}
                   </Badge>
                 )}
