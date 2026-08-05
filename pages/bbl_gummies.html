@@ -76,8 +76,16 @@
     }
 
     .radio-button-segment label {
-        display: inline;
+        display: flex;
+        align-items: center;
         margin-bottom: 0px;
+        gap: 10px;
+    }
+
+    .radio-button-segment input[type="radio"] {
+        margin: 0px;
+        vertical-align: middle;
+        flex-shrink: 0;
     }
 
     .form-group {
