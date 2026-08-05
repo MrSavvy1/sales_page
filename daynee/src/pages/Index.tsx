@@ -370,7 +370,7 @@ const OrderForm = ({ defaultPack }: { defaultPack?: string }) => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    const form = e.currentTarge t;
+    const form = e.currentTarget;
     const fd = new FormData(form);
     const name = String(fd.get("name") || "").trim();
     const phone = String(fd.get("phone") || "").trim();
